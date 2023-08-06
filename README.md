@@ -23,7 +23,7 @@ npm i
 node bot.js
 ```
 
-#Commands
+# Commands
 ```
 %setsystem {argument}
 This command sets your systemID from pluralkit.
