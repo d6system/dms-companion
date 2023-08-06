@@ -1,0 +1,16 @@
+{
+    "dbb": {
+        "prefixes": {
+            "main": "%",
+            "servers": {}
+        },
+        "owners": []
+    },
+    "discord": {
+        "servers": {},
+        "members": {},
+        "users": {}
+    },
+    "blocks": {},
+    "custom": {}
+}

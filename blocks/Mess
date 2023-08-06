@@ -1,0 +1,91 @@
+        var style1 = this.GetOptionValue("styles1", cache);
+        var enable1 = this.GetOptionValue("enable1", cache);
+        var emoji1 = this.GetOptionValue("emoji1", cache);
+        const label1 = this.GetOptionValue("label1", cache);      
+        const id1 = this.GetOptionValue("id1", cache);
+
+        var style2 = this.GetOptionValue("styles2", cache);
+        var enable2 = this.GetOptionValue("enable2", cache);
+        var emoji2 = this.GetOptionValue("emoji2", cache);
+        const label2 = this.GetOptionValue("label2", cache);      
+        const id2 = this.GetOptionValue("id2", cache);
+
+        var style3 = this.GetOptionValue("styles3", cache);
+        var enable3 = this.GetOptionValue("enable3", cache);
+        var emoji3 = this.GetOptionValue("emoji3", cache);
+        const label3 = this.GetOptionValue("label3", cache);      
+        const id3 = this.GetOptionValue("id3", cache);
+
+        var style4 = this.GetOptionValue("styles4", cache);
+        var enable4 = this.GetOptionValue("enable4", cache);
+        var emoji4 = this.GetOptionValue("emoji4", cache);
+        const label4 = this.GetOptionValue("label4", cache);      
+        const id4 = this.GetOptionValue("id4", cache);
+
+        var style5 = this.GetOptionValue("styles5", cache);
+        var enable5 = this.GetOptionValue("enable5", cache);
+        var emoji5 = this.GetOptionValue("emoji5", cache);
+        const label5 = this.GetOptionValue("label5", cache);      
+        const id5 = this.GetOptionValue("id5", cache);
+
+        --//////////////////////////////////////////////////////////////////////////////////////////////////////////////////--
+
+        const end = (button) => {
+            this.StoreOutputValue(button, "button", cache);
+            this.RunNextBlock("action", cache);
+            }
+
+        --//////////////////////////////////////////////////////////////////////////////////////////////////////////////////--
+
+        if(style == "primary"){
+            var style = ButtonStyle.Primary
+        } else if(style == "secondary") {
+            var style = ButtonStyle.Secondary
+        } else if(style == "success") {
+            var style = ButtonStyle.Success
+        } else if(style == "danger") {
+            var style = ButtonStyle.Danger
+        } else if(style == "link") {
+            var style = ButtonStyle.Link
+        }
+
+        if(enable == "enabled"){
+            var enable = false
+        } else if(enable == "disabled") {
+            var enable = true
+        }
+
+        if(emoji == null || emoji == "") {
+            noEmoji()
+        } else {
+            Emoji()
+        }
+
+
+        function Emoji() {
+            const button = [
+                new ActionRowBuilder().setComponents(
+                    new ButtonBuilder()
+                        .setCustomId(id)
+                        .setLabel(label)
+                        .setStyle(style)
+                        .setEmoji(emoji)
+                        .setDisabled(enable)
+                )
+                ]
+            end(button)
+        }
+
+
+        function noEmoji() {
+            const button = [
+                new ActionRowBuilder().setComponents(
+                    new ButtonBuilder()
+                        .setCustomId(id)
+                        .setLabel(label)
+                        .setStyle(style)
+                        .setDisabled(enable)
+                )
+                ]
+            end(button)
+        }
