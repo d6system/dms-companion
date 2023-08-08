@@ -25,13 +25,13 @@ node bot.js
 
 # Commands
 ```
-%setsystem {argument}
+/setsystem {argument}
 This command sets your systemID from pluralkit.
 Example: %setsystem exmpl
 ```
 
 ```
-%reloadalters
+/reloadalters
 This command will delete all roles that end in (alter). Then it will get your alterlist from pluralkit and create new roles with your current list.
 So, when you have a new alter you do %reloadalters to recreate the list.
 ```
