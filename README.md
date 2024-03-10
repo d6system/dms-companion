@@ -3,6 +3,8 @@ A DM Server companion for PluralKit
 
 This Discord bot can be used to create roles in your DM server for each of your alters so people can ping your alters seperately.
 
+You want it hosted for you? Request a quote by e-mailing sales@gotitsystems.nl
+
 # How to install
 Compatible with: Windows/Linux/Mac.
 
