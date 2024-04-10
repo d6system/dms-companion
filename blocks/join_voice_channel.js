@@ -29,21 +29,28 @@ module.exports = {
             "name": "Action",
             "description": "Type: Action\n\nDescription: Executes the following blocks when this block finishes its task.",
             "types": ["action"]
+        },
+        {
+            "id": "connection",
+            "name": "Connection",
+            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The voice channel to join.",
+            "types": ["object", "unspecified"]
         }
     ],
 
-    code(cache) {
-        const DiscordPlayer = this.getDependency("DiscordPlayer", cache.name)
+    async code(cache) {
 
-        const voice_channel = this.GetInputValue("voice_channel", cache);
+        const channel = this.GetInputValue("voice_channel", cache);
 
-        const queue = DiscordPlayer.player.createQueue(voice_channel);
+        const { joinVoiceChannel } = await this.require('@discordjs/voice');
 
-        if (queue.connection)
-            this.RunNextBlock("action", cache);
-        else
-            queue.connect(voice_channel).then(() => {
-                this.RunNextBlock("action", cache);
-            });
+        const connection = await joinVoiceChannel({
+            channelId: channel.id,
+            guildId: channel.guild.id,
+            adapterCreator: channel.guild.voiceAdapterCreator,
+        });
+
+        this.StoreOutputValue(connection, "connection", cache)
+        this.RunNextBlock("action", cache);
     }
 }

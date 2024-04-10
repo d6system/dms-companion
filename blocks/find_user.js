@@ -16,8 +16,7 @@ module.exports = {
             "id": "search_value",
             "name": "Search Value",
             "description": "Acceptable Types: Text, Unspecified\n\nDescription: The value according to your choice in the \"Find User By\" option.",
-            "types": ["text", "unspecified"],
-            "required": true
+            "types": ["text", "unspecified"]
         }
     ],
 
@@ -32,6 +31,12 @@ module.exports = {
                 "username": "User Username",
                 "tag": "User Tag"
             }
+        },
+        {
+            id: "search_value",
+            name: "Search Value",
+            description: "Description: The value for the search Value",
+            type: "TEXT"
         }
     ],
 
@@ -51,8 +56,12 @@ module.exports = {
     ],
 
     async code(cache) {
-        const search_value = this.GetInputValue("search_value", cache);
+        var search_value = this.GetInputValue("search_value", cache);
         const find_user_by = this.GetOptionValue("find_user_by", cache);
+
+        if (search_value == undefined) {
+            search_value = this.GetOptionValue("search_value", cache);
+        }
 
         const users = this.client.users;
 

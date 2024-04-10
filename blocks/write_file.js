@@ -57,7 +57,7 @@ module.exports = {
         const fs = require("fs");
         const path = require("path");
 
-        if(conversion_type == "json") content = JSON.stringify(content);
+        if(conversion_type == "json") content = JSON.stringify(content, null, 2);
 
         fs.mkdirSync(path.dirname(file_path), {recursive: true});
 

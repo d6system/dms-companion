@@ -84,7 +84,7 @@ module.exports = {
 
         const {Embed} = require("discord.js");
 
-        if (message_embed && !(message_embed instanceof Embed) && message_embed.hasProperty('data'))
+        if (message_embed && !(message_embed instanceof Embed) && message_embed.hasOwnProperty('data'))
             message_embed = new Embed(message_embed.data)
 
         let result;
@@ -125,13 +125,22 @@ module.exports = {
                 result = message_embed.files;
                 break;
             case 12:
-                result = message_embed.footer && message_embed.footer.text;
+                try 
+                {
+                    result = message_embed.footer && message_embed.footer.text;
+                } catch {}
                 break;
             case 13:
-                result = message_embed.footer && message_embed.footer.iconURL;
+                try
+                {
+                    result = message_embed.footer && message_embed.footer.iconURL;
+                } catch {}
                 break;
             case 14:
-                result = message_embed.footer && message_embed.footer.proxyIconURL;
+                try
+                {
+                    result = message_embed.footer && message_embed.footer.proxyIconURL;
+                } catch {}
                 break;
             case 15:
                 result = message_embed.image && message_embed.image.url;

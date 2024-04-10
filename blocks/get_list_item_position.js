@@ -1,7 +1,7 @@
 module.exports = {
     name: "Get List Item Position",
 
-    description: "Searches for the item from the list and get its position.",
+    description: "Searches for the item from the list and gets its position.",
 
     category: "List Stuff",
 
@@ -56,7 +56,8 @@ module.exports = {
         const item = this.GetInputValue("item", cache);
         const start_at = parseInt(this.GetInputValue("start_at", cache));
 
-        this.StoreOutputValue(list.indexOf(item, start_at - 1) + 1, "position", cache);
+        const position = list.indexOf(item, start_at - 1);
+        this.StoreOutputValue(position === -1 ? -1 : position + 1, "position", cache);
         this.RunNextBlock("action", cache);
     }
 }

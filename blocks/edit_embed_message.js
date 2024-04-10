@@ -89,7 +89,7 @@ module.exports = {
             "id": "timestamp",
             "name": "Timestamp (Date)",
             "description": "Acceptable Types: Date, Number, Unspecified\n\nDescription: The new timestamp (Date) for this message embed. If a boolean as \"true\", this uses the current time. (OPTIONAL)",
-            "types": ["date", "number", "unspecified"]
+            "types": ["date", "boolean", "number", "unspecified"]
         }
     ],
 
@@ -110,39 +110,53 @@ module.exports = {
         }
     ],
 
-    code: function(cache) {
+    code (cache) {
+        const { EmbedBuilder } = require('discord.js');
         const message_embed = this.GetInputValue("message_embed", cache);
-        const color = this.GetInputValue("color", cache, true);
-        const thumbnail = this.GetInputValue("thumbnail", cache, true);
+        const color = this.GetInputValue("color", cache);
+        const thumbnail = this.GetInputValue("thumbnail", cache);
         const author_icon = this.GetInputValue("author_icon", cache);
         const author_name = this.GetInputValue("author_name", cache);
         const author_url = this.GetInputValue("author_url", cache);
-        const title = this.GetInputValue("title", cache, true);
-        const url = this.GetInputValue("url", cache, true);
-        const description = this.GetInputValue("description", cache, true);
-        const image = this.GetInputValue("image", cache, true);
+        const title = this.GetInputValue("title", cache);
+        const url = this.GetInputValue("url", cache);
+        const description = this.GetInputValue("description", cache);
+        const image = this.GetInputValue("image", cache);
         const footer_icon = this.GetInputValue("footer_icon", cache);
         const footer_text = this.GetInputValue("footer_text", cache);
-        const timestamp = this.GetInputValue("timestamp", cache, true);
+        const timestamp = this.GetInputValue("timestamp", cache);
 
-        if(color) message_embed.setColor(color.value);
-        if(thumbnail) message_embed.setThumbnail(thumbnail.value);
-        if(author_icon || author_name || author_url) message_embed.setAuthor({
-            name: author_name || "\u200b",
-            url: author_icon,
-            icon_url: author_url
-        });
-        if(title) message_embed.setTitle(title.value);
-        if(url) message_embed.setURL(url.value);
-        if(description) message_embed.setDescription(description.value);
-        if(image) message_embed.setImage(image.value);
-        if(footer_icon || footer_text) message_embed.setFooter({
-            text: footer_text || "\u200b",
-            icon_url: footer_icon
-        });
-        if(timestamp) message_embed.setTimestamp(timestamp.value);
+        let footer = {};
+        if (footer_text) {
+            footer.text = footer_text
+        } 
+        if (footer_icon) {
+            footer.iconURL = footer_icon
+        } 
 
-        this.StoreOutputValue(message_embed, "message_embed", cache);
+        let author = {};
+        if (author_name) {
+            author.name = author_name
+        }
+        if (author_icon) {
+            author.iconURL = author_icon
+        }
+        if (author_url) {
+            author.url = author_url
+        }
+
+        const embed = EmbedBuilder.from(message_embed)
+        if (color) embed.setColor(color);
+        if (thumbnail) embed.setThumbnail(thumbnail);
+        if (author_icon || author_name || author_url) embed.setAuthor(author);
+        if (title) embed.setTitle(title);
+        if (url) embed.setURL(url);
+        if (description) embed.setDescription(description);
+        if (image) embed.setImage(image);
+        if (footer_icon || footer_text) embed.setFooter(footer);
+        if (timestamp) embed.setTimestamp(timestamp);
+
+        this.StoreOutputValue(embed, "message_embed", cache);
         this.RunNextBlock("action", cache);
     }
 }

@@ -21,38 +21,20 @@ module.exports = {
         }
     ],
 
-    options: [
-        {
-            "id": "typing_indicator_type",
-            "name": "Typing Indicator Type",
-            "description": "Description: The type of typing indicator.",
-            "type": "SELECT",
-            "options": {
-                "start": "Start Typing",
-                "stop": "Stop Typing"
-            }
-        }
-    ],
+    options: [],
 
     outputs: [
         {
             "id": "action",
             "name": "Action",
             "description": "Acceptable Types: Action\n\nDescription: Executes the following blocks when this block finishes its task.",
-            "types": ["action"]
+            "types": ["action"] 
         }
     ],
 
     code(cache) {
         const channel = this.GetInputValue("channel", cache);
-        const typing_option = this.GetOptionValue("typing_option", cache);
-
-        if(typing_option == "start") {
-            channel.startTyping();
-        } else {
-            channel.stopTyping(true);
-        }
-
+        channel.sendTyping()        
         this.RunNextBlock("action", cache);
     }
 }

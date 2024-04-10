@@ -13,13 +13,6 @@ module.exports = {
             "types": ["action"]
         },
         {
-            "id": "queue",
-            "name": "Queue",
-            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Queue Object!",
-            "types": ["object", "unspecified"],
-            "required": true
-        },
-        {
             "id": "voicechannel",
             "name": "Voice Channel",
             "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Voice Channel to Switch to!",
@@ -36,18 +29,13 @@ module.exports = {
             "name": "Action",
             "description": "Type: Action\n\nDescription: Executes the following blocks when this block finishes its task.",
             "types": ["action"]
-        },
-        {
-            "id": "queue",
-            "name": "Queue",
-            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Queue Object!",
-            "types": ["object", "unspecified"]
         }
     ],
 
     async code(cache) {
-        const queue = this.GetInputValue("queue", cache);
         const voicechannel = this.GetInputValue("voicechannel", cache);
+        const { useQueue } = require("discord-player");
+        const queue = useQueue(voicechannel.guild.id);
 
         await queue.connect(voicechannel);
 

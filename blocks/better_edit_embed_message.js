@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Edits the embed to insert into a message.",
 
-    category: ".MOD",
+    category: "Message Embed Stuff",
 
     inputs: [
         {
@@ -89,7 +89,7 @@ module.exports = {
             "id": "timestamp",
             "name": "Timestamp (Date)",
             "description": "Acceptable Types: Date, Number, Unspecified\n\nDescription: The new timestamp (Date) for this message embed. If a boolean as \"true\", this uses the current time. (OPTIONAL)",
-            "types": ["date", "number", "unspecified"]
+            "types": ["date", "number", "boolean", "unspecified"]
         }
     ],
 
@@ -163,11 +163,11 @@ module.exports = {
 		{
             "id": "timestamp",
             "name": "Timestamp (Date)",
-            "description": "Acceptable Types: Date, Number, Boolean, Unspecified\n\nDescription: The timestamp (Date) for this message embed. If a boolean as \"true\", this uses the current time. (OPTIONAL)",
+            "description": "Description: The timestamp (Date) for this message embed.\nTrue: Adds/Keeps timestamp // False: Removes timestamp.",
             "type": "SELECT",
-            "options": {                
-                "false": "False",                
-                "true": "True",
+            "options": {   
+                "true": "True",             
+                "false": "False",
             }
         }		
 	],
@@ -188,78 +188,89 @@ module.exports = {
     ],
 
     code: function(cache) {
-        const { EmbedBuilder } = require('discord.js');
-        const color_input = this.GetInputValue("color", cache, false, "#2f3136");        
-        const thumbnail_input = this.GetInputValue("thumbnail", cache, true);
-        const author_icon_input = this.GetInputValue("author_icon", cache);
-        const author_name_input = this.GetInputValue("author_name", cache);
-        const author_url_input = this.GetInputValue("author_url", cache);
-        const title_input = this.GetInputValue("title", cache, true);
-        const url_input = this.GetInputValue("url", cache, true);
-        const description_input = this.GetInputValue("description", cache, true);
-        const image_input = this.GetInputValue("image", cache, true);
-        const footer_icon_input = this.GetInputValue("footer_icon", cache);
-        const footer_text_input = this.GetInputValue("footer_text", cache);
-        const timestamp_input = this.GetInputValue("timestamp", cache, true);
-
-        const color_option = this.GetOptionValue("color", cache) !== '' ? this.GetOptionValue("color", cache) : null;
-        const thumbnail_option = this.GetOptionValue("thumbnail", cache) !== '' ? this.GetOptionValue("thumbnail", cache, true) : undefined;
-        const author_icon_option = this.GetOptionValue("author_icon", cache) !== '' ? this.GetOptionValue("author_icon", cache) : undefined;
-        const author_name_option = this.GetOptionValue("author_name", cache) !== '' ? this.GetOptionValue("author_name", cache) : undefined;
-        const author_url_option = this.GetOptionValue("author_url", cache) !== '' ? this.GetOptionValue("author_url", cache) : undefined;
-        const title_option = this.GetOptionValue("title", cache) !== '' ? this.GetOptionValue("title", cache, true) : undefined;
-        const url_option = this.GetOptionValue("url", cache) !== '' ? this.GetOptionValue("url", cache, true) : undefined;
-        const description_option = this.GetOptionValue("description", cache) !== '' ? this.GetOptionValue("description", cache, true) : undefined;
-        const image_option = this.GetOptionValue("image", cache) !== '' ? this.GetOptionValue("image", cache, true) : undefined;
-        const footer_icon_option = this.GetOptionValue("footer_icon", cache) !== '' ? this.GetOptionValue("footer_icon", cache) : undefined;
-        const footer_text_option = this.GetOptionValue("footer_text", cache) !== '' ? this.GetOptionValue("footer_text", cache) : undefined;
-
-        let timestamp_option = this.GetOptionValue("timestamp", cache); 
-        if(timestamp_option == "true") { timestamp_option = true; }
-    	else { timestamp_option = false; }
-
+        const { EmbedBuilder, time } = require('discord.js');
         const message_embed = this.GetInputValue("message_embed", cache);
-        const color = color_input !== "#2f3136" ? color_input : color_option;
-        const thumbnail = thumbnail_input !== undefined ? thumbnail_input : thumbnail_option;
-        const author_icon = author_icon_input !== undefined ? author_icon_input : author_icon_option;
-        const author_name = author_name_input !== undefined ? author_name_input : author_name_option;
-        const author_url = author_url_input !== undefined ? author_url_input : author_url_option;
-        const title = title_input !== undefined ? title_input : title_option;        
-        const url = url_input !== undefined ? url_input : url_option;
-        const description = description_input !== undefined ? description_input : description_option;
-        const image = image_input !== undefined ? image_input : image_option;
-        const footer_icon = footer_icon_input !== undefined ? footer_icon_input : footer_icon_option;
-        const footer_text = footer_text_input !== undefined ? footer_text_input : footer_text_option;        
-        const timestamp = timestamp_input !== undefined ? timestamp_input : timestamp_option;   
+        const color_input = this.GetInputValue("color", cache, false, "#2f3136");     
+        const color_option = this.GetOptionValue("color", cache) !== "#000000" ? this.GetOptionValue("color", cache) : null;
+        const color = color_input !== "#2f3136" ? color_input : color_option;       
 
-        const embed = new EmbedBuilder()
-        if(color) {embed.setColor(color)} else {embed.setColor(message_embed['data'].color)};
-        if(thumbnail) {embed.setThumbnail(thumbnail)} else {message_embed['data'].hasOwnProperty('thumbnail') ? embed.setThumbnail(message_embed['data'].thumbnail.url) : ""};
-        if(author_icon || author_name || author_url) {
-            embed.setAuthor({
-            name: author_name || "\u200b",
-            url: author_icon,
-            icon_url: author_url
-        })} else {message_embed['data'].hasOwnProperty('author') ? embed.setAuthor({
-            name: message_embed['data'].author.hasOwnProperty('name') ? message_embed['data'].author.name : "\u200b",
-            url: message_embed['data'].author.hasOwnProperty('url') ? message_embed['data'].author.url : "",
-            icon_url: message_embed['data'].author.hasOwnProperty('icon_url') ? message_embed['data'].author.icon_url : "" 
-        }) : ""};
-        if(title) {embed.setTitle(title.value)} else {message_embed['data'].hasOwnProperty('title') ? embed.setTitle(message_embed['data'].title) : ""};
-        if(url) {embed.setURL(url.value)} else {message_embed['data'].hasOwnProperty('url') ? embed.setURL(message_embed['data'].url) : ""};
-        if(description) {embed.setDescription(description.value)} else {message_embed['data'].hasOwnProperty('description') ? embed.setDescription(message_embed['data'].description) : ""};
-        if(image) {embed.setImage(image.value)} else {message_embed['data'].hasOwnProperty('image') ? embed.setImage(message_embed['data'].image.url) : ""};
-        if(footer_icon || footer_text) {
-            embed.setFooter({
-            text: footer_text || "\u200b",
-            icon_url: footer_icon
-        })} else {message_embed['data'].hasOwnProperty('footer') ? embed.setFooter({
-            text: message_embed['data'].footer.hasOwnProperty('text') ? message_embed['data'].footer.text : "\u200b",
-            icon_url: message_embed['data'].footer.hasOwnProperty('icon_url') ? message_embed['data'].footer.icon_url : ""
-        }) : ""};
-        if(timestamp) {embed.setTimestamp(timestamp.value)} else {message_embed['data'].hasOwnProperty('timestamp') ? embed.setTimestamp(message_embed['data'].timestamp.value) : ""};
+        const thumbnailtest = this.GetInputValue("thumbnail", cache) || this.GetOptionValue("thumbnail", cache, false, undefined);
+        const author_icontest = this.GetInputValue("author_icon", cache) || this.GetOptionValue("author_icon", cache, false, undefined);
+        const author_name = this.GetInputValue("author_name", cache) || this.GetOptionValue("author_name", cache, false, undefined);
+        const author_url = this.GetInputValue("author_url", cache) || this.GetOptionValue("author_url", cache, false, undefined);
+        const title = this.GetInputValue("title", cache) || this.GetOptionValue("title", cache, false, undefined);
+        const url = this.GetInputValue("url", cache) || this.GetOptionValue("url", cache, false, undefined);
+        const description = this.GetInputValue("description", cache) || this.GetOptionValue("description", cache, false, undefined);
+        const imagetest = this.GetInputValue("image", cache) || this.GetOptionValue("image", cache, false, undefined);
+        const footer_icontest = this.GetInputValue("footer_icon", cache) || this.GetOptionValue("footer_icon", cache, false, undefined);
+        const footer_text = this.GetInputValue("footer_text", cache) || this.GetOptionValue("footer_text", cache, false, undefined); 
 
-        this.StoreOutputValue(embed, "message_embed", cache);
+        var timestamp = this.GetInputValue("timestamp", cache) || this.GetOptionValue("timestamp", cache);            
+
+        if (imagetest.match(/(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))/i)) {
+            image = imagetest;
+        }else{
+            image = undefined;
+        }
+
+        if (thumbnailtest.match(/(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))/i)) {
+            thumbnail = thumbnailtest;
+        }else{
+            thumbnail = undefined;
+        }
+
+        if (author_icontest.match(/(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))/i)) {
+            author_icon = author_icontest;
+        }else{
+            author_icon = undefined;
+        }
+
+        if (footer_icontest.match(/(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))/i)) {
+            footer_icon = footer_icontest;
+        }else{
+            footer_icon = undefined;
+        }
+
+        let footer = {};
+        if (footer_text) {
+            footer.text = footer_text
+        } 
+        if (footer_icon) {
+            footer.iconURL = footer_icon
+        } 
+
+        let author = {};
+        if (author_name) {
+            author.name = author_name
+        }
+        if (author_icon) {
+            author.iconURL = author_icon
+        }
+        if (author_url) {
+            author.url = author_url
+        }
+
+        const embed = EmbedBuilder.from(message_embed)
+        if (color) embed.setColor(color);
+        if (thumbnail) embed.setThumbnail(thumbnail);
+        if (author_icon || author_name || author_url) embed.setAuthor(author);
+        if (title) embed.setTitle(title);
+        if (url) embed.setURL(url);
+        if (description) embed.setDescription(description);
+        if (image) embed.setImage(image);
+        if (footer_icon || footer_text) embed.setFooter(footer);
+
+        if (timestamp == true || timestamp == "true"){
+            timestamp = undefined;
+            embed.setTimestamp(timestamp);
+        }
+        else if(timestamp == false || timestamp == "false"){  
+            embed.setTimestamp(null);
+        }else{
+            embed.setTimestamp(timestamp);
+        }
+        
+        this.StoreOutputValue(embed, "message_embed", cache);        
         this.RunNextBlock("action", cache);
     }
 }

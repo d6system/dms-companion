@@ -111,7 +111,7 @@ module.exports = {
         const text10 = this.GetInputValue("text10", cache) + "";
         const __text = this.GetOptionValue("text", cache) + "";
 
-        this.StoreOutputValue(eval("`" + __text.replace(/`/g, "\\`") + "`"), "text", cache);
+        this.StoreOutputValue(eval("`" + __text.replace(/`/g, "\\`") + "`").replaceAll('\\n', '\n'), "text", cache);
         this.RunNextBlock("action", cache);
     }
 }

@@ -209,7 +209,7 @@ module.exports = {
             manage_nicknames: PermissionFlagsBits.ManageNicknames,
             manage_roles: PermissionFlagsBits.ManageRoles,
             manage_webhooks: PermissionFlagsBits.ManageWebhooks,
-            manage_emojis: PermissionFlagsBits.ManageEmojisAndStickers
+            manage_emojis: PermissionFlagsBits.ManageGuildExpressions
         }
 
         let command_name = this.GetInputValue("command_name", cache);

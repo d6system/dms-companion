@@ -66,14 +66,12 @@ module.exports = {
 
     async code(cache) {
 
-        this.client.on("ready", () => YTP = new YoutubePoster(this.client));
-        
         const YoutubePoster = await this.require("discord-yt-poster");
         const grabLink = await this.require('youtube-thumbnail-grabber');
-        const fetch = await this.require('node-fetch');
-        const { EventEmitter } = require('node:events');
-        const myEmitter = new EventEmitter();
+        const fetch = await this.require('node-fetch');        
 
+        this.client.on("ready", () => YTP = new YoutubePoster(this.client));
+        
         const channelid = this.GetInputValue("id", cache);
         const channel = 'https://www.youtube.com/channel/' + channelid
 

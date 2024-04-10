@@ -16,8 +16,7 @@ module.exports = {
             "id": "activity_name",
             "name": "Activity Text",
             "description": "Acceptable Types: Text, Unspecified\n\nDescription: The activity text for the activity.",
-            "types": ["text", "unspecified"],
-            "required": true
+            "types": ["text", "unspecified"]
         },
         {
             "id": "activity_url",
@@ -39,7 +38,8 @@ module.exports = {
                 "watching": "Watching",
                 "streaming": "Streaming",
                 "custom": "Custom (emoji)",
-                "competing": "Competing in"
+                "competing": "Competing in",
+                "remove": "Remove Status"
             }
         }
     ],
@@ -60,7 +60,10 @@ module.exports = {
 
         const {ActivityType} = require("discord.js");
 
-        const activityType = {
+        if(activity_type == "remove")  {
+            this.client.user.setPresence({ activity: null });
+        } else {
+            const activityType = {
             playing: ActivityType.Playing,
             listening: ActivityType.Listening,
             watching: ActivityType.Watching,
@@ -74,6 +77,7 @@ module.exports = {
             type: activityType[activity_type],
             url: activity_twitch_url
         });
+        }
 
         this.RunNextBlock("action", cache);
     }

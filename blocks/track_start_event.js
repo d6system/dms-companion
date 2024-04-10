@@ -22,20 +22,27 @@ module.exports = {
             "id": "queue",
             "name": "Queue",
             "description": "Type: Object, Unspecified\n\nDescription: The Queue Object",
-            "types": ["object", "list", "unspecified"]
+            "types": ["object", "unspecified"]
+        },
+        {
+            "id": "server",
+            "name": "Server",
+            "description": "Type: Object, Unspecified\n\nDescription: The Server Object",
+            "types": ["object", "unspecified"]
         },
         {
             "id": "track",
             "name": "Track",
             "description": "Type: Object, Unspecified\n\nDescription: The Track Object",
-            "types": ["object", "list", "unspecified"]
+            "types": ["object", "unspecified"]
         }
     ],
 
     async code(cache) {
-        const player = await this.getDependency("DiscordPlayer", cache).player;
+        const player = await this.getDBB().Dependencies["DiscordPlayer"].player;
         player.events.on("playerStart", (queue, track) => {
             this.StoreOutputValue(queue, "queue", cache);
+            this.StoreOutputValue(queue.guild, "server", cache);
             this.StoreOutputValue(track, "track", cache);
             this.RunNextBlock("action", cache);
         })

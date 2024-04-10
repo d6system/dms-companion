@@ -54,7 +54,7 @@ module.exports = {
         const requestedBy = this.GetInputValue("requested_by", cache);
 
         const searchResult = await DiscordPlayer.player.search(audio_query, { requestedBy });
-        const queue = DiscordPlayer.player.getQueue(server);
+        const queue = DiscordPlayer.player.createQueue(server);
 
         if (searchResult.playlist)
             queue.addTracks(searchResult.tracks);

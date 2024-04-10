@@ -23,8 +23,7 @@ module.exports = {
             "id": "text",
             "name": "Text",
             "description": "Acceptable Types: Text, Unspecified\n\nDescription: The text to try to find in the source text.",
-            "types": ["text", "unspecified"],
-            "required": true
+            "types": ["text", "unspecified"]
         },
         {
             "id": "result_number",
@@ -34,7 +33,14 @@ module.exports = {
         }
     ],
 
-    options: [],
+    options: [
+        {
+            id: "text",
+            name: "Search Value",
+            description: "Description: The value for the search Value",
+            type: "TEXT"
+        }
+    ],
 
     outputs: [
         {
@@ -53,8 +59,12 @@ module.exports = {
 
     code(cache) {
         const source_text = this.GetInputValue("source_text", cache) + "";
-        const text = this.GetInputValue("text", cache) + "";
+        var text = this.GetInputValue("text", cache) + "";
         const result_number = parseInt(this.GetInputValue("result_number", cache)) - 1;
+
+        if (text == undefined) {
+            text = this.GetOptionValue("text", cache);
+        }
 
         let position = -1,
             loop = 0,

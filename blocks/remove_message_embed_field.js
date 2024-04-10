@@ -61,7 +61,7 @@ module.exports = {
         const message_embed = this.GetInputValue("message_embed", cache);
         const position_type = this.GetOptionValue("position_type", cache) + "";
 
-        const fields = message_embed.data?.fields;
+        const fields = message_embed.data && message_embed.data.fields;
 
         if(fields) {
             switch(position_type) {
@@ -74,11 +74,12 @@ module.exports = {
                 case "random":
                     fields.splice(Math.floor(Math.random() * fields.length), 1);
                     break;
-                case "custom":
+                case "custom": {
                     const custom_position = parseInt(this.GetInputValue("custom_position", cache));
 
                     fields.splice(custom_position - 1, 1);
                     break;
+                }
             }
         }
 

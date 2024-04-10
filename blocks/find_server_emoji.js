@@ -16,14 +16,14 @@ module.exports = {
             "id": "server",
             "name": "Server",
             "description": "Acceptable Types: Object, Unspecified\n\nDescription: The server to find the server emoji. If possible, use this input to avoid finding the emoji on an unintended server. (OPTIONAL)",
-            "types": ["object", "unspecified"]
+            "types": ["object", "unspecified"],
+            "required": true
         },
         {
             "id": "search_value",
             "name": "Search Value",
             "description": "Acceptable Types: Text, Unspecified\n\nDescription: The value according to your choice in the \"Find Server Emoji By\" option.",
-            "types": ["text", "unspecified"],
-            "required": true
+            "types": ["text", "unspecified"]
         }
     ],
 
@@ -38,6 +38,12 @@ module.exports = {
                 "name": "Server Emoji Name",
                 "url": "Server Emoji URL"
             }
+        },
+        {
+            id: "search_value",
+            name: "Search Value",
+            description: "Description: The value for the search Value",
+            type: "TEXT"
         }
     ],
 
@@ -58,10 +64,14 @@ module.exports = {
 
     code(cache) {
         const server = this.GetInputValue("server", cache);
-        const search_value = this.GetInputValue("search_value", cache);
+        var search_value = this.GetInputValue("search_value", cache);
         const find_server_emoji_by = this.GetOptionValue("find_server_emoji_by", cache);
 
         const emojis = server ? server.emojis.cache : this.client.emojis.cache;
+
+        if (search_value == undefined) {
+            search_value = this.GetOptionValue("search_value", cache);
+        }
 
         let result;
         switch(find_server_emoji_by) {

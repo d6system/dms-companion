@@ -34,14 +34,15 @@ module.exports = {
                 3: "Thread Creation Timestamp [Number]",
                 4: "Is Thread Invitable [Boolean]",
                 5: "Thread Auto Archive Duration [Number]",
-                6: "Thread Member Count [Number]",
-                7: "Thread Message Count",
-                8: "Thread Tags [List]",
-                9: "Thread Owner Member ID [Text]",
-                10: "Thread Name [Text]",
-                11: "Is Thread Archived [Boolean]",
-                12: "Is Thread Locked [Boolean]",
-                13: "Last Message Id [Text]",
+                6: "Thread ID [Text]",
+                7: "Thread Member Count [Number]",
+                8: "Thread Message Count",
+                9: "Thread Tags [List]",
+                10: "Thread Owner Member ID [Text]",
+                11: "Thread Name [Text]",
+                12: "Is Thread Archived [Boolean]",
+                13: "Is Thread Locked [Boolean]",
+                14: "Last Message Id [Text]",
             }
         }
     ],
@@ -83,29 +84,33 @@ module.exports = {
                 result = thread.autoArchiveDutation;
                 break;
             case 6:
-                result = thread.memberCount;
+                 result = thread.id;
                 break;
             case 7:
-                result = thread.messageCount;
+                result = thread.memberCount;
                 break;
             case 8:
-                result = thread.appliedTags;
+                result = thread.messageCount;
                 break;
             case 9:
-                result = thread.ownerId;
+                result = thread.appliedTags;
                 break;
             case 10:
-                result = thread.name;
+                result = thread.ownerId;
                 break;
             case 11:
-                result = thread.archived;
+                result = thread.name;
                 break;
             case 12:
-                result = thread.locked;
+                result = thread.archived;
                 break;
             case 13:
+                result = thread.locked;
+                break;
+            case 14:
                 result = thread.lastMessageId;
                 break;
+            
         }
 
         this.StoreOutputValue(result, "result", cache);

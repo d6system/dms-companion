@@ -36,8 +36,14 @@ module.exports = {
     outputs: [
         {
             "id": "action",
-            "name": "Action",
-            "description": "Type: Action\n\nDescription: Executes the following blocks when this block finishes its task.",
+            "name": "File Found",
+            "description": "Type: Action\n\nDescription: Executes the following blocks if the file is found.",
+            "types": ["action"]
+        },
+        {
+            "id": "action2",
+            "name": "File Not Found",
+            "description": "Type: Action\n\nDescription: Executes the following blocks if the file is not found",
             "types": ["action"]
         },
         {
@@ -49,16 +55,20 @@ module.exports = {
     ],
 
     code(cache) {
-        const path = this.GetInputValue("file_path", cache) + "";
+        const file_path = this.GetInputValue("file_path", cache) + "";
         const conversion_type = this.GetOptionValue("conversion_type", cache) + "";
 
         const fs = require("fs");
 
-        let content = fs.readFileSync(path, "utf8");
+        if (fs.existsSync(file_path)) {
+            let content = fs.readFileSync(file_path, "utf8");
+            if(conversion_type == "json") content = JSON.parse(content);
+            this.StoreOutputValue(content, "content", cache);
+            this.RunNextBlock("action", cache);
+        }else{
+            this.RunNextBlock("action2", cache);
+        }
+        
 
-        if(conversion_type == "json") content = JSON.parse(content);
-
-        this.StoreOutputValue(content, "content", cache);
-        this.RunNextBlock("action", cache);
     }
 }

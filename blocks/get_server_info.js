@@ -88,7 +88,8 @@ module.exports = {
                 59: "Is Server Widget Enabled? [Text]",
                 60: "Server Audit Log List [List <Audit Log>]",
                 61: "Server Preview [Server Preview]",
-                62: "Server Bot Prefix [Text]"
+                62: "Server Bot Prefix [Text]",
+                63: "Server Scheduled Events [List]"
             }
         }
     ],
@@ -215,7 +216,7 @@ module.exports = {
             case "28":
                 result = server.presences.cache.map(a => a.activities[0]);
                 break;
-            case "63":
+            case "29":
                 result = server.presences.cache.map(a => a.activities);
                 break;
             case "30":
@@ -307,6 +308,9 @@ module.exports = {
                 break;
             case "62":
                 result = DBB.Data.data.dbb.prefixes.servers[server.id];
+                break;
+            case "63":
+                result = await server.scheduledEvents.cache.toJSON()
                 break;
         }
 

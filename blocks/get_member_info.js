@@ -1,5 +1,3 @@
-
-
 module.exports = {
     name: "Get Member Info",
 
@@ -18,13 +16,6 @@ module.exports = {
             "id": "member",
             "name": "Member",
             "description": "Acceptable Types: Object, Unspecified\n\nDescription: The member to get the information.",
-            "types": ["object", "unspecified"],
-            "required": true
-        },
-        {
-            "id": "server",
-            "name": "Server",
-            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The server to get the information.",
             "types": ["object", "unspecified"],
             "required": true
         }
@@ -47,6 +38,7 @@ module.exports = {
                 9: "Member Highest Role [Role]",
                 10: "Member Hoist Role [Role]",
                 11: "Member ID [Text]",
+                42: "Member Avatar URL [Text]",
                 12: "Member Joined Server At [Date]",
                 13: "Is Member Kickable By The Bot? [Boolean]",
                 16: "Is Member Manageable By The Bot? [Boolean]",
@@ -71,7 +63,7 @@ module.exports = {
                 31: "Member Mention [Text]",
                 34: "Member Boosted Server At [Date]",
                 35: "Is Member Using \"Go Live\"? [Boolean]",
-                36: "Is Member In Voice Channel? [Boolean]"
+                36: "Is Member In Voice Channel? [Boolean]"                
             }
         }
     ],
@@ -92,7 +84,6 @@ module.exports = {
     ],
 
     code(cache) {
-        const server = this.GetInputValue("server", cache);
         const member = this.GetInputValue("member", cache);
         const member_info = parseInt(this.GetOptionValue("member_info", cache));
 
@@ -128,6 +119,14 @@ module.exports = {
             case 11:
                 result = member.id;
                 break;
+            case 42:
+                if(member.avatar !== null){
+                    result = member.avatarURL({dynamic: true, format: "png"});
+                }else{
+                    user = member.user;
+                    result = user.avatarURL({dynamic: true, format: "png"});
+                }            
+                break;
             case 12:
                 result = member.joinedAt;
                 break;
@@ -141,7 +140,7 @@ module.exports = {
                 result = member.voice.mute;
                 break;
             case 18:
-                result = member.nickname;
+                result = member.nickname;               
                 break;
             case 19:
                 result = member.permissions;
@@ -221,7 +220,7 @@ module.exports = {
                 break;
             case 36:
                 result = Boolean(member.voice.channelId);
-                break;
+                break;            
         }
 
         this.StoreOutputValue(result, "result", cache);

@@ -23,8 +23,7 @@ module.exports = {
             "id": "value2",
             "name": "Value 2",
             "description": "Acceptable Types: Unspecified, Undefined, Null, Object, Boolean, Date, Number, Text, List\n\nDescription: The value 2 to compare with the value 1.",
-            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text", "list"],
-            "required": true
+            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text", "list"]
         }
     ],
 
@@ -48,6 +47,12 @@ module.exports = {
 				"includes": "Includes",
                 "match_regexp": "Match RegExp"
             }
+        },
+        {
+            "id": "value2",
+            "name": "Value 2",
+            "description": "The value 2 to compare with the value 1.",
+            "type": "TEXT"
         }
     ],
 
@@ -68,7 +73,7 @@ module.exports = {
 
     code(cache) {
         const value1 = this.GetInputValue("value1", cache);
-        const value2 = this.GetInputValue("value2", cache);
+        const value2 = this.GetInputValue("value2", cache) || this.GetOptionValue("value2", cache);
         const comparison_type = this.GetOptionValue("comparison_type", cache) + "";
 
         let result  = false;

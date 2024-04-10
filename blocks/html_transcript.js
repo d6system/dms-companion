@@ -36,12 +36,6 @@ module.exports = {
             name: "Credits?",
             description: "Description: Whether to include the \"Powered by discord-html-transcripts\" footer",
             types: ["boolean"],
-        },
-        {
-            "id": "footer",
-            "name": "Footer Text",
-            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The text to add at the end of the file",
-            "types": ["text", "unspecified"],
         }
     ],
 
@@ -60,7 +54,7 @@ module.exports = {
             "options": {
                 "attachment": "Attachment",
                 "string": "String (Raw HTML Code)",
-                "buffer": "Buffer",
+                "buffer": "Buffer"
             }
         },
         {
@@ -70,7 +64,7 @@ module.exports = {
             "type": "SELECT",
             "options": {
                 true: "True/Yes",
-                false: "False/No",
+                false: "False/No"
             }
         },
         {
@@ -80,7 +74,7 @@ module.exports = {
             "type": "SELECT",
             "options": {
                 true: "True/Yes",
-                false: "False/No",
+                false: "False/No"
             }
         }
     ],
@@ -101,37 +95,37 @@ module.exports = {
     ],
 
     async code(cache) {
-        const discordTranscripts = require('discord-html-transcripts');
+        const discordTranscripts = await this.require('discord-html-transcripts');
         const channel = this.GetInputValue("text_channel", cache);
-        var filename = this.GetInputValue("filename", cache) ? this.GetInputValue("filename", cache) : this.GetOptionValue("filename", cache);
+        var filename = this.GetInputValue("filename", cache);
         const returntype = this.GetOptionValue("returntype", cache);
         var saveimg = this.GetInputValue("saveimg", cache);
         var credits = this.GetInputValue("credits", cache);
         const messages = await channel.messages.fetch();
-        var footer = this.GetInputValue("footer", cache)
 
         if(filename == undefined) {
             filename = this.GetOptionValue("filename", cache);
+            if (filename == "") {
+                filename = "transcript"
+            }
         }
 
         if(saveimg == undefined) {
             saveimg = this.GetOptionValue("saveimg", cache);
+            if(saveimg == "true") { saveimg = true } else { saveimg = false }
         }
 
         if(credits == undefined) {
             credits = this.GetOptionValue("credits", cache);
+            if(credits == "true") { credits = true } else { credits = false }
         }
 
-        if(footer == undefined) {
-            footer = ' '
-        }
-
-        transcript = await discordTranscripts.generateFromMessages(messages.reverse(), channel, {
+        transcript = await discordTranscripts.createTranscript(channel, {
+            limit: -1, // Number of messages to fetch. -1 for all messages
             returnType: returntype, // Valid options: 'buffer' | 'string' | 'attachment' Default: 'attachment' OR use the enum ExportReturnType
             filename: filename + '.html', // Only valid with returnType is 'attachment'. Name of attachment.
             saveImages: saveimg, // Download all images and include the image data in the HTML (allows viewing the image even after it has been deleted) (! WILL INCREASE FILE SIZE !)
-            poweredBy: false, // Whether to include the "Powered by discord-html-transcripts" footer
-            footerText: footer
+            poweredBy: credits // Whether to include the "Powered by discord-html-transcripts" footer
         });
         this.StoreOutputValue(transcript, "result", cache);
         this.RunNextBlock("action", cache);

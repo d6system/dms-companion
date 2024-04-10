@@ -13,9 +13,9 @@ module.exports = {
             "types": ["action"]
         },
         {
-            "id": "queue",
-            "name": "Queue",
-            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Queue Object",
+            "id": "guild",
+            "name": "Server",
+            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Server Object",
             "types": ["object", "unspecified"],
             "required": true
         },
@@ -96,7 +96,9 @@ module.exports = {
     ],
 
     async code(cache) {
-        const queue = await this.GetInputValue("queue", cache);
+        const guild = this.GetInputValue("guild", cache);
+        const { useQueue } = require("discord-player");
+        const queue = useQueue(guild.id);
         var qqueue = this.GetOptionValue("queue", cache);
         var timecodes = this.GetOptionValue("timecodes", cache);
         var length = this.GetInputValue("length", cache);

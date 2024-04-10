@@ -15,12 +15,6 @@ module.exports = {
             description: "Description: The Label of the Button.",
             types: ["text"]
         },
-        // {
-        //     id: "emoji",
-        //     name: "Emoji",
-        //     description: "Description: The value of the menu component.",
-        //     types: ["text"]
-        // },
 		{
             id: "description",
             name: "Description",
@@ -32,8 +26,15 @@ module.exports = {
             name: "Value",
             description: "Description: The value of the menu component.",
             types: ["text"]
+        },
+        {
+            id: "emoji",
+            name: "Emoji",
+            description: "Description: The value of the menu component.",
+            types: ["text"]
         }
-		
+
+
     ],
     options: [
         {
@@ -42,12 +43,6 @@ module.exports = {
             description: "Description: The Label of the Button.",
             type: "TEXT"
         },
-        // {
-        //     id: "emoji",
-        //     name: "Emoji",
-        //     description: "Description: The value of the menu component.",
-        //     type: "TEXT"
-        // },
 		{
             id: "description",
             name: "Description",
@@ -59,8 +54,13 @@ module.exports = {
             name: "Value",
             description: "Description: The value of the menu component.",
             type: "TEXT"
+        },
+        {
+            id: "emoji",
+            name: "Emoji",
+            description: "Description: The Emoji of the option.",
+            type: "TEXT"
         }
-		
     ],
     outputs: [
         {
@@ -81,8 +81,8 @@ module.exports = {
         var label = this.GetInputValue("label", cache);
         var description = this.GetInputValue("description", cache);
         var value = this.GetInputValue("value", cache);
-        // var emoji = this.GetInputValue("emoji", cache);
-        let menu;
+        var emoji = this.GetInputValue("emoji", cache);
+
 
         if(label == undefined) {
             label = this.GetOptionValue("label", cache);
@@ -95,41 +95,31 @@ module.exports = {
         if(value == undefined) {
             value = this.GetOptionValue("value", cache);
         }
-
-        // if(emoji == undefined) {
-        //     emoji = this.GetOptionValue("emoji", cache);
-        // }
-
-        // console.log(emoji)
-
-        // if(emoji == undefined) {
-                noEmoji()
-        // } else if(emoji !== undefined){
-        //     emojis()
-        // }
-
-        function noEmoji() {
-            menu = [
-                {
-                    label: label,
-                    description: description,
-                    value: value,
-                }
-            ]
+        if(emoji == undefined) {
+            emoji = this.GetOptionValue("emoji", cache);
         }
 
-        function emojis() {
-            menu = [
-                {
-                    label: label,
-                    description: description,
-                    value: value,
-                    emoji: emoji
-                }
-            ]
+        
+
+        if (description == '') {
+            var description = " ";
         }
+
+
+        const menu_object = {
+            label,
+            description,
+            value,
+            emoji: emoji
+        }
+        
+         
+        if(!emoji) delete menu_object.emoji;
+         
+        const menu = [menu_object];
 
         this.StoreOutputValue(menu, "menu", cache);
         this.RunNextBlock("action", cache);                
     }
 }
+

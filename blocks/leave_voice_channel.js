@@ -13,9 +13,9 @@ module.exports = {
             "types": ["action"]
         },
         {
-            "id": "voice_channel",
-            "name": "Voice Channel",
-            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The voice channel to leave.",
+            "id": "connection",
+            "name": "Connection",
+            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Voice Connection",
             "types": ["object", "unspecified"],
             "required": true
         }
@@ -32,15 +32,11 @@ module.exports = {
         }
     ],
 
-    code(cache) {
-        const DiscordPlayer = this.getDependency("DiscordPlayer", cache.name)
+    async code(cache) {
 
-        const voice_channel = this.GetInputValue("voice_channel", cache);
+        const connection = this.GetInputValue("connection", cache);
 
-        const queue = DiscordPlayer.player.getQueue(voice_channel);
-
-        if (queue)
-            queue.destroy(true);
+        await connection.destroy();
 
         this.RunNextBlock("action", cache);
     }

@@ -20,16 +20,15 @@ module.exports = {
             "required": true
         },
         {
-            "id": "javascript_filter_code",
-            "name": "JavaScript Filter Code",
-            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The JavaScript code to filter the result.\n\nVariables:\n\"reaction\" -> The message reaction object\n\"user\" -> The user object that reacted",
-            "types": ["text", "unspecified"],
-            "required": true
+            "id": "max_reactions",
+            "name": "Max Reactions",
+            "description": "Acceptable Types: Number, Unspecified\n\nDescription: The maximum total amount of reactions to collect. Default: \"1\". (OPTIONAL)",
+            "types": ["number", "unspecified"]
         },
         {
-            "id": "max_reactions",
-            "name": "Maximum Reactions",
-            "description": "Acceptable Types: Number, Unspecified\n\nDescription: The maximum total amount of reactions to collect. Default: \"1\". (OPTIONAL)",
+            "id": "max_time",
+            "name": "Max Time",
+            "description": "Acceptable Types: Number, Unspecified\n\nDescription: How long to run the collector of message reactions in seconds. Default: \"60\". (OPTIONAL)",
             "types": ["number", "unspecified"]
         },
         {
@@ -45,14 +44,38 @@ module.exports = {
             "types": ["number", "unspecified"]
         },
         {
-            "id": "max_time",
-            "name": "Maximum Time (Milliseconds)",
-            "description": "Acceptable Types: Number, Unspecified\n\nDescription: How long to run the collector of message reactions in milliseconds. Default: \"60000\". (OPTIONAL)",
-            "types": ["number", "unspecified"]
+            "id": "user",
+            "name": "User",
+            "description": "The user to listen for. (OPTIONAL, if \"Target Type\" is Anyone)",
+            "types": ["object", "unspecified"]
         },
+        {
+            "id": "javascript_filter_code",
+            "name": "JavaScript Filter Code",
+            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The JavaScript code to filter the result.\n\nVariables:\n\"reaction\" -> The message reaction object\n\"user\" -> The user object that reacted",
+            "types": ["text", "unspecified"]
+        }
     ],
 
-    options: [],
+    options: [
+        {
+            "id": "target_type",
+            "name": "Target Type",
+            "description": "Who to listen for on the Await Message",
+            "type": "SELECT",
+            "options": {
+                1: "Anyone",
+                2: "Specific User",
+                3: "Custom Code"
+            }
+        },
+        {
+            "id": "emoji_input",
+            "name": "Emoji",
+            "description": "Ussage is: <emoji>, <emoji>, <emoji> \nYou can leave this empty if you didn't select for reactions.\nYou can put as many emojis as discord allows.\nThe user input only gets used if you selected specific user.",
+            "type": "JUST GIVE ME TEXT FOR FUCK SAKE"
+        }
+    ],
 
     outputs: [
         {
@@ -70,41 +93,56 @@ module.exports = {
         {
             "id": "message_reactions",
             "name": "Message Reactions",
-            "description": "Type: List\n\nDescription: The list containing the message reaction(s) received.",
-            "types": ["list"]
+            "description": "Type: List, Object, unspecified\n\nDescription: The list or Object containing the message reaction(s) received.",
+            "types": ["list", "object", "unspecified"]
         }
     ],
 
     code(cache) {
         const message = this.GetInputValue("message", cache);
-        const javascript_filter_code = this.GetInputValue("javascript_filter_code", cache);
-        const max_reactions = parseInt(this.GetInputValue("max_reactions", cache));
+        const emoji_input = this.GetOptionValue("emoji_input", cache).split("<").join("'<").split(">").join(">'");
+        const max_reactions = parseInt(this.GetInputValue("max_reactions", cache)) || 1;
         const max_emojis = parseInt(this.GetInputValue("max_emojis", cache));
         const max_users = parseInt(this.GetInputValue("max_users", cache));
-        const max_time = parseInt(this.GetInputValue("max_time", cache));
+        const max_time = parseInt(this.GetInputValue("max_time", cache)) * 1000 || 60000;
 
-        message.awaitReactions({
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            filter: (reaction, user) => {
+        const javascript_filter_code = this.GetInputValue("javascript_filter_code", cache);
+
+        const target_user = this.GetInputValue("user", cache);
+        const target_type = parseInt(this.GetOptionValue("target_type", cache));
+
+        const emojis = emoji_input.split(", ")
+
+        const filter = (reaction, user) => {
+            if(target_type == 1) {
+                return emojis.includes(reaction.emoji.name) && !user.bot;
+            } else if (target_type == 2) {
+                return emojis.includes(reaction.emoji.name) && user.id === target_user.id && !user.bot;
+            } else {
                 try {
                     return Boolean(eval(javascript_filter_code));
                 } catch {
                     return false;
                 }
-            },
-            errors: ["time"],
-            max: max_reactions,
-            maxEmojis: max_emojis,
-            maxUsers: max_users,
-            time: max_time
-        })
-        .then(reactions => {
-            this.StoreOutputValue(Array.from(reactions.values()), "messages", cache);
-            this.RunNextBlock("action1", cache);
-        })
-        .catch(reactions => {
-            this.StoreOutputValue(Array.from(reactions.values()), "messages", cache);
-            this.RunNextBlock("action2", cache);
-        });
+            }
+        };
+
+        message.awaitReactions({filter, max: max_reactions, maxEmojis: max_emojis, maxUsers: max_users, time: max_time, errors: ["time"]})
+            .then(reactions => {
+                if (reactions.size == 1) {
+                    this.StoreOutputValue(reactions.first(), "message_reactions", cache);
+                } else {
+                    this.StoreOutputValue(Array.from(reactions.values()), "message_reactions", cache);
+                }
+                this.RunNextBlock("action1", cache);
+            })
+            .catch(reactions => {
+                if (reactions.size == 1) {
+                    this.StoreOutputValue(reactions.first(), "message_reactions", cache);
+                } else {
+                    this.StoreOutputValue(Array.from(reactions.values()), "message_reactions", cache);
+                }
+                this.RunNextBlock("action2", cache);
+            });
     }
 }

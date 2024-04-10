@@ -13,31 +13,31 @@ module.exports = {
             id: "styles",
             name: "Style",
             description: "Type: Text\n\nDescription: The Style of the Button. [blurple], [grey], [green], [red], [url]",
-            types: ["text"],
+            types: ["text", "unspecified"]
         },
         {
             id: "label",
             name: "Label",
             description: "Type: Text\n\nDescription: The Label of the Button.",
-            types: ["text"]
+            types: ["text", "unspecified"]
         },
         {
             id: "emoji",
             name: "Emoji",
             description: "Type: Text\n\nDescription: The Emoji for the Button. (OPTIONAL)",
-            types: ["text"]
+            types: ["text", "unspecified"]
         },
 		{
             id: "id",
             name: "ID / URL",
             description: "Type: Text\n\nDescription: The ID or URL of the Button.",
-            types: ["text"]
+            types: ["text", "unspecified"]
         },
         {
             id: "enable",
             name: "Enabled or Disabled?",
             description: "Description: Whether this button is enabled or disabled",
-            types: ["text"],
+            types: ["boolean", "unspecified"]
         }
     ],
     options: [
@@ -101,114 +101,131 @@ module.exports = {
 
         const { ButtonBuilder, ButtonStyle } = require('discord.js');
 
-        var style = this.GetInputValue("styles", cache);
-        var enable = this.GetInputValue("enable", cache);
-        var emoji = this.GetInputValue("emoji", cache);
-        var label = this.GetInputValue("label", cache);      
-        var id = this.GetInputValue("id", cache);
+        const style_input = this.GetInputValue("styles", cache);
+        const label_input = this.GetInputValue("label", cache);      
+        const emoji_input = this.GetInputValue("emoji", cache);
+        const id_input = this.GetInputValue("id", cache);
+        const enable_input = this.GetInputValue("enable", cache);
 
-        if(style == undefined) {
-            style = this.GetOptionValue("styles", cache);
-        }
+        const style_option = this.GetOptionValue("styles", cache);
+        const label_option = this.GetOptionValue("label", cache) !== undefined ? this.GetOptionValue("label", cache) : undefined;
+        const emoji_option = this.GetOptionValue("emoji", cache) !== undefined ? this.GetOptionValue("emoji", cache) : undefined;
+        const id_option = this.GetOptionValue("id", cache) !== undefined ? this.GetOptionValue("id", cache) : undefined;
+        const enable_option = this.GetOptionValue("enable", cache);
 
-        if(enable == undefined) {
-            enable = this.GetOptionValue("enable", cache);
-        }
+        var style = style_input !== undefined ? style_input : style_option;
+        const label = label_input !== undefined ? label_input : label_option;
+        const emoji = emoji_input !== undefined ? emoji_input : emoji_option;
+        const id = id_input !== undefined ? id_input : id_option;
+        var enable = enable_input !== undefined ? enable_input : enable_option;        
 
-        if(emoji == undefined || emoji == null || emoji == '') {
-            emoji = this.GetOptionValue("emoji", cache);
-        }
-
-        if(label == undefined) {
-            label = this.GetOptionValue("label", cache);
-        }
-
-        if(id == undefined) {
-            id = this.GetOptionValue("id", cache);
-        }
-        
         const end = (button) => {
-        this.StoreOutputValue(button, "button", cache);
-        this.RunNextBlock("action", cache);
-        }
-
-        if(style == "primary"){
-            style = ButtonStyle.Primary
-        } else if(style == "secondary") {
-            style = ButtonStyle.Secondary
-        } else if(style == "success") {
-            style = ButtonStyle.Success
-        } else if(style == "danger") {
-            style = ButtonStyle.Danger
-        } else if(style == "link") {
-            style = ButtonStyle.Link
-        }
-
-        if(enable == "enabled"){
-            enable = false
-        } else if(enable == "disabled") {
-            enable = true
-        }
-
-        if(style == ButtonStyle.Link && emoji !== '') {
-            link()
-        }else if(style == ButtonStyle.Link && emoji == ''){
-            linkNoEmoji()
-        }else if(emoji == undefined || emoji == null || emoji == '') {
-            noEmoji()
-        } else {
-            Emoji()
-        }
-
-
+            this.StoreOutputValue(button, "button", cache);
+            this.RunNextBlock("action", cache);
+            }
         
-  
-        function Emoji() {
-            const button = [
+            if(style == "primary"){
+                style = ButtonStyle.Primary
+            } else if(style == "secondary") {
+                style = ButtonStyle.Secondary
+            } else if(style == "success") {
+                style = ButtonStyle.Success
+            } else if(style == "danger") {
+                style = ButtonStyle.Danger
+            } else if(style == "link") {
+                style = ButtonStyle.Link
+            }
+        
+            if(enable == "enabled"){
+                enable = false
+            } else if(enable == "disabled") {
+                enable = true
+            }
+        
+            if(style == ButtonStyle.Link && label == undefined || style == ButtonStyle.Link && label == '') {
+                linkNoLabel()
+            }else if(style == ButtonStyle.Link && emoji == undefined  || style == ButtonStyle.Link && emoji == ''){
+                linkNoEmoji()
+            }else if(style == ButtonStyle.Link && emoji !== undefined) {
+                link()
+            }else if(emoji == undefined || emoji == '') {
+                noEmoji()
+            }else if(label == undefined || label == '') {
+                noLabel()
+            } else {
+                Emoji()
+            }
+        
+            function noLabel() {
+                const button = [
+                        new ButtonBuilder()
+                            .setCustomId(id)
+                            .setStyle(style)
+                            .setEmoji(emoji)
+                            .setDisabled(enable)
+                ]
+                end(button)
+            }
+            
+        
+            function Emoji() {
+                const button = [
+                        new ButtonBuilder()
+                            .setCustomId(id)
+                            .setLabel(label)
+                            .setStyle(style)
+                            .setEmoji(emoji)
+                            .setDisabled(enable)
+                ]
+                end(button)
+            }
+        
+        
+            function noEmoji() {
+                const button = [
+                        new ButtonBuilder()
+                            .setCustomId(id)
+                            .setLabel(label)
+                            .setStyle(style)
+                            .setDisabled(enable)
+                ]
+                end(button)
+            }
+        
+            function link() {
+                const button = [
                     new ButtonBuilder()
-                        .setCustomId(id)
+                        .setURL(id)
                         .setLabel(label)
                         .setStyle(style)
                         .setEmoji(emoji)
                         .setDisabled(enable)
             ]
             end(button)
-        }
-
-
-        function noEmoji() {
-            const button = [
+            }
+        
+            function linkNoEmoji() {
+                const button = [
                     new ButtonBuilder()
-                        .setCustomId(id)
+                        .setURL(id)
                         .setLabel(label)
                         .setStyle(style)
                         .setDisabled(enable)
             ]
             end(button)
-        }
+            }
 
-        function link() {
-            const button = [
-                new ButtonBuilder()
-                    .setURL(id)
-                    .setLabel(label)
-                    .setStyle(style)
-                    .setEmoji(emoji)
-                    .setDisabled(enable)
-        ]
-        end(button)
-        }
-
-        function linkNoEmoji() {
-            const button = [
-                new ButtonBuilder()
-                    .setURL(id)
-                    .setLabel(label)
-                    .setStyle(style)
-                    .setDisabled(enable)
-        ]
-        end(button)
-        }
+            function linkNoLabel() {
+                const button = [
+                    new ButtonBuilder()
+                        .setURL(id)
+                        .setEmoji(emoji)
+                        .setStyle(style)
+                        .setDisabled(enable)
+            ]
+            end(button)
+            }
+        
     }
 }
 

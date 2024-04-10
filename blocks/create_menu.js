@@ -13,20 +13,32 @@ module.exports = {
             id: "options",
             name: "Options",
             description: "Type: List\n\nDescription: The Menu component(s) to add.",
-            types: ["list"],
+            types: ["list", "unspecified"],
             required: true
         },
         {
             id: "label",
             name: "Placeholder Label",
             description: "Description: The Label of the Menu that is seen before a selection occurs.",
-            types: ["text"]
+            types: ["text", "unspecified"]
         },
 		{
             id: "id",
             name: "ID of the Menu",
             description: "Description: The ID of the Menu.",
-            types: ["text"]
+            types: ["text", "unspecified"]
+        },
+		{
+            id: "maxvalues",
+            name: "Max Possible Selects",
+            description: "Description: The Amount of Selects possible. Default: 1",
+            types: ["number", "unspecified"]
+        },
+		{
+            id: "minvalues",
+            name: "Min Required Selects",
+            description: "Description: The Amount of Selects Needed. Default: 1",
+            types: ["number", "unspecified"]
         }
     ],
     options: [
@@ -63,6 +75,8 @@ module.exports = {
 
         var id = this.GetInputValue("id", cache);
         var label = this.GetInputValue("label", cache);
+        const maxvalues = parseInt(this.GetInputValue("maxvalues", cache)) || 1;
+        const minvalues = parseInt(this.GetInputValue("minvalues", cache)) || 1;
 
         if(id == undefined) {
             id = this.GetOptionValue("id", cache);
@@ -78,6 +92,8 @@ module.exports = {
             .setCustomId(id)
             .setPlaceholder(label)
             .addOptions()
+            .setMaxValues(maxvalues)
+            .setMinValues(minvalues)
 
         options.forEach(option => {
              if(typeof option !== 'undefined' || option !== null) {

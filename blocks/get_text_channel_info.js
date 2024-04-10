@@ -53,7 +53,7 @@ module.exports = {
                 26: "Text Channel Invite List [List <Invite>]",
                 27: "Text Channel Webhook List [List <Webhook>]",
                 28: "Text Channel Mention [Text]",
-                29: "Text Channel URL [Text]"
+                29: "Text Channel Threads [List]"
             }
         }
     ],
@@ -95,7 +95,8 @@ module.exports = {
                 result = text_channel.id;
                 break;
             case 6:
-                result = text_channel.lastMessage;
+                let messagelist = await text_channel.messages.fetch();
+                result = await messagelist.first();
                 break;
             case 7:
                 result = text_channel.lastMessageID;
@@ -107,15 +108,14 @@ module.exports = {
                 result = text_channel.manageable;
                 break;
             case 10:
-                result = text_channel.members.array();
+                result = Array.from(await text_channel.members.values());
                 break;
             case 11:
-                const messages = await text_channel.messages.fetch({ limit: 100 });
-                result = await Array.from(messages);
+                let messages = await text_channel.messages.fetch();
+                result = await messages.toJSON();
                 break;
             case 12:
-                const messagesPinned = await text_channel.messages.fetchPinned({ limit: 100 });
-                result = await Array.from(messagesPinned);
+                result = await text_channel.messages.fetchPinned().then(a => Array.from(a));
                 break;
             case 13:
                 result = text_channel.name;
@@ -151,18 +151,16 @@ module.exports = {
                 result = text_channel.viewable;
                 break;
             case 26:
-                const Invites = await text_channel.messages.fetchInvites({ limit: 100 });
-                result = await Array.from(Invites);
+                result = await text_channel.fetchInvites().then(a => Array.from(a));
                 break;
             case 27:
-                const Webhooks = await text_channel.messages.fetchWebhooks({ limit: 100 });
-                result = await Array.from(Webhooks);
+                result = await text_channel.fetchWebhooks().then(a => Array.from(a));
                 break;
             case 28:
                 result = text_channel.toString();
                 break;
             case 29:
-                result = text_channel.url;
+                result = await text_channel.threads.fetch();
                 break;
         }
 

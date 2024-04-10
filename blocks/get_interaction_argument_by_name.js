@@ -19,7 +19,7 @@ module.exports = {
             "types": ["object", "unspecified"],
             "required": true
         },
-		{
+        {
             "id": "name",
             "name": "Name",
             "description": "Acceptable Types: Text, Unspecified\n\nDescription: The Name of the Argument",
@@ -41,14 +41,17 @@ module.exports = {
             "type": "SELECT",
             "options": {
                 "string": "String/Text",
-				"channel": "Channel [Object]",
+                "channel": "Channel [Object]",
                 "user": "User [Object]",
                 "member": "Member [Object]",
                 "role": "Role [Object]",
-				"number": "Number/Integer [Number]",
+                "number": "Number/Integer [Number]",
                 "attachment": "Attachment [Object]",
                 "mentionable": "Mentionable [Object]",
                 "message": "Message [Message]",
+                "boolean": "Boolean [Boolean]",
+                "subgroup": "Sub Command Group [String]",
+                "subcmd": "Sub Command [String]",
                 "anything": "Anything [Unspecified]"
             }
         }
@@ -65,7 +68,7 @@ module.exports = {
             "id": "output",
             "name": "Output",
             "description": "Type: Object, Text, Number, Unspecified\n\nDescription: The Property Value Obtained.",
-            "types": ["object", "text", "number", "unspecified"]
+            "types": ["unspecified", "text", "object", "number"]
         }
     ],
 
@@ -74,16 +77,16 @@ module.exports = {
         var get = this.GetOptionValue("get", cache);
         var name = this.GetInputValue("name", cache);
 
-        if(name === undefined) {
+        if (name === undefined) {
             name = this.GetOptionValue("name", cache);
         }
-		
-		let output;
-        switch(get) {
+
+        let output;
+        switch (get) {
             case "string":
-				output = await interaction.options.getString(name);
+                output = await interaction.options.getString(name);
                 break;
-			case "channel":
+            case "channel":
                 output = await interaction.options.getChannel(name);
                 break;
             case "user":
@@ -95,9 +98,9 @@ module.exports = {
             case "role":
                 output = await interaction.options.getRole(name);
                 break;
-			case "number":
-				output = await interaction.options.getNumber(name);
-                if(output === undefined) {
+            case "number":
+                output = await interaction.options.getNumber(name);
+                if (output === undefined) {
                     output = await interaction.options.getInteger(name);
                 }
                 break;
@@ -110,17 +113,26 @@ module.exports = {
             case "message":
                 output = await interaction.options.getMessage(name);
                 break;
+            case "boolean":
+                output = await interaction.options.getBoolean(name);
+                break;
+            case "subgroup":
+                output = await interaction.options.getSubcommandGroup();
+                break;
+            case "subcmd":
+                output = await interaction.options.getSubcommand();
+                break;
             case "anything":
                 var json = await interaction.options.get(name);
-                if(json.hasOwnProperty("value")) {
+                if (json.hasOwnProperty("value")) {
                     output = json.value;
                 } else {
                     output = undefined;
                 }
                 break;
         }
-		
-		this.StoreOutputValue(output, "output", cache);
+
+        this.StoreOutputValue(output, "output", cache);
         this.RunNextBlock("action", cache);
     }
 }

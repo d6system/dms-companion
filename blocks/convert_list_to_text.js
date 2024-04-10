@@ -27,7 +27,13 @@ module.exports = {
         }
     ],
 
-    options: [],
+    options: [{
+        "id": "separator",
+        "name": "Separator",
+        "description": "Description: The text to insert between the items from the list. Default: \", \". (OPTIONAL)",
+        "type": "TEXT"
+    }
+    ],
 
     outputs: [
         {
@@ -46,7 +52,16 @@ module.exports = {
 
     code(cache) {
         const list = this.GetInputValue("list", cache);
-        const separator = this.GetInputValue("separator", cache, false, ", ") + "";
+
+        var separator = this.GetInputValue("separator", cache, false, undefined) + "";
+        if(separator == "undefined") {
+            separator = this.GetOptionValue("separator", cache) + "";
+        }
+
+        if(separator == "") {
+            separator = ", ";
+        }
+
 
         this.StoreOutputValue(list.join(separator), "text", cache);
         this.RunNextBlock("action", cache);

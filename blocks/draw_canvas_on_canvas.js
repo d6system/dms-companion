@@ -1,7 +1,7 @@
 module.exports = {
     name: "Draw Canvas On Canvas",
 
-    description: "Draws an canvas on the canvas.",
+    description: "Draws a canvas on another canvas.",
 
     category: "Canvas Stuff",
 
@@ -9,51 +9,51 @@ module.exports = {
         {
             "id": "action",
             "name": "Action",
-            "description": "Acceptable Types: Action\n\nDescription: Executes this block.",
+            "description": "Description: Executes this block.",
             "types": ["action"]
         },
         {
             "id": "canvas1",
             "name": "Canvas 1",
-            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The canvas to draw the canvas 2.",
+            "description": "Description: The canvas on which to draw another canvas.",
             "types": ["object", "unspecified"],
             "required": true
         },
         {
             "id": "canvas2",
             "name": "Canvas 2",
-            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The canvas for drawing on the canvas 1.",
+            "description": "Description: The canvas to be drawn on canvas 1.",
             "types": ["object", "unspecified"],
             "required": true
         },
         {
             "id": "x",
             "name": "Position X",
-            "description": "Acceptable Types: Number, Text, Unspecified\n\nDescription: The position X (horizontal) for the canvas 2. Supports percentage (i.e. \"50%\"). Default: \"0\". (OPTIONAL)",
+            "description": "Description: The horizontal position for canvas 2. Supports percentage (i.e. \"50%\"). Default: \"0\". (OPTIONAL)",
             "types": ["number", "text", "unspecified"]
         },
         {
             "id": "y",
             "name": "Position Y",
-            "description": "Acceptable Types: Number, Text, Unspecified\n\nDescription: The position Y (vertical) for the canvas 2. Supports percentage (i.e. \"50%\"). Default: \"0\". (OPTIONAL)",
+            "description": "Description: The vertical position for canvas 2. Supports percentage (i.e. \"50%\"). Default: \"0\". (OPTIONAL)",
             "types": ["number", "text", "unspecified"]
         },
         {
             "id": "width",
             "name": "Custom Width",
-            "description": "Acceptable Types: Number, Text, Unspecified\n\nDescription: The custom width for the canvas 2. Supports percentage (i.e. \"50%\"). Default: Current canvas 2 width. (OPTIONAL)",
+            "description": "Description: The custom width for canvas 2. Supports percentage (i.e. \"50%\"). Default: Current canvas 2 width. (OPTIONAL)",
             "types": ["number", "text", "unspecified"]
         },
         {
             "id": "height",
             "name": "Custom Height",
-            "description": "Acceptable Types: Number, Text, Unspecified\n\nDescription: The custom height for the canvas 2. Supports percentage (i.e. \"50%\"). Default: Current canvas 2 height. (OPTIONAL)",
+            "description": "Description: The custom height for canvas 2. Supports percentage (i.e. \"50%\"). Default: Current canvas 2 height. (OPTIONAL)",
             "types": ["number", "text", "unspecified"]
         },
         {
             "id": "opacity",
             "name": "Opacity",
-            "description": "Acceptable Types: Number, Unspecified\n\nDescription: The opacity (0-1) for the canvas 2. Default: \"1\". (OPTIONAL)",
+            "description": "Description: The opacity (0-1) for canvas 2. Default: \"1\". (OPTIONAL)",
             "types": ["number", "unspecified"]
         }
     ],
@@ -78,15 +78,19 @@ module.exports = {
     async code(cache) {
         const canvas1 = this.GetInputValue("canvas1", cache);
         const canvas2 = this.GetInputValue("canvas2", cache);
-        const x = parseFloat(this.GetInputValue("x", cache));
-        const y = parseFloat(this.GetInputValue("y", cache));
-        const width = parseFloat(this.GetInputValue("width", cache));
-        const height = parseFloat(this.GetInputValue("height", cache));
-        const opacity = parseFloat(this.GetInputValue("opacity", cache));
+        const x = parseFloat(this.GetInputValue("x", cache)) || 0;
+        const y = parseFloat(this.GetInputValue("y", cache)) || 0;
+        const width = parseFloat(this.GetInputValue("width", cache)) || canvas2.width;
+        const height = parseFloat(this.GetInputValue("height", cache)) || canvas2.height;
+        const opacity = parseFloat(this.GetInputValue("opacity", cache)) || 1;
 
-        const canvas = this.drawCanvas(canvas1, canvas2, x, y, {width, height, opacity});
-
-        this.StoreOutputValue(canvas, "canvas", cache);
+        const context1 = canvas1.getContext('2d');
+        const context2 = canvas2.getContext('2d');
+        
+        context1.globalAlpha = opacity;
+        context1.drawImage(canvas2, x, y, width, height);
+        
+        this.StoreOutputValue(canvas1, "canvas", cache);
         this.RunNextBlock("action", cache);
     }
-}
+};

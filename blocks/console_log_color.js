@@ -27,6 +27,7 @@ module.exports = {
             "description": "Description: Select Your Font Color",
             "type": "SELECT",
             "options": {
+                "1": "Black",
                 "2": "Red",
                 "3": "Green",
                 "4": "Yellow",
@@ -50,9 +51,13 @@ module.exports = {
                 "6": "Background Cyan",
                 "7": "Background Yellow",
             }
+        },
+        {
+            id: "value",
+            name: "Value",
+            description: "Description: The value of the Console Log",
+            type: "TEXT"
         }
-        
-
         ],
 
 
@@ -67,9 +72,14 @@ module.exports = {
 
 
     code(cache) {
-        const content = this.GetInputValue("value", cache);
+        var content = this.GetInputValue("value", cache);
         const Color = parseInt(this.GetOptionValue("color", cache));
         const BgColor = parseInt(this.GetOptionValue("bgcolor", cache));
+
+        if (content == undefined) {
+            content = this.GetOptionValue("value", cache);
+        }
+
 
         let bgresult
 

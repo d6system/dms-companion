@@ -52,15 +52,15 @@ module.exports = {
             "id": "text",
             "name": "Text",
             "description": "Type: Text\n\nDescription: The text merged.",
-            "types": ["text"]
+            "types": ["text", "unspecified"]
         }
     ],
 
     code(cache) {
-        const text1 = this.GetInputValue("text1", cache) + "";
-        const text2 = this.GetInputValue("text2", cache) + "";
-        const text3 = this.GetInputValue("text3", cache) + "";
-        const __text = this.GetOptionValue("text", cache) + "";
+        const text1 = this.GetInputValue("text1", cache);
+        const text2 = this.GetInputValue("text2", cache);
+        const text3 = this.GetInputValue("text3", cache);
+        const __text = this.GetOptionValue("text", cache);
 
         this.StoreOutputValue(eval("`" + __text.replace(/`/g, "\\`") + "`").replaceAll('\\n', '\n'), "text", cache);
         this.RunNextBlock("action", cache);

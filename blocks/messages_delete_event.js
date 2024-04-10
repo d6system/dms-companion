@@ -74,7 +74,7 @@ module.exports = {
             if (unstable_outputs == 'yes' && msgs.size) {
                 const message = msgs.first()
                 const server = message.guild
-                const me = server?.members.fetchMe()
+                const me = server && server.members.fetchMe()
 
                 if (me && me.permissions.has(PermissionFlagsBits.ViewAuditLog)) {
                     const current = Date.now() - 10000

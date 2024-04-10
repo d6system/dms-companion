@@ -1,7 +1,7 @@
 module.exports = {
     name: "Database SQL Query",
 
-    description: "Wenn you get an Request to the Webserver this Block gets Triggerd. Made by @ju#1111",
+    description: "This block is used to execute a SQL query and retrieve, manipulate, or manage data in a SQL database. Created by @ju#1111",
 
     category: "Database Stuff",
 
@@ -14,8 +14,8 @@ module.exports = {
         },
         {
             "id": "query",
-            "name": "SQL query",
-            "description": "Type: Number\n\nDescription: Port where the server gets Deployed!\nDefaults to '3000'. Ports under 1000 are reserved for root (Linux) thats not recommend!\nWill default to 3000!",
+            "name": "SQL Query",
+            "description": "Acceptable Types: Text, Unspecified\n\nDescription: A SQL query that retrieves, modifies, or manages data in a SQL database by specifying operations and conditions to interact with the database tables.",
             "types": ["text"]
         },  
     ],
@@ -30,21 +30,41 @@ module.exports = {
             "types": ["action"]
         },
         {
+            "id": "erroraction",
+            "name": "Action (Error)",
+            "description": "Type: Action\n\nDescription: Executes the following blocks when an error occurs.",
+            "types": ["action"]
+        },
+        {
             "id": "response",
-            "name": "Server-response",
-            "description": "Type: Object\n\nDescription: The Server Response Object needed to Respond to the Webclient.",
+            "name": "Server Response",
+            "description": "Type: Object, Unspecified\n\nDescription: The server response object that contains relevant data or information in response to the query.",
             "types": ["unspecified"]
+        },
+        {
+            "id": "errormsg",
+            "name": "Error Message",
+            "description": "Type: Text, Unspecified\n\nDescription: The error message if an error occurs.",
+            "types": ["text", "unspecified"]
         }
     ],
 
     async code(cache) {
-		const dbcon = this.getDBB().database
-		if(typeof dbcon === "undefined") return new Error("Database is not Initilized");
-
-		const query = this.GetInputValue("query", cache);
-		const [rows,fields] = await dbcon.con.execute(query);
-		
-		this.StoreOutputValue(rows, "response", cache);
-        this.RunNextBlock("action", cache);      
+        try {
+            const dbcon = this.getDBB().database;
+            if (typeof dbcon === "undefined") {
+                throw new Error("Database is not initialized");
+            }
+    
+            const query = this.GetInputValue("query", cache);
+            const [rows, fields] = await dbcon.con.execute(query);
+    
+            this.StoreOutputValue(rows, "response", cache);
+            this.RunNextBlock("action", cache);
+        } catch (error) {
+            console.log(error);
+            this.StoreOutputValue(error.message, "errormsg", cache);
+            this.RunNextBlock("erroraction", cache);
+        }
     }
 }

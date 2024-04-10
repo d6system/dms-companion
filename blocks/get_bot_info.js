@@ -220,10 +220,10 @@ module.exports = {
                 result = DBB.Data.workspaces.length;
                 break;
             case 36:
-                result = DBB.Data.data.prefixes.main;
+                result = DBB.Data.data.dbb.prefixes.main;
                 break;
             case 37:
-                result = Object.values(DBB.Data.data.prefixes.servers);
+                result = Object.values(DBB.Data.data.dbb.prefixes.servers);
                 break;
             case 38:
                 result = client.application;

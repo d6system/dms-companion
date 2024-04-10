@@ -32,6 +32,12 @@ module.exports = {
                 "name_acronym": "Server Name Acronym",
                 "owner": "Server Owner"
             }
+        },
+        {
+            id: "search_value",
+            name: "Search Value",
+            description: "Description: The value for the search Value",
+            type: "TEXT"
         }
     ],
 
@@ -51,10 +57,14 @@ module.exports = {
     ],
 
     code(cache) {
-        const search_value = this.GetInputValue("search_value", cache);
+        var search_value = this.GetInputValue("search_value", cache);
         const find_server_by = this.GetOptionValue("find_server_by", cache) + "";
 
         const servers = this.client.guilds.cache;
+
+        if (search_value == undefined) {
+            search_value = this.GetOptionValue("search_value", cache);
+        }
 
         let result;
         switch(find_server_by) {

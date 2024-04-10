@@ -1,7 +1,7 @@
 module.exports = {
     name: "Create Button Row",
 
-    description: "Sends a message with a button.",
+    description: "Creates a Button Row to send with a message.",
 
     category: "Buttons",
 
@@ -58,14 +58,12 @@ module.exports = {
             id: "row",
             name: "Button Row",
             description: "Description: The Button Row Output.",
-            types: ["object"]
+            types: ["list", "unspecified"]
         }
     ],
 
     code(cache) {
-
-        const { ActionRowBuilder } = require('discord.js');   
-
+        
 		const button1 = this.GetInputValue("button1", cache);
         const button2 = this.GetInputValue("button2", cache);
         const button3 = this.GetInputValue("button3", cache);
@@ -73,67 +71,11 @@ module.exports = {
         const button5 = this.GetInputValue("button5", cache);
         let buttons;
 
-        if(button2 == null){
-            one()
-        }else if(button3 == null){
-            two()
-        }else if(button4 == null){
-            three()
-        }else if(button5 == null){
-            four()
-        }else{
-            five()
-        }
+        buttons = [button1, button2, button3, button4, button5]
+
+        buttons = buttons.filter(button => button)
 
         this.StoreOutputValue(buttons, "row", cache);
         this.RunNextBlock("action", cache);
-        
-
-        function one(){
-            buttons =
-                new ActionRowBuilder()
-                    .addComponents(button1)       
-            return;
-        }
-
-        
-
-        function two(){
-            buttons =
-                new ActionRowBuilder()
-                    .addComponents(button1)
-                    .addComponents(button2)  
-            return;
-        }
-
-        function three(){
-            buttons =
-                new ActionRowBuilder()
-                    .addComponents(button1)
-                    .addComponents(button2)
-                    .addComponents(button3)
-            return;
-        }
-
-        function four(){
-            buttons =
-                new ActionRowBuilder()
-                    .addComponents(button1)
-                    .addComponents(button2)
-                    .addComponents(button3)
-                    .addComponents(button4)
-            return;
-        }
-
-        function five(){
-            buttons =
-                new ActionRowBuilder()
-                    .addComponents(button1)
-                    .addComponents(button2)
-                    .addComponents(button3)
-                    .addComponents(button4)
-                    .addComponents(button5)
-            return;
-        }    
     }
 }

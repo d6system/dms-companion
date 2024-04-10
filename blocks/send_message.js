@@ -27,9 +27,9 @@ module.exports = {
         },
         {
             "id": "embed",
-            "name": "Embed",
+            "name": "Embed(s)",
             "description": "Acceptable Types: Object, Unspecified\n\nDescription: The embed to put in the message. (OPTIONAL)",
-            "types": ["object", "unspecified"]
+            "types": ["object", "list", "unspecified"]
         },
         {
             "id": "attachment",
@@ -39,7 +39,18 @@ module.exports = {
         }
     ],
 
-    options: [],
+    options: [
+        {
+            "id": "silent",
+            "name": "Silent Message",
+            "description": "Description: Prevents users from getting a notification.",
+            "type": "SELECT",
+            "options": {
+                undefined: "False",
+                "true": "True"
+            }
+        }
+    ],
 
     outputs: [
         {
@@ -57,14 +68,24 @@ module.exports = {
     ],
 
     code(cache) {
+
+        const { MessageFlags } = require("discord.js");
+
         const channel = this.GetInputValue("channel", cache);
         const text = this.GetInputValue("text", cache);
         const embed = this.GetInputValue("embed", cache);
         const attachment = this.GetInputValue("attachment", cache);
+        const silent = this.GetOptionValue("silent", cache);
+
+        let flags;
+        if (silent === "true") {
+            flags = MessageFlags.SuppressNotifications;
+        }
 
         const data = {
+            flags: flags,
             content: text,
-            embeds: embed && embed.hasOwnProperty('data') && [embed.data],
+            embeds: (embed && embed.hasOwnProperty('data') || Array.isArray(embed)) ?  Array.isArray(embed) ? embed : [embed] : undefined,
             files: attachment ? [attachment] : undefined
         }
 

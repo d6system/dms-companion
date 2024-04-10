@@ -1,10 +1,4 @@
-const {ChannelType} = require("discord.js");
 
-const channelType = {
-    text: ChannelType.GuildText,
-    voice: ChannelType.GuildVoice,
-    category: ChannelType.GuildCategory
-}
 
 module.exports = {
     name: "Clone Channel",
@@ -113,7 +107,15 @@ module.exports = {
         }
     ],
 
-    code(cache) {
+    async code(cache) {
+
+        const {ChannelType} = require("discord.js");
+
+        const channelType = {
+            text: ChannelType.GuildText,
+            voice: ChannelType.GuildVoice,
+            category: ChannelType.GuildCategory
+}
         const channel = this.GetInputValue("channel", cache);
         const channel_name = this.GetInputValue("channel_name", cache);
         const channel_position = parseInt(this.GetInputValue("channel_position", cache));
@@ -126,6 +128,16 @@ module.exports = {
         const reason = this.GetInputValue("reason", cache);
         const channel_type = channelType[this.GetOptionValue("channel_type", cache)];
 
+        let userLimitResult
+
+        if (!channel_user_limit)
+        {
+             userLimitResult = await channel.UserLimit;
+        } else
+        {
+            userLimitResult = parseInt(this.GetInputValue("channel_user_limit", cache));
+        };
+
         const options = {
             name: channel_name,
             type: channel_type,
@@ -135,7 +147,7 @@ module.exports = {
             rateLimitPerUser: channel_slowmode,
             parent: channel_category,
             bitrate: channel_bitrate,
-            userLimit: channel_user_limit,
+            userLimit: userLimitResult,
             reason
         }
 

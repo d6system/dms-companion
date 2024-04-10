@@ -1,7 +1,7 @@
 {
     "dbb": {
         "prefixes": {
-            "main": "%",
+            "main": "&",
             "servers": {}
         },
         "owners": []

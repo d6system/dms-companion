@@ -33,7 +33,13 @@ module.exports = {
         }
     ],
 
-    options: [],
+    options: [{
+        "id": "separator",
+        "name": "Separator",
+        "description": "Description: The separator to use for splitting the text. Supports RegExp. Default: \"/\\s+/\" (space). (OPTIONAL)",
+        "type": "TEXT"
+    }
+    ],
 
     outputs: [
         {
@@ -52,7 +58,16 @@ module.exports = {
 
     code(cache) {
         const text = this.GetInputValue("text", cache) + "";
-        const separator = this.GetInputValue("separator", cache, false, "/\\s+/");
+        var separator = this.GetInputValue("separator", cache, false, undefined) + "";
+        if(separator == "undefined") {
+            separator = this.GetOptionValue("separator", cache) + "";
+        }
+
+        if(separator == "") {
+            separator = "/\\s+/";
+        }
+
+
         const limit = this.GetInputValue("limit", cache, true);
 
         this.StoreOutputValue(text.split(this.ConvertRegex(separator), limit ? parseInt(limit.value) : undefined), "list", cache);

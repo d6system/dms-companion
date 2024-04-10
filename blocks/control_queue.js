@@ -13,9 +13,9 @@ module.exports = {
             "types": ["action"]
         },
         {
-            "id": "queue",
-            "name": "Queue",
-            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Queue Object!",
+            "id": "guild",
+            "name": "Server",
+            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Server Object!",
             "types": ["object", "unspecified"],
             "required": true
         }
@@ -28,7 +28,8 @@ module.exports = {
             "description": "Description: What to do with the Queue.",
             "type": "SELECT",
             "options": {
-                "pause": "Pause/Resume",
+                "pause": "Pause",
+                "resume": "Resume",
                 "play": "Play",
                 "skip": "Skip",
                 "stop": "Stop",
@@ -49,16 +50,17 @@ module.exports = {
     ],
 
     async code(cache) {
-        const queue = this.GetInputValue("queue", cache);
+        const guild = this.GetInputValue("guild", cache);
+        const { useQueue } = require("discord-player");
+        const queue = useQueue(guild.id);
         const action = this.GetOptionValue("action", cache);
 
         switch (action) {
             case "pause":
-                if (queue.isPlaying()) {
-                    queue.node.pause();
-                } else if (!queue.isPlaying()) {
-                    queue.node.resume();
-                }
+                queue.node.pause();
+                break;
+            case "resume":
+                queue.node.resume();
                 break;
             case "play":
                 queue.node.play();

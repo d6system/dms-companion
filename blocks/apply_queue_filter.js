@@ -13,9 +13,9 @@ module.exports = {
             "types": ["action"]
         },
         {
-            "id": "queue",
-            "name": "Queue",
-            "description": "Acceptable Types: Object\n\nDescription: The Queue of which you want to get Infos from.",
+            "id": "guild",
+            "name": "Server",
+            "description": "Acceptable Types: Object\n\nDescription: The Server Queue of which you want to get Infos from.",
             "types": ["object", "undefined"],
             "required": true
         }
@@ -55,7 +55,9 @@ module.exports = {
 
     async code(cache) {
         const preset = parseInt(this.GetOptionValue("preset", cache));
-        const queue = this.GetInputValue("queue", cache);
+        const guild = this.GetInputValue("guild", cache);
+        const { useQueue } = require("discord-player");
+        const queue = useQueue(guild.id);
         const { EqualizerConfigurationPreset } = require("discord-player");
 
         switch (preset) {

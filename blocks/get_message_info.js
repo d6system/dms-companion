@@ -65,6 +65,8 @@ module.exports = {
                 37: "Message Reply Guild ID [Text]",
                 38: "Message Reply Channel ID [Text]",
                 39: "Message Reply Message ID [Text]",
+                40: "Has Massage a Thread? [Boolean]",
+                41: "Message Thread [Object <Thread Channel>]"
             }
         }
     ],
@@ -207,6 +209,12 @@ module.exports = {
                 break;
             case 39:
                 result = message.reference.messageId;                      
+                break;
+            case 40:
+                result = message.hasThread;
+                break;
+            case 41:
+                result = message.thread;
                 break;
         }
 

@@ -133,7 +133,7 @@ module.exports = {
         {
             "id": "textfield",
             "name": "Input Field",
-            "description": "The Text Input Field created(Important, this is already an ActionRow)",
+            "description": "The Text Input Field created",
             "types": ["object"]
         }
     ],

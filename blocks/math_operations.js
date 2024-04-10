@@ -40,6 +40,12 @@ module.exports = {
                 "modulo": "% (Modulo)",
                 "exponentiation": "^ (Exponentiation)",
             }
+        },
+        {
+            "id": "number2",
+            "name": "Second Number",
+            "description": "The second number to perform a mathematical operation with the first number.",
+            "type": "NUMBER"
         }
     ],
 
@@ -60,7 +66,8 @@ module.exports = {
 
     code(cache) {
         const number1 = parseFloat(this.GetInputValue("number1", cache));
-        const number2 = parseFloat(this.GetInputValue("number2", cache));
+        const number2 = parseFloat(this.GetInputValue("number2", cache)) || parseFloat(this.GetOptionValue("number2", cache));        
+
         const math_operation_type = this.GetOptionValue("math_operation_type", cache);
 
         let result;

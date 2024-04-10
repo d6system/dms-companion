@@ -19,16 +19,33 @@ module.exports = {
             "types": ["action"]
         },
         {
+            "id": "error",
+            "name": "Error",
+            "description": "Type: Object\n\nDescription: The Error that was caught(FULL ERROR BACKTRACE)",
+            "types": ["object", "unspecified"]
+        },
+        {
             "id": "error_message",
             "name": "Error Message",
-            "description": "Type: Object\n\nDescription: The bot error message.",
-            "types": ["object"]
+            "description": "Type: Object\n\nDescription: The Error Reason(SHORT)",
+            "types": ["text", "unspecified"]
         }
     ],
 
     code(cache) {
-        this.events.on("error", error => {
+        process.on('unhandledRejection', error => {
             this.StoreOutputValue(error, "error", cache);
+            this.StoreOutputValue(error.message, "error_message", cache);
+            this.RunNextBlock("action", cache);
+        });
+        process.on('uncaughtException', error => {
+            this.StoreOutputValue(error, "error", cache);
+            this.StoreOutputValue(error.message, "error_message", cache);
+            this.RunNextBlock("action", cache);
+        });
+        this.client.on('error', error => {
+            this.StoreOutputValue(error, "error", cache);
+            this.StoreOutputValue(error.message, "error_message", cache);
             this.RunNextBlock("action", cache);
         });
     }

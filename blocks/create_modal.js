@@ -29,13 +29,38 @@ module.exports = {
             "name": "Title",
             "description": "Type: Text\n\nDescription:The Title of Your Application",
             "types": ["text", "unspecified"]
-        },  
+        },
         {
-            "id": "inputs",
-            "name": "Inputs",
-            "description": "Type: List\n\nDescription: The input fields to add",
-            "types": ["list"]
-        } 
+            "id": "textfield1",
+            "name": "Input Field 1",
+            "description": "The Text Input Field created",
+            "types": ["object", "unspecified"],
+            "required": true
+        },
+        {
+            "id": "textfield2",
+            "name": "Input Field 2",
+            "description": "The Text Input Field created",
+            "types": ["object", "unspecified"]
+        },
+        {
+            "id": "textfield3",
+            "name": "Input Field 3",
+            "description": "The Text Input Field created",
+            "types": ["object", "unspecified"]
+        },
+        {
+            "id": "textfield4",
+            "name": "Input Field 4",
+            "description": "The Text Input Field created",
+            "types": ["object", "unspecified"]
+        },
+        {
+            "id": "textfield5",
+            "name": "Input Field 5",
+            "description": "The Text Input Field created",
+            "types": ["object", "unspecified"]
+        }
     ],
 
     options: [
@@ -62,30 +87,27 @@ module.exports = {
         }
     ],
 
-    code: async function(cache) {
-        const { ModalBuilder, ActionRowBuilder } = require("discord.js");
+    code(cache) {
+        const {ModalBuilder, ActionRowBuilder} = require("discord.js");
         var custom_id = this.GetInputValue("customid", cache) || this.GetOptionValue("customid", cache);
         var title = this.GetInputValue("title", cache) || this.GetOptionValue("title", cache);
         const interaction = this.GetInputValue("interaction", cache);
-        var options = this.GetInputValue("inputs", cache);
+        const textfield1 = this.GetInputValue("textfield1", cache);
+        const textfield2 = this.GetInputValue("textfield2", cache);
+        const textfield3 = this.GetInputValue("textfield3", cache);
+        const textfield4 = this.GetInputValue("textfield4", cache);
+        const textfield5 = this.GetInputValue("textfield5", cache);
+        const options = [textfield1, textfield2, textfield3, textfield4, textfield5];
 
-        if(custom_id == undefined) {
-            custom_id = this.GetOptionValue("customid", cache);
-        }
-
-         if(title == undefined) {
-             title = this.GetOptionValue("title", cache);
-         }
-        
-        const modal = new ModalBuilder ()
+        const modal = new ModalBuilder()
             .setCustomId(custom_id)
             .setTitle(title)
 
         options.forEach(option => {
-            if(typeof option !== 'undefined' || option !== null) {
+            if (option) {
                 const row = new ActionRowBuilder().addComponents(option);
-                modal.addComponents([row]);
-                }
+                modal.addComponents(row);
+            }
         });
 
         interaction.showModal(modal);

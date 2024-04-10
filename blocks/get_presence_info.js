@@ -66,9 +66,9 @@ module.exports = {
         }
     ],
 
-    code(cache) {
-        const activity = this.getInputValue("presence", cache);
-        const activity_info = parseInt(this.getOptionValue("presence_info", cache));
+   async code(cache) {
+        const activity = this.GetInputValue("presence", cache);
+        const activity_info = parseInt(this.GetOptionValue("presence_info", cache));
 
         const {ActivityType} = require("discord.js");
         const simplify = txt => txt.replace(/([A-Z])/g, ' $1').trim();

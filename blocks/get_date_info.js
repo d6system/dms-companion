@@ -128,24 +128,23 @@ module.exports = {
             case 9:
                 result = date.toLocaleString(undefined, {timeZone: time_type || undefined});
                 break;
-            case 9:
+            case 10:
                 result = date["get" + time_type + "Hours"]();
                 break;
-            case 10:
+            case 11:
                 result = date["get" + time_type + "Minutes"]();
                 break;
-            case 11:
+            case 12:
                 result = date["get" + time_type + "Seconds"]();
                 break;
-            case 12:
+            case 13:
                 result = date["get" + time_type + "Milliseconds"]();
                 break;
-            case 13:
+            case 14:
                 result = "GMT" + date.slice(28, 29) + parseInt(date.slice(29, 33)) / 100;
                 break;
         }
 
-        console.log(date)
         this.StoreOutputValue(result, "result", cache);
         this.RunNextBlock("action", cache);
     }

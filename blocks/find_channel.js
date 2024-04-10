@@ -16,14 +16,14 @@ module.exports = {
             "id": "server",
             "name": "Server",
             "description": "Acceptable Types: Object, Unspecified\n\nDescription: The server to find the channel. Use only if you are not looking for a DM channel. If possible, use this input to avoid finding the channel on an unintended server. (OPTIONAL)",
-            "types": ["object", "unspecified"]
+            "types": ["object", "unspecified"],
+            "required": true
         },
         {
             "id": "search_value",
             "name": "Search Value",
             "description": "Acceptable Types: Unspecified, Text, Number\n\nDescription: The value according to your choice in the \"Find Channel By\" option.",
             "types": ["unspecified", "text", "number", "object"],
-            "required": true
         }
     ],
 
@@ -56,6 +56,12 @@ module.exports = {
                 "position": "Channel Position",
                 "recipient": "DM User",
             }
+        },
+        {
+        id: "search_value",
+        name: "Search Value",
+        description: "Description: The value for the search Value",
+        type: "TEXT"
         }
     ],
 
@@ -88,11 +94,15 @@ module.exports = {
         }
 
         const server = this.GetInputValue("server", cache, false, this.client);
-        const search_value = this.GetInputValue("search_value", cache);
+        var search_value = this.GetInputValue("search_value", cache);
         let channel_type = this.GetOptionValue("channel_type", cache) + "";
         const find_channel_by = this.GetOptionValue("find_channel_by", cache) + "";
 
         const channels = server.channels.cache;
+
+        if (search_value == undefined) {
+            search_value = this.GetOptionValue("search_value", cache);
+        }
 
         channel_type = channelType[channel_type]
 

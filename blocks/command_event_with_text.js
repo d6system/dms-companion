@@ -76,16 +76,6 @@ module.exports = {
             }
         },
         {
-            "id": "case_sensitive",
-            "name": "Case Sensitive",
-            "description": "Description: If \"No\", for example, \"play\", \"PLAY\" and \"PlAy\" are the same command name. This is useful if you want commands with the same name but with different case variants.",
-            "type": "SELECT",
-            "options": {
-                "no": "No",
-                "yes": "Yes"
-            }
-        },
-        {
             "id": "command_slowmode_restriction",
             "name": "Command Slowmode Restriction",
             "description": "Description: The restriction that will affect the user slowmode at each location. Only use this option if you put a value in the \"Command Slowmode\" input.",
@@ -227,11 +217,9 @@ module.exports = {
         let command_slowmode = this.GetInputValue("command_slowmode", cache);
         const command_restriction = this.GetOptionValue("command_restriction", cache) + "";
         const required_member_permission = permissions[this.GetOptionValue("required_member_permission", cache) + ""];
-        const case_sensitive = this.GetOptionValue("case_sensitive", cache) == "yes";
         const command_slowmode_restriction = this.GetOptionValue("command_slowmode_restriction", cache) + "";
 
         command_name = typeof command_name == "string" ? command_name : "";
-        if(case_sensitive) command_name = command_name.toLowerCase();
 
         command_slowmode = Math.max(0, command_slowmode instanceof Date ? command_slowmode.getTime() : Date.now() + parseInt(command_slowmode));
 
@@ -248,7 +236,7 @@ module.exports = {
                 case "server_only":
                     return [Boolean(msg.guild), CheckPermission(msg.member)];
                 case "server_owner_only":
-                    return [msg.guild && msg.guild.owner.id == msg.member.id, true];
+                    return [msg.guild && msg.guild.ownerId == msg.member.id, true];
                 case "bot_owner_only":
                     return [owners.includes(msg.author.id), true];
                 case "dms_only":
@@ -320,10 +308,8 @@ module.exports = {
             const _prefix = !custom_prefix && msg.guild && msg.guild.id in prefixes.servers ? prefixes.servers[msg.guild.id] : prefix;
 
             let content = msg.content.trim();
-            if(case_sensitive) content = content.toLowerCase();
 
-            if(!content.startsWith(_prefix + command_name)) return;
-
+            if(content.split(" ")[0] !== (_prefix + command_name)) return;
 
             const restriction = CheckCommandRestriction(msg);
 

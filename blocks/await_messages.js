@@ -20,27 +20,44 @@ module.exports = {
             "required": true
         },
         {
-            "id": "javascript_filter_code",
-            "name": "JavaScript Filter Code",
-            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The JavaScript code to filter the result.\n\nVariables:\n\"message\" -> The message object\n\"user\" -> The message author [User]\n\"member\" -> The message author [Member]",
-            "types": ["text", "unspecified"],
-            "required": true
-        },
-        {
             "id": "max_messages",
-            "name": "Maximum Messages",
+            "name": "Max Messages",
             "description": "Acceptable Types: Number, Unspecified\n\nDescription: The maximum amount of messages to collect. Default: \"1\". (OPTIONAL)",
             "types": ["number", "unspecified"]
         },
         {
             "id": "max_time",
-            "name": "Maximum Time (Milliseconds)",
-            "description": "Acceptable Types: Number, Unspecified\n\nDescription: How long to run the collector of messages in milliseconds. Default: \"60000\". (OPTIONAL)",
+            "name": "Max Time",
+            "description": "Acceptable Types: Number, Unspecified\n\nDescription: How long to run the collector of messages in seconds. Default: \"60\". (OPTIONAL)",
             "types": ["number", "unspecified"]
         },
+        {
+            "id": "user",
+            "name": "User",
+            "description": "The user to listen for. (OPTIONAL, if \"Target Type\" is Anyone)",
+            "types": ["object", "unspecified"]
+        },
+        {
+            "id": "javascript_filter_code",
+            "name": "JavaScript Filter Code",
+            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The JavaScript code to filter the result.\n\nVariables:\n\"reaction\" -> The message reaction object\n\"user\" -> The user object that reacted",
+            "types": ["text", "unspecified"]
+        }
     ],
 
-    options: [],
+    options: [
+        {
+            "id": "target_type",
+            "name": "Target Type",
+            "description": "Who to listen for on the Await Message",
+            "type": "SELECT",
+            "options": {
+                1: "Anyone",
+                2: "Specific User",
+                3: "Custom Code"
+            }
+        },
+    ],
 
     outputs: [
         {
@@ -57,42 +74,63 @@ module.exports = {
         },
         {
             "id": "messages",
-            "name": "Messages",
-            "description": "Type: List\n\nDescription: The list containing the message(s) received.",
-            "types": ["list"]
+            "name": "Message(s)",
+            "description": "Type: List, Object, Unspecified\n\nDescription: The list or Object containing the message(s) received.",
+            "types": ["list", "object", "unspecified"]
         }
     ],
 
     code(cache) {
         const channel = this.GetInputValue("channel", cache);
+        const max_messages = parseInt(this.GetInputValue("max_messages", cache)) || 1;
+        const max_time = parseInt(this.GetInputValue("max_time", cache))*1000 || 60000;
         const javascript_filter_code = this.GetInputValue("javascript_filter_code", cache);
-        const max_messages = parseInt(this.GetInputValue("max_messages", cache));
-        const max_time = parseInt(this.GetInputValue("max_time", cache));
+
+        const user = this.GetInputValue("user", cache);
+        const target_type = parseInt(this.GetOptionValue("target_type", cache));
+        let result;
+        switch (target_type) {
+            case 2:
+                result = `message.author.id == ${user.id}`;
+                break;
+            case 1:
+                result = true;
+                break;
+            case 3:
+                result = javascript_filter_code;
+                break;
+        }
 
         channel.awaitMessages({
             filter: message => {
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 const user = message.author;
-                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 const member = message.member;
-    
+
                 try {
-                    return Boolean(eval(javascript_filter_code));
+                    return Boolean(eval(result));
                 } catch {
                     return false;
                 }
             },
             errors: ["time"],
             max: max_messages,
-			time: max_time
+            time: max_time
         })
-        .then(msgs => {
-            this.StoreOutputValue(Array.from(msgs.values()), "messages", cache);
-            this.RunNextBlock("action1", cache);
-        })
-        .catch(msgs => {
-            this.StoreOutputValue(Array.from(msgs.values()), "messages", cache);
-            this.RunNextBlock("action2", cache);
-        });
+            .then(msgs => {
+                if(msgs.size == 1) {
+                    this.StoreOutputValue(msgs.first(), "messages", cache);
+                } else {
+                    this.StoreOutputValue(Array.from(msgs.values()), "messages", cache);
+                }
+                this.RunNextBlock("action1", cache);
+            })
+            .catch(msgs => {
+                if(msgs.size == 1) {
+                    this.StoreOutputValue(msgs.first(), "messages", cache);
+                } else {
+                    this.StoreOutputValue(Array.from(msgs.values()), "messages", cache);
+                }
+                this.RunNextBlock("action2", cache);
+            });
     }
 }

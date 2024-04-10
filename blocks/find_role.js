@@ -16,14 +16,14 @@ module.exports = {
             "id": "server",
             "name": "Server",
             "description": "Acceptable Types: Object, Unspecified\n\nDescription: The server to find the role. If possible, use this input to avoid finding the role on an unintended server. (OPTIONAL)",
-            "types": ["object", "unspecified"]
+            "types": ["object", "unspecified"],
+            "required": true
         },
         {
             "id": "search_value",
             "name": "Search Value",
             "description": "Acceptable Types: Unspecified, Text, Number\n\nDescription: The value according to your choice in the \"Find Role By\" option.",
-            "types": ["unspecified", "text", "number"],
-            "required": true
+            "types": ["unspecified", "text", "number"]
         }
     ],
 
@@ -40,6 +40,12 @@ module.exports = {
                 "color_hex": "Role Color (Hex)",
                 "color_base10": "Role Color (Base 10)"
             }
+        },
+        {
+            id: "search_value",
+            name: "Search Value",
+            description: "Description: The value for the search Value",
+            type: "TEXT"
         }
     ],
 
@@ -60,8 +66,12 @@ module.exports = {
 
     code(cache) {
         const server = this.GetInputValue("server", cache);
-        const search_value = this.GetInputValue("search_value", cache);
+        var search_value = this.GetInputValue("search_value", cache);
         const find_role_by = this.GetOptionValue("find_role_by", cache);
+
+        if (search_value == undefined) {
+            search_value = this.GetOptionValue("search_value", cache);
+        }
 
         const roles = server ? server.roles.cache : this.client.guilds.cache.map(a => Array.from(a.roles.cache.values())).flat();
 

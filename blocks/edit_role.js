@@ -38,6 +38,12 @@ module.exports = {
             "types": ["boolean", "unspecified"]
         },
         {
+            "id": "role_icon",
+            "name": "Role Icon",
+            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The icon for this role. !!Only works for boosted servers!!.",
+            "types": ["text", "unspecified"]
+        },
+        {
             "id": "role_position",
             "name": "Role Position",
             "description": "Acceptable Types: Number, Unspecified\n\nDescription: The new position for this role. (OPTIONAL)",
@@ -79,6 +85,7 @@ module.exports = {
         const role_name = this.GetInputValue("role_name", cache);
         const role_color = this.GetInputValue("role_color", cache);
         const role_hoist = Boolean(this.GetInputValue("role_hoist", cache));
+        const role_icon = this.GetInputValue("role_icon", cache);
         const role_position = parseInt(this.GetInputValue("role_position", cache));
         const role_permissions = this.GetInputValue("role_permissions", cache);
         const role_mentionable = Boolean(this.GetInputValue("role_mentionable", cache));
@@ -88,17 +95,17 @@ module.exports = {
             name: role_name,
             color: role_color,
             hoist: role_hoist,
+            unicodeEmoji: role_icon,
             position: role_position,
             permissions: role_permissions && role_permissions.hasOwnProperty("allow") ? role_permissions.allow : role_permissions,
             mentionable: role_mentionable,
-            reason
         }
 
         Object.keys(data).forEach(key => {
             if([undefined, null, NaN].includes(data[key])) delete data[key];
         });
 
-        role.edit(data).then(() => {
+        role.edit(data, reason).then(() => {
             this.RunNextBlock("action", cache);
         });
     }

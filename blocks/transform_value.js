@@ -30,6 +30,11 @@ module.exports = {
             "options": {
                 "number1": "Number (Integer)",
                 "number2": "Number (Decimal)",
+                "number3": "Number (Remove Decimals)",
+                "number4": "Number (Round)",
+                "number5": "Number (Remove Numbers)",
+                "number6": "Number (Remove Letters)",
+                "number7": "Number (Add punctuation)",
                 "text": "Text",
                 "uppercase": "Uppercase",
                 "lowercase": "Lowercase",
@@ -61,10 +66,25 @@ module.exports = {
         let res = value;
         switch(transformation_type) {
             case "number1":
-                res = parseInt(value);
+                res = ("" + value).match(/\d+/)[0];
                 break;
             case "number2":
                 res = parseFloat(value);
+                break;
+            case "number3":
+                res = Math.floor(value);
+                break;
+            case "number4":
+                res = Math.round(value);
+                break;
+            case "number5":
+                res = value.replace(/[0-9]/g, '');
+                break;
+            case "number6":
+                res = value.replace(/\D/g, '')
+                break;
+            case "number7":
+                res = Number(value.replace(/\D/g, '')).toLocaleString()
                 break;
             case "text":
                 res = "" + value;

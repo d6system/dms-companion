@@ -16,8 +16,7 @@ module.exports = {
             "id": "name",
             "name": "Name",
             "description": "Acceptable Types: Text, Unspecified\n\nDescription: The name of the data.",
-            "types": ["text", "unspecified"],
-            "required": true
+            "types": ["text", "unspecified"]
         },
         {
             "id": "target",
@@ -28,6 +27,12 @@ module.exports = {
     ],
 
     options: [
+        {
+            "id": "name",
+            "name": "Name",
+            "description": "Description: The name for this data.",
+            "type": "TEXT"
+        },
         {
             "id": "data_type",
             "name": "Data Type",
@@ -52,15 +57,22 @@ module.exports = {
     ],
 
     code(cache) {
-        const name = this.GetInputValue("name", cache) + "";
+        var name = this.GetInputValue("name", cache) + "";
+        if(name == "undefined") {
+            name = this.GetOptionValue("name", cache);
+        }        
         const target = this.GetInputValue("target", cache);
         const data_type = this.GetOptionValue("data_type", cache) + "";
 
-        if(["server", "member", "user"].includes(data_type)) {
-            this.deleteData(name, typeof target == "object" ? target.id : target, data_type);
-        } else { // "none"
-            this.deleteData(name);
+        if(["server", "user"].includes(data_type)) {
+            this.setData(name, undefined, typeof target == "object" ? target.id : target, data_type);
         }
+        if(data_type == "member") {
+             this.setData(name, undefined, typeof target == "object" ? target.id + target.guild.id: target, data_type);
+        } 
+        if(data_type == "none") { // "none"
+            this.setData(name, undefined);
+        }       
 
         this.RunNextBlock("action", cache);
     }

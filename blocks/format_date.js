@@ -35,7 +35,7 @@ module.exports = {
                 "m/d/yyyy": "M/D/YYYY (e.g. 6/1/2020)",
                 "yyyy/mm/dd": "YYYY/MM/DD (e.g. 2020/06/01)",
                 "yyyy/m/d": "YYYY/M/D (e.g. 2020/6/1)",
-                "mmmm_d,yyyy": "MMMM D, YYYY (e.g. June 1, 2020)",
+                "mmmm_dd,yyyy": "MMMM D, YYYY (e.g. June 1, 2020)",
                 "dddd,d_mmmm_yyyy": "DDDD, DD MMMM YYYY (e.g. Monday, 1 June 2020)"
             }
         },
@@ -144,17 +144,17 @@ module.exports = {
                 res.push(addZero(date.getHours()) + ":" + addZero(date.getMinutes()));
                 break;
             case "hh:mm:ss":
-                res.push(addZero(date.getHours()) + ":" + addZero(date.getMinutes()) + ":" + addZero(datedate.getSeconds()));
+                res.push(addZero(date.getHours()) + ":" + addZero(date.getMinutes()) + ":" + addZero(date.getSeconds()));
                 break;
             case "hh:mm_ampm":
                 var hours = date.getHours();
                 var hours2 = hours % 12;
-                res.push(addZero(hours2 ? hours2 : 12) + ":" + addZero(date.getMinutes()) + " " + (hours >= 12 ? "pm" : "am"));
+                res.push(addZero(hours2 ? hours2 : 12) + ":" + addZero(date.getMinutes()) + " " + (hours >= 12 ? "PM" : "AM"));
                 break;
             case "hh:mm:ss_ampm":
                 var hours = date.getHours();
                 var hours2 = hours % 12;
-                res.push(addZero(hours2 ? hours2 : 12) + ":" + addZero(date.getMinutes()) + ":" + addZero(date.getSeconds()) + " " + (hours >= 12 ? "pm" : "am"));
+                res.push(addZero(hours2 ? hours2 : 12) + ":" + addZero(date.getMinutes()) + ":" + addZero(date.getSeconds()) + " " + (hours >= 12 ? "PM" : "AM"));
                 break;
         }
 

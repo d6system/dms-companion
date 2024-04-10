@@ -1,7 +1,7 @@
 module.exports = {
     name: "Twitch Stream [Event]",
 
-    description: "Triggers an ecent when a YouTube channel starts streaming.",
+    description: "Triggers an event when a Twitch channel starts streaming.",
 
     auto_execute: true,
 
@@ -65,6 +65,36 @@ module.exports = {
             "types": ["text", "undefined"]
         },
         {
+            "id": "thumbnailUrl",
+            "name": "Thumbnail URL",
+            "description": "Type: Text, Undefined\n\nDescription: The Game that is being played.",
+            "types": ["text", "undefined"]
+        },
+        {
+            "id": "tags",
+            "name": "Stream Tags",
+            "description": "Type: Text, Undefined\n\nDescription: The Game that is being played.",
+            "types": ["list", "undefined"]
+        },
+        {
+            "id": "viewers",
+            "name": "Viewer Count",
+            "description": "Type: Text, Undefined\n\nDescription: The Game that is being played.",
+            "types": ["number", "undefined"]
+        },
+        {
+            "id": "language",
+            "name": "Language",
+            "description": "Type: Text, Undefined\n\nDescription: The Game that is being played.",
+            "types": ["text", "undefined"]
+        },
+        {
+            "id": "startDate",
+            "name": "Stream Started",
+            "description": "Type: Text, Undefined\n\nDescription: The Game that is being played.",
+            "types": ["date", "undefined"]
+        },
+        {
             "id": "author",
             "name": "Channel Name",
             "description": "Type: Text, Undefined\n\nDescription: The Name of the channel.",
@@ -94,6 +124,11 @@ module.exports = {
         let link;
         let game_name;
         let user_name;
+        let thumbnailUrl;
+        let tags;
+        let viewers;
+        let language;
+        let startDate;
 
         const onlineSubscription = await listener.onStreamOnline(id, async e => {
             const stream = await e.getStream()
@@ -102,11 +137,21 @@ module.exports = {
             link = "https://www.twitch.tv/" + await stream.userName
             game_name = await stream.gameName
             user_name = await stream.userDisplayName
+            thumbnailUrl = await stream.thumbnailUrl
+            tags = await stream.tags
+            viewers = await stream.viewers
+            language = await stream.language
+            startDate = await stream.startDate
 
             this.StoreOutputValue(title, "title", cache);
             this.StoreOutputValue(link, "link", cache);
             this.StoreOutputValue(game_name, "game", cache);
             this.StoreOutputValue(user_name, "author", cache);
+            this.StoreOutputValue(thumbnailUrl, "thumbnailUrl", cache);
+            this.StoreOutputValue(tags, "tags", cache);
+            this.StoreOutputValue(viewers, "viewers", cache);
+            this.StoreOutputValue(language, "language", cache);
+            this.StoreOutputValue(startDate, "startDate", cache);
             this.RunNextBlock("action1", cache);
         });
         

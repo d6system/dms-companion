@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Text 1x",
+    name: "Text",
 
     description: "Creates a text to use it in your blocks.",
 

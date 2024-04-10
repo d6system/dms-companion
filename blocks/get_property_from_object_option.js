@@ -26,7 +26,7 @@ module.exports = {
             "id": "key",
             "name": "key",
             "description": "who cares",
-            "types": ["text", "unspecified"],
+            "type": "TEXT",
         }
     ],
 

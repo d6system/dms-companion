@@ -42,7 +42,8 @@ module.exports = {
                 16: "User Username [Text]",
                 21: "User Mention [Text]",
                 23: "Is An Official Discord System User? [Boolean]",
-                24: "Is Bot Owner? [Boolean]"
+                24: "Is Bot Owner? [Boolean]",
+                25: "User Global Name [Text]"
             }
         }
     ],
@@ -112,6 +113,9 @@ module.exports = {
                 break;
             case 24:
                 result = DBB.Data.data.dbb.owners.includes(user.id);
+                break;
+            case 25:
+                result = user.globalName;
                 break;
         }
 

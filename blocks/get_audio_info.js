@@ -16,7 +16,7 @@ module.exports = {
             "id": "audio",
             "name": "Audio",
             "description": "Acceptable Types: Object\n\nDescription: The audio to get its information.",
-            "types": ["object"],
+            "types": ["object", "unspecified"],
             "required": true
         }
     ],

@@ -40,9 +40,9 @@ module.exports = {
 
     code(cache) {
         const prefix = this.GetInputValue("prefix", cache) + "";
-        const server = this.GetInputValue("server", cache, true);
+        const server = this.GetInputValue("server", cache);
 
-        this.setPrefix(prefix, server ? server.value : false);
+        this.setPrefix(prefix, server ? server.id : false);
 
         this.RunNextBlock("action", cache);
     }

@@ -34,7 +34,7 @@ module.exports = {
             "id": "time",
             "name": "Time",
             "description": "Acceptable Types: Number, Date, Unspecified\n\nDescription: The amount of time to wait. Supports Date.",
-            "types": ["number", "date", "unspecified"],
+            "type": "NUMBER",
             "required": true
         }
     ],

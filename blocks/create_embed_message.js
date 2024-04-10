@@ -81,8 +81,8 @@ module.exports = {
         {
             "id": "timestamp",
             "name": "Timestamp (Date)",
-            "description": "Acceptable Types: Date, Number, Unspecified\n\nDescription: The timestamp (Date) for this message embed. (OPTIONAL)",
-            "types": ["date", "number", "unspecified"]
+            "description": "Acceptable Types: Date, Number, Boolean, Unspecified\n\nDescription: The timestamp (Date) for this message embed. If a boolean as \"true\", this uses the current time. (OPTIONAL)",
+            "types": ["date", "number", "boolean", "unspecified"]
         }
     ],
 
@@ -105,39 +105,41 @@ module.exports = {
 
     code: function(cache) {
         const color = this.GetInputValue("color", cache, false, "#2f3136");
-        const thumbnail = this.GetInputValue("thumbnail", cache, true);
+        const thumbnail = this.GetInputValue("thumbnail", cache);
         const author_icon = this.GetInputValue("author_icon", cache);
         const author_name = this.GetInputValue("author_name", cache);
         const author_url = this.GetInputValue("author_url", cache);
-        const title = this.GetInputValue("title", cache, true);
-        const url = this.GetInputValue("url", cache, true);
-        const description = this.GetInputValue("description", cache, true);
-        const image = this.GetInputValue("image", cache, true);
+        const title = this.GetInputValue("title", cache);
+        const url = this.GetInputValue("url", cache);
+        const description = this.GetInputValue("description", cache);
+        const image = this.GetInputValue("image", cache);
         const footer_icon = this.GetInputValue("footer_icon", cache);
         const footer_text = this.GetInputValue("footer_text", cache);
-        const timestamp = this.GetInputValue("timestamp", cache, true);
+        const timestamp = this.GetInputValue("timestamp", cache);
 
-        const {EmbedBuilder} = require("discord.js");
+        const { EmbedBuilder } = require("discord.js");
 
         const embed = new EmbedBuilder()
 
-        embed.setColor(color)
+        embed.setColor(color || "black")
 
-        if(thumbnail) embed.setThumbnail(thumbnail.value);
-        if(author_icon || author_name || author_url) embed.setAuthor({
-            name: author_name || "\u200b",
-            url: author_icon,
-            icon_url: author_url
-        });
-        if(title) embed.setTitle(title.value);
-        if(url) embed.setURL(url.value);
-        if(description) embed.setDescription(description.value);
-        if(image) embed.setImage(image.value);
-        if(footer_icon || footer_text) embed.setFooter({
-            text: footer_text || "\u200b",
-            icon_url: footer_icon
-        });
-        if(timestamp) embed.setTimestamp(timestamp.value);
+        let author = {};
+        if(author_name) author.name = author_name;
+        if(author_icon) author.iconURL = author_icon;
+        if(author_url) author.url = author_url;
+
+        let footer = {}
+        if(footer_icon) footer.iconURL = footer_icon;
+        if(footer_text) footer.text = footer_text;
+
+        if(thumbnail) embed.setThumbnail(thumbnail || "\u200b");
+        if(author_icon || author_name || author_url) embed.setAuthor(author);
+        if(title) embed.setTitle(title || "\u200b");
+        if(url) embed.setURL(url || "\u200b");
+        if(description) embed.setDescription(description || "\u200b");
+        if(image) embed.setImage(image || "\u200b");
+        if(footer_icon || footer_text) embed.setFooter(footer);
+        if(timestamp) embed.setTimestamp(timestamp === true ? undefined : timestamp);
 
         this.StoreOutputValue(embed, "message_embed", cache);
         this.RunNextBlock("action", cache);

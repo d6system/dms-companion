@@ -1,7 +1,7 @@
 module.exports = {
     name: "Database SQL Setup",
 
-    description: "When you get an Request to the Webserver this Block gets Triggerd. Made by @ju#1111",
+    description: "This block is used to establish a connection with a SQL database. Created by @ju#1111",
 
     category: "Database Stuff",
 
@@ -20,32 +20,32 @@ module.exports = {
         {
             "id": "host",
             "name": "Host",
-            "description": "Type: Number\n\nDescription: Port where the server gets Deployed!\nDefaults to '3000'. Ports under 1000 are reserved for root (Linux) thats not recommend!\nWill default to 3000!",
-            "types": ["text"]
+            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The host address of the SQL database.",
+            "types": ["text", "unspecified"]
         },
 		{
             "id": "port",
             "name": "Port",
-            "description": "Type: Number\n\nDescription: Port where the server gets Deployed!\nDefaults to '3000'. Ports under 1000 are reserved for root (Linux) thats not recommend!\nWill default to 3000!",
-            "types": ["number"]
+            "description": "Acceptable Types: Number, Unspecified\n\nDescription: The port number for the SQL database connection. Defaults to '3306' if not specified. Ports under 1000 are reserved for root (Linux), so it is not recommended to use them.",
+            "types": ["number", "unspecified"]
         },  
 		{
             "id": "user",
             "name": "User",
-            "description": "Type: Number\n\nDescription: Port where the server gets Deployed!\nDefaults to '3000'. Ports under 1000 are reserved for root (Linux) thats not recommend!\nWill default to 3000!",
-            "types": ["text"]
+            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The username to authenticate the SQL database connection.",
+            "types": ["text", "unspecified"]
         },  
 		{
             "id": "password",
             "name": "Password",
-            "description": "Type: Number\n\nDescription: Port where the server gets Deployed!\nDefaults to '3000'. Ports under 1000 are reserved for root (Linux) thats not recommend!\nWill default to 3000!",
-            "types": ["text"]
+            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The password to authenticate the SQL database connection.",
+            "types": ["text", "unspecified"]
         },  
 		{
             "id": "database",
             "name": "Database",
-            "description": "Type: Number\n\nDescription: Port where the server gets Deployed!\nDefaults to '3000'. Ports under 1000 are reserved for root (Linux) thats not recommend!\nWill default to 3000!",
-            "types": ["text"]
+            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The name of the SQL database to connect to.",
+            "types": ["text", "unspecified"]
         }		
     ],
 

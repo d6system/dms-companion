@@ -23,8 +23,7 @@ module.exports = {
             "id": "search_value",
             "name": "Search Value",
             "description": "Acceptable Types: Unspecified, Text, Number\n\nDescription: The value according to your choice in the \"Find Message Reaction By\" option.",
-            "types": ["unspecified", "text", "number", "object"],
-            "required": true
+            "types": ["unspecified", "text", "number", "object"]
         }
     ],
 
@@ -38,6 +37,12 @@ module.exports = {
                 "emoji_id": "Message Reaction Emoji Name/ID",
                 "count": "Message Reaction Count"
             }
+        },
+        {
+            id: "search_value",
+            name: "Search Value",
+            description: "Description: The value for the search Value",
+            type: "TEXT"
         }
     ],
 
@@ -58,8 +63,12 @@ module.exports = {
 
     code(cache) {
         const message = this.GetInputValue("message", cache);
-        const search_value = this.GetInputValue("search_value", cache);
+        var search_value = this.GetInputValue("search_value", cache);
         const find_message_reaction_by = this.GetOptionValue("find_message_reaction_by", cache) + "";
+
+        if (search_value == undefined) {
+            search_value = this.GetOptionValue("search_value", cache);
+        }
 
         const reactions = message.reactions.cache;
 

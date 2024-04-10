@@ -42,7 +42,8 @@ module.exports = {
                 13: "Role Name [Text]",
                 14: "Role Permissions [Permissions]",
                 15: "Role Raw Position (API) [Number]",
-                16: "Role Mention [Text]"
+                16: "Role Mention [Text]",
+                17: "Role Emoji / Role Icon URL [Boostd Server Only]"
             }
         }
     ],
@@ -113,6 +114,15 @@ module.exports = {
             case 16:
                 result = role.toString();
                 break;
+            case 17:
+                if(role.unicodeEmoji !== null){
+                    result = role.unicodeEmoji;
+                }else if(role.icon !== null){
+                    result = role.iconURL({dynamic: true, format: "png"});
+                }else{
+                    result = null
+                }
+            break;
         }
 
         this.StoreOutputValue(result, "result", cache);

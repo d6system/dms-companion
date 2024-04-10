@@ -10,14 +10,14 @@ module.exports = {
             "id": "action",
             "name": "Action",
             "description": "Acceptable Types: Action\n\nDescription: Executes this block.",
-            "types": ["action"]
+            "types": ["action"],
+            "required": true
         },
         {
             "id": "name",
             "name": "Name",
             "description": "Acceptable Types: Text, Unspecified\n\nDescription: The name of the data.",
-            "types": ["text", "unspecified"],
-            "required": true
+            "types": ["text", "unspecified"]
         },
         {
             "id": "target",
@@ -28,6 +28,12 @@ module.exports = {
     ],
 
     options: [
+        {
+            "id": "name",
+            "name": "Name",
+            "description": "Description: The name for this data.",
+            "type": "TEXT"
+        },
         {
             "id": "data_type",
             "name": "Data Type",
@@ -50,6 +56,12 @@ module.exports = {
             "types": ["action"]
         },
         {
+            "id": "nameOutput",
+            "name": "Name",
+            "description": "Type: Action\n\nDescription: Executes the following blocks when this block finishes its task.",
+            "types": ["text"]
+        },
+        {
             "id": "value",
             "name": "Value",
             "description": "Type: Unspecified\n\nDescription: The value of the data.",
@@ -58,18 +70,29 @@ module.exports = {
     ],
 
     code(cache) {
-        const name = this.GetInputValue("name", cache) + "";
+        var name = this.GetInputValue("name", cache) + "";
+        if(name == "undefined") {
+            name = this.GetOptionValue("name", cache);
+        }   
         const target = this.GetInputValue("target", cache);
         const data_type = this.GetOptionValue("data_type", cache) + "";
 
         let value;
-        if(["server", "member", "user"].includes(data_type)) {
+        if(["server", "user"].includes(data_type)) {
             value = this.getData(name, typeof target == "object" ? target.id : target, data_type);
-        } else { // "none"
+        }
+        if(data_type == "member") {
+            value = this.getData(name, typeof target == "object" ? target.id + target.guild.id: target, data_type);
+        }
+
+        if(data_type == "none"){ // "none"
             value = this.getData(name);
         }
 
+
+
         this.StoreOutputValue(value, "value", cache);
+        this.StoreOutputValue(name, "nameOutput", cache);
         this.RunNextBlock("action", cache);
     }
 }

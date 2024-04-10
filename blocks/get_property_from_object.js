@@ -40,8 +40,8 @@ module.exports = {
         {
             "id": "value",
             "name": "Value",
-            "description": "Type: Object\n\nDescription: The property value obtained.",
-            "types": ["object"]
+            "description": "Type: Unspecified, Object\n\nDescription: The property value obtained.",
+            "types": ["unspecified", "object"]
         }
     ],
 

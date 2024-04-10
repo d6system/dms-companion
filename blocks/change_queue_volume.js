@@ -1,7 +1,7 @@
 module.exports = {
     name: "Change Queue Volume",
 
-    description: "Changes the Queue Volume",
+    description: "Changes the Server Queue Volume",
 
     category: ".Audio V2",
 
@@ -13,9 +13,9 @@ module.exports = {
             "types": ["action"]
         },
         {
-            "id": "queue",
-            "name": "Queue",
-            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Queue Object!",
+            "id": "guild",
+            "name": "Server",
+            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Server Object!",
             "types": ["object", "unspecified"],
             "required": true
         },
@@ -47,7 +47,9 @@ module.exports = {
     ],
 
     async code(cache) {
-        const queue = this.GetInputValue("queue", cache);
+        const guild = this.GetInputValue("guild", cache);
+        const { useQueue } = require("discord-player");
+        const queue = useQueue(guild.id);
         const amount = parseInt(this.GetInputValue("amount", cache)) || 30;
         
         queue.node.setVolume(amount);

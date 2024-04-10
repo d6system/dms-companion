@@ -53,7 +53,8 @@ module.exports = {
             "type": "SELECT",
             "options": {
                 "text": "Text",
-                "json": "Object (JSON)"
+                "json": "Object (JSON)",
+				"buffer": "Image (Buffer)"
             }
         }
     ],
@@ -88,7 +89,7 @@ module.exports = {
         options.timeout == 7000
         const res = await fetch(url, options).catch(err => console.error(err));
 
-        var data = data_type == "json" ? await res.json() : await res.text();
+        var data = data_type == "json" ? await res.json() : data_type == "buffer" ? await res.buffer() : await res.text();
         this.StoreOutputValue(data, "data", cache);
         this.RunNextBlock("action", cache);
     }
