@@ -5928,7 +5928,7 @@
                 "inputs": {},
                 "options": {
                     "command_name": "setupmain",
-                    "custom_prefix": "",
+                    "custom_prefix": "&",
                     "command_restriction": "none",
                     "required_member_permission": "none",
                     "command_slowmode_restriction": "none"
