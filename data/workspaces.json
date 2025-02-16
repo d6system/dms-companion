@@ -6453,7 +6453,7 @@
                 "name": "text",
                 "inputs": {},
                 "options": {
-                    "text": "PK DM Server Companion Version: 3.0.0"
+                    "text": "PK DM Server Companion Version: 3.0.1"
                 },
                 "outputs": {
                     "text": [
@@ -7311,7 +7311,7 @@
                 "name": "register_slash_commands",
                 "inputs": {},
                 "options": {
-                    "text": "{\n  \"name\": \"help\",\n  \"description\": \"Shows you the help page\",\n  \"options\": []\n},\n{\n  \"name\": \"setupsys\",\n  \"description\": \"Link your system to your server\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"systemid\",\n      \"description\": \"The 5 or 6 letter ID of your system\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"setupfronter\",\n  \"description\": \"Create a category for your fronters to be in.\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"name\",\n      \"description\": \"The name you want your category to have. e.g. Fronters\",\n      \"required\": true\n    }\n  ]\n}"
+                    "text": "{\n  \"name\": \"help\",\n  \"description\": \"Shows you the help page\",\n  \"options\": []\n},\n{\n  \"name\": \"reloadalters\",\n  \"description\": \"Reloads your alter roles\",\n  \"options\": []\n},\n{\n  \"name\": \"setupsys\",\n  \"description\": \"Link your system to your server\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"systemid\",\n      \"description\": \"The 5 or 6 letter ID of your system\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"setupfronter\",\n  \"description\": \"Create a category for your fronters to be in.\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"name\",\n      \"description\": \"The name you want your category to have. e.g. Fronters\",\n      \"required\": true\n    }\n  ]\n}"
                 },
                 "outputs": {},
                 "info": {
@@ -7700,13 +7700,15 @@
                     "private": "true"
                 },
                 "outputs": {
-                    "action": [],
+                    "action": [
+                        "GO5y3yPX0C"
+                    ],
                     "interaction": [],
                     "message": []
                 },
                 "info": {
-                    "x": 2019.0625915527344,
-                    "y": 290,
+                    "x": 2050,
+                    "y": 500,
                     "z": 0,
                     "width": 420,
                     "height": 320,
