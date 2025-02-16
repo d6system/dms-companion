@@ -35,24 +35,24 @@ Example: &setupmain
 ```
 
 ```
-&setupsys
+/setupsys
 This command sets your systemID from pluralkit.
-Example: &setupsys exmpl
+Example: /setupsys exmpl
 ```
 
 ```
-&setupfronter
+/setupfronter
 This command sets the catergory name for your fronter widget
-Example: &setupfronter Fronters
+Example: /setupfronter Fronters
 ```
 
 ```
-&reloadalters
+/reloadalters
 This command will delete all roles that end in (alter). Then it will get your alterlist from pluralkit and create new roles with your current list.
-So, when you have a new alter you do &reloadalters to recreate the list.
+So, when you have a new alter you do /reloadalters to recreate the list.
 ```
 
 ```
-&help
+/help
 Shows the version and help page of the ValkyriaBot™ code
 ```
