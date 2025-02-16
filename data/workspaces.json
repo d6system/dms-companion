@@ -950,7 +950,7 @@
                 "inputs": {},
                 "options": {
                     "command_name": "getapi",
-                    "custom_prefix": "",
+                    "custom_prefix": "&",
                     "command_restriction": "none",
                     "required_member_permission": "none",
                     "command_slowmode_restriction": "none"
@@ -2471,38 +2471,6 @@
                 }
             },
             {
-                "name": "command_event_with_text",
-                "inputs": {},
-                "options": {
-                    "command_name": "syncfrontdebug",
-                    "custom_prefix": "",
-                    "command_restriction": "none",
-                    "required_member_permission": "none",
-                    "command_slowmode_restriction": "none"
-                },
-                "outputs": {
-                    "action1": [
-                        "63NBgO0hBO"
-                    ],
-                    "action2": [],
-                    "message": [],
-                    "server": [],
-                    "channel": [],
-                    "vc": [],
-                    "user": [],
-                    "member": [],
-                    "error_message": []
-                },
-                "info": {
-                    "x": 590,
-                    "y": 0,
-                    "z": 0,
-                    "width": 320,
-                    "height": 294,
-                    "color": ""
-                }
-            },
-            {
                 "name": "merge_actions",
                 "inputs": {
                     "action": [
@@ -2570,8 +2538,8 @@
                     ]
                 },
                 "info": {
-                    "x": 2240,
-                    "y": 150,
+                    "x": 2230,
+                    "y": 170,
                     "z": 0,
                     "width": 451,
                     "height": 138,
@@ -2881,8 +2849,8 @@
                     "action2": []
                 },
                 "info": {
-                    "x": 2770,
-                    "y": 940,
+                    "x": 2790,
+                    "y": 870,
                     "z": 0,
                     "width": 476,
                     "height": 171,
@@ -3968,52 +3936,6 @@
         },
         "blocks": [
             {
-                "name": "command_event_with_text",
-                "inputs": {},
-                "options": {
-                    "command_name": "reloadalters",
-                    "custom_prefix": "",
-                    "command_restriction": "none",
-                    "required_member_permission": "administrator",
-                    "command_slowmode_restriction": "none"
-                },
-                "outputs": {
-                    "action1": [
-                        "0JdVJixXfn"
-                    ],
-                    "action2": [],
-                    "message": [],
-                    "server": [
-                        "R0Ajn6V31S",
-                        "JZ6vf31kH2",
-                        "W4PSS1mnQA",
-                        "gpQ6W3Si4h"
-                    ],
-                    "channel": [
-                        "31Fx8beuvU",
-                        "XD0W4fu6XD",
-                        "lxbpbcEhTr"
-                    ],
-                    "vc": [],
-                    "user": [
-                        "2POsKvz1CL",
-                        "idepyQ4VUf"
-                    ],
-                    "member": [
-                        "qQmZQJOvPd"
-                    ],
-                    "error_message": []
-                },
-                "info": {
-                    "x": 20,
-                    "y": 30,
-                    "z": 0,
-                    "width": 580,
-                    "height": 550,
-                    "color": ""
-                }
-            },
-            {
                 "name": "get_server_info",
                 "inputs": {
                     "action": "0JdVJixXfn",
@@ -4973,8 +4895,8 @@
                     ]
                 },
                 "info": {
-                    "x": 4000,
-                    "y": 180,
+                    "x": 4030,
+                    "y": 50,
                     "z": 0,
                     "width": 276,
                     "height": 117,
@@ -5726,8 +5648,220 @@
                     "x": 6242,
                     "y": 1592,
                     "z": 0,
-                    "width": 360,
-                    "height": 113,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "interaction_event",
+                "inputs": {},
+                "options": {
+                    "type": "slash",
+                    "id": "reloadalters",
+                    "sub": "",
+                    "group": "",
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "OLgO0rHNMQ"
+                    ],
+                    "user": [
+                        "2POsKvz1CL",
+                        "idepyQ4VUf"
+                    ],
+                    "member": [
+                        "uHQoV5NwnQ",
+                        "qQmZQJOvPd"
+                    ],
+                    "server": [
+                        "R0Ajn6V31S",
+                        "JZ6vf31kH2",
+                        "gpQ6W3Si4h",
+                        "W4PSS1mnQA"
+                    ],
+                    "channel": [
+                        "31Fx8beuvU",
+                        "XD0W4fu6XD",
+                        "lxbpbcEhTr"
+                    ],
+                    "message": [],
+                    "interaction": [
+                        "wZXExMeWlt",
+                        "s89Cj6H5A8",
+                        "M6Us0mjdn6"
+                    ],
+                    "args": [],
+                    "name": [],
+                    "menuvalues": [],
+                    "subcommandname": [],
+                    "subcommandgroup": []
+                },
+                "info": {
+                    "x": 0,
+                    "y": 651.2857055664062,
+                    "z": 0,
+                    "width": 366,
+                    "height": 396,
+                    "color": ""
+                }
+            },
+            {
+                "name": "reply_interaction",
+                "inputs": {
+                    "action": "sMmXhSVd00",
+                    "interaction": "s89Cj6H5A8",
+                    "message": "S6Wtmk7tak",
+                    "embeds": "PTUnDRP0zh",
+                    "row1": "64Q6hzXGxW",
+                    "row2": "1YO5yq1Zzs",
+                    "row3": "JjfLxbRgdM",
+                    "row4": "8QrtfCdXbr",
+                    "row5": "FfgSFZLzsp",
+                    "attachment": "nKbQPcMu2q"
+                },
+                "options": {
+                    "response": "reply",
+                    "private": "true"
+                },
+                "outputs": {
+                    "action": [],
+                    "interaction": [],
+                    "message": []
+                },
+                "info": {
+                    "x": 430,
+                    "y": 990,
+                    "z": 0,
+                    "width": 420,
+                    "height": 320,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "Done!"
+                },
+                "outputs": {
+                    "text": [
+                        "S6Wtmk7tak"
+                    ]
+                },
+                "info": {
+                    "x": 40,
+                    "y": 1071.2857055664062,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_permissions",
+                "inputs": {
+                    "action": "D8BcclFh18",
+                    "permissions": "Qepe3P6RSc"
+                },
+                "options": {
+                    "permission": "administrator"
+                },
+                "outputs": {
+                    "action1": [
+                        "sMmXhSVd00"
+                    ],
+                    "action2": [
+                        "c1U0iPyOHG"
+                    ]
+                },
+                "info": {
+                    "x": 430,
+                    "y": 800,
+                    "z": 0,
+                    "width": 438,
+                    "height": 160,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_member_info",
+                "inputs": {
+                    "action": "OLgO0rHNMQ",
+                    "member": "uHQoV5NwnQ"
+                },
+                "options": {
+                    "member_info": "19"
+                },
+                "outputs": {
+                    "action": [
+                        "D8BcclFh18"
+                    ],
+                    "result": [
+                        "Qepe3P6RSc"
+                    ]
+                },
+                "info": {
+                    "x": 460,
+                    "y": 650,
+                    "z": 0,
+                    "width": 355,
+                    "height": 160,
+                    "color": ""
+                }
+            },
+            {
+                "name": "reply_interaction",
+                "inputs": {
+                    "action": "c1U0iPyOHG",
+                    "interaction": "M6Us0mjdn6",
+                    "message": "HukrMRD5cS",
+                    "embeds": "WMJmi5fE4m",
+                    "row1": "OcVZBi2FeZ",
+                    "row2": "AoyA7n1Yd6",
+                    "row3": "OIwfVKxOBv",
+                    "row4": "pg309Pz4OR",
+                    "row5": "EtxMuAevbm",
+                    "attachment": "6w4O2KWyA2"
+                },
+                "options": {
+                    "response": "reply",
+                    "private": "true"
+                },
+                "outputs": {
+                    "action": [
+                        "0JdVJixXfn"
+                    ],
+                    "interaction": [],
+                    "message": []
+                },
+                "info": {
+                    "x": 440,
+                    "y": 1330,
+                    "z": 0,
+                    "width": 420,
+                    "height": 320,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "You do not have permission to use this command."
+                },
+                "outputs": {
+                    "text": [
+                        "HukrMRD5cS"
+                    ]
+                },
+                "info": {
+                    "x": 0,
+                    "y": 1190,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
                     "color": ""
                 }
             }
@@ -5789,82 +5923,6 @@
             "thumbnail": ""
         },
         "blocks": [
-            {
-                "name": "command_event_with_text",
-                "inputs": {},
-                "options": {
-                    "command_name": "setupsys",
-                    "custom_prefix": "",
-                    "command_restriction": "none",
-                    "required_member_permission": "administrator",
-                    "command_slowmode_restriction": "none"
-                },
-                "outputs": {
-                    "action1": [
-                        "wFkYU8taE2"
-                    ],
-                    "action2": [],
-                    "message": [
-                        "zprvErvNxx"
-                    ],
-                    "server": [
-                        "xtNr6uKCS1"
-                    ],
-                    "channel": [
-                        "ZelNuUZKaj"
-                    ],
-                    "vc": [],
-                    "user": [],
-                    "member": [],
-                    "error_message": []
-                },
-                "info": {
-                    "x": 1560,
-                    "y": 40,
-                    "z": 0,
-                    "width": 500,
-                    "height": 380,
-                    "color": ""
-                }
-            },
-            {
-                "name": "command_event_with_text",
-                "inputs": {},
-                "options": {
-                    "command_name": "setupfronter",
-                    "custom_prefix": "",
-                    "command_restriction": "none",
-                    "required_member_permission": "administrator",
-                    "command_slowmode_restriction": "none"
-                },
-                "outputs": {
-                    "action1": [
-                        "NnfoxbnpKI"
-                    ],
-                    "action2": [],
-                    "message": [
-                        "deof8NQSKl"
-                    ],
-                    "server": [
-                        "px04DXO3M5",
-                        "0h66T1npfD",
-                        "6Qq8w5zSzy"
-                    ],
-                    "channel": [],
-                    "vc": [],
-                    "user": [],
-                    "member": [],
-                    "error_message": []
-                },
-                "info": {
-                    "x": 60,
-                    "y": 700,
-                    "z": 0,
-                    "width": 500,
-                    "height": 410,
-                    "color": ""
-                }
-            },
             {
                 "name": "command_event_with_text",
                 "inputs": {},
@@ -6050,34 +6108,6 @@
                 }
             },
             {
-                "name": "get_message_arguments",
-                "inputs": {
-                    "action": "wFkYU8taE2",
-                    "message": "zprvErvNxx",
-                    "argument_number": "wcTToC8jvn",
-                    "custom_argument_separator": "WJuD8zjz7h"
-                },
-                "options": {
-                    "argument_type": "one_argument"
-                },
-                "outputs": {
-                    "action": [
-                        "tjfEV1yloy"
-                    ],
-                    "result": [
-                        "WlC410kuWG"
-                    ]
-                },
-                "info": {
-                    "x": 2650,
-                    "y": 0,
-                    "z": 0,
-                    "width": 430,
-                    "height": 204,
-                    "color": ""
-                }
-            },
-            {
                 "name": "write_file",
                 "inputs": {
                     "action": "QNg8QPBvMz",
@@ -6093,8 +6123,8 @@
                     ]
                 },
                 "info": {
-                    "x": 4090,
-                    "y": 80,
+                    "x": 5560,
+                    "y": 40,
                     "z": 0,
                     "width": 398,
                     "height": 138,
@@ -6126,8 +6156,8 @@
                     "error": []
                 },
                 "info": {
-                    "x": 4540,
-                    "y": 200,
+                    "x": 5560,
+                    "y": 230,
                     "z": 0,
                     "width": 415,
                     "height": 372,
@@ -6152,8 +6182,8 @@
                     ]
                 },
                 "info": {
-                    "x": 3220,
-                    "y": 0,
+                    "x": 4710,
+                    "y": 20,
                     "z": 0,
                     "width": 345,
                     "height": 160,
@@ -6180,39 +6210,11 @@
                     ]
                 },
                 "info": {
-                    "x": 3670,
-                    "y": 10,
+                    "x": 5110,
+                    "y": 30,
                     "z": 0,
                     "width": 364,
                     "height": 164,
-                    "color": ""
-                }
-            },
-            {
-                "name": "get_message_arguments",
-                "inputs": {
-                    "action": "NnfoxbnpKI",
-                    "message": "deof8NQSKl",
-                    "argument_number": "2SfA35gzl8",
-                    "custom_argument_separator": "6C1htWNGsl"
-                },
-                "options": {
-                    "argument_type": "one_argument"
-                },
-                "outputs": {
-                    "action": [
-                        "GO5y3yPX0C"
-                    ],
-                    "result": [
-                        "7GEWD2SGCd"
-                    ]
-                },
-                "info": {
-                    "x": 740,
-                    "y": 760,
-                    "z": 0,
-                    "width": 430,
-                    "height": 204,
                     "color": ""
                 }
             },
@@ -6237,8 +6239,8 @@
                     ]
                 },
                 "info": {
-                    "x": 1390,
-                    "y": 800,
+                    "x": 1420,
+                    "y": 810,
                     "z": 0,
                     "width": 276,
                     "height": 202,
@@ -6328,40 +6330,6 @@
                     "z": 0,
                     "width": 400,
                     "height": 150,
-                    "color": ""
-                }
-            },
-            {
-                "name": "command_event_with_text",
-                "inputs": {},
-                "options": {
-                    "command_name": "help",
-                    "custom_prefix": "",
-                    "command_restriction": "none",
-                    "required_member_permission": "none",
-                    "command_slowmode_restriction": "none"
-                },
-                "outputs": {
-                    "action1": [
-                        "gBWxbjMCKs"
-                    ],
-                    "action2": [],
-                    "message": [],
-                    "server": [],
-                    "channel": [
-                        "xpkrV0W996"
-                    ],
-                    "vc": [],
-                    "user": [],
-                    "member": [],
-                    "error_message": []
-                },
-                "info": {
-                    "x": 70,
-                    "y": 2640,
-                    "z": 0,
-                    "width": 550,
-                    "height": 400,
                     "color": ""
                 }
             },
@@ -6460,7 +6428,7 @@
                 "options": {
                     "position_type": "last",
                     "field_name": "Setup",
-                    "field_value": "To setup your system you use the command:\n&setupsys xxxxx\nReplace the xxxxx with your system ID.\n\nTo setup your fronter channel you use the command:\n&setupfronter name\nReplace name with the name for the channel",
+                    "field_value": "To setup your system you use the command:\n/setupsys xxxxxx\nReplace the xxxxxx with your system ID.\n\nTo setup your fronter channel you use the command:\n/setupfronter name\nReplace name with the name for the channel category.",
                     "field_inline": "false",
                     "custom_position": 0
                 },
@@ -6485,7 +6453,7 @@
                 "name": "text",
                 "inputs": {},
                 "options": {
-                    "text": "ValkyriaBot™ Version: 6.1.2\nDM Companion Version: 2.2.0"
+                    "text": "PK DM Server Companion Version: 3.0.0"
                 },
                 "outputs": {
                     "text": [
@@ -6515,7 +6483,7 @@
                 "options": {
                     "position_type": "last",
                     "field_name": "Alter roles",
-                    "field_value": "Want pingable roles for your alters?\nUse &reloadalters\n\nBeware, its going to take a while to create and refresh the roles. Please be patient.\n\nBeware, DIscord has a max of 250 roles per server. If you have more members than that, it won't work.",
+                    "field_value": "Want pingable roles for your alters?\nUse /reloadalters\n\nBeware, its going to take a while to create and refresh the roles. Please be patient.\n\nBeware, DIscord has a max of 250 roles per server. If you have more members than that, it won't work.",
                     "field_inline": "false",
                     "custom_position": 0
                 },
@@ -6673,7 +6641,7 @@
                     "text3": "HpgHPM1Ayp"
                 },
                 "options": {
-                    "text": "&help | In ${text1} servers"
+                    "text": "/help | In ${text1} servers"
                 },
                 "outputs": {
                     "action": [
@@ -7297,6 +7265,575 @@
                     "z": 0,
                     "width": 256,
                     "height": 112,
+                    "color": ""
+                }
+            },
+            {
+                "name": "interaction_event",
+                "inputs": {},
+                "options": {
+                    "type": "slash",
+                    "id": "help",
+                    "sub": "",
+                    "group": "",
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "3x8quxbPrx"
+                    ],
+                    "user": [],
+                    "member": [],
+                    "server": [],
+                    "channel": [
+                        "xpkrV0W996"
+                    ],
+                    "message": [],
+                    "interaction": [
+                        "RMKdXi3z70"
+                    ],
+                    "args": [],
+                    "name": [],
+                    "menuvalues": [],
+                    "subcommandname": [],
+                    "subcommandgroup": []
+                },
+                "info": {
+                    "x": 150,
+                    "y": 2650,
+                    "z": 0,
+                    "width": 366,
+                    "height": 396,
+                    "color": ""
+                }
+            },
+            {
+                "name": "register_slash_commands",
+                "inputs": {},
+                "options": {
+                    "text": "{\n  \"name\": \"help\",\n  \"description\": \"Shows you the help page\",\n  \"options\": []\n},\n{\n  \"name\": \"setupsys\",\n  \"description\": \"Link your system to your server\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"systemid\",\n      \"description\": \"The 5 or 6 letter ID of your system\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"setupfronter\",\n  \"description\": \"Create a category for your fronters to be in.\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"name\",\n      \"description\": \"The name you want your category to have. e.g. Fronters\",\n      \"required\": true\n    }\n  ]\n}"
+                },
+                "outputs": {},
+                "info": {
+                    "x": 2910,
+                    "y": 3400,
+                    "z": 0,
+                    "width": 790,
+                    "height": 1080,
+                    "color": ""
+                }
+            },
+            {
+                "name": "interaction_event",
+                "inputs": {},
+                "options": {
+                    "type": "slash",
+                    "id": "setupsys",
+                    "sub": "",
+                    "group": "",
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "tkm4qA1O9S"
+                    ],
+                    "user": [],
+                    "member": [
+                        "uHQoV5NwnQ"
+                    ],
+                    "server": [
+                        "xtNr6uKCS1"
+                    ],
+                    "channel": [
+                        "ZelNuUZKaj"
+                    ],
+                    "message": [],
+                    "interaction": [
+                        "wZXExMeWlt",
+                        "s89Cj6H5A8",
+                        "M6Us0mjdn6"
+                    ],
+                    "args": [],
+                    "name": [],
+                    "menuvalues": [],
+                    "subcommandname": [],
+                    "subcommandgroup": []
+                },
+                "info": {
+                    "x": 3220,
+                    "y": 50,
+                    "z": 0,
+                    "width": 366,
+                    "height": 396,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_interaction_argument_by_name",
+                "inputs": {
+                    "action": "tkm4qA1O9S",
+                    "interaction": "wZXExMeWlt",
+                    "name": "njyEPZVpDf"
+                },
+                "options": {
+                    "name": "systemid",
+                    "get": "string"
+                },
+                "outputs": {
+                    "action": [
+                        "OLgO0rHNMQ"
+                    ],
+                    "output": [
+                        "WlC410kuWG"
+                    ]
+                },
+                "info": {
+                    "x": 3710,
+                    "y": 100,
+                    "z": 0,
+                    "width": 434,
+                    "height": 169,
+                    "color": ""
+                }
+            },
+            {
+                "name": "reply_interaction",
+                "inputs": {
+                    "action": "3x8quxbPrx",
+                    "interaction": "RMKdXi3z70",
+                    "message": "teUUZupsn9",
+                    "embeds": "wbKqWMPPxK",
+                    "row1": "UftOzmkLmG",
+                    "row2": "tKh5GPort0",
+                    "row3": "DYabu5PQIZ",
+                    "row4": "jA6RjuCVLd",
+                    "row5": "9it7Md5POF",
+                    "attachment": "btCSR6XlwH"
+                },
+                "options": {
+                    "response": "reply",
+                    "private": "true"
+                },
+                "outputs": {
+                    "action": [
+                        "gBWxbjMCKs"
+                    ],
+                    "interaction": [],
+                    "message": []
+                },
+                "info": {
+                    "x": 590,
+                    "y": 2860,
+                    "z": 0,
+                    "width": 420,
+                    "height": 320,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "Done!"
+                },
+                "outputs": {
+                    "text": [
+                        "teUUZupsn9"
+                    ]
+                },
+                "info": {
+                    "x": 260,
+                    "y": 3060,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "reply_interaction",
+                "inputs": {
+                    "action": "sMmXhSVd00",
+                    "interaction": "s89Cj6H5A8",
+                    "message": "S6Wtmk7tak",
+                    "embeds": "PTUnDRP0zh",
+                    "row1": "64Q6hzXGxW",
+                    "row2": "1YO5yq1Zzs",
+                    "row3": "JjfLxbRgdM",
+                    "row4": "8QrtfCdXbr",
+                    "row5": "FfgSFZLzsp",
+                    "attachment": "nKbQPcMu2q"
+                },
+                "options": {
+                    "response": "reply",
+                    "private": "true"
+                },
+                "outputs": {
+                    "action": [
+                        "tjfEV1yloy"
+                    ],
+                    "interaction": [],
+                    "message": []
+                },
+                "info": {
+                    "x": 5090,
+                    "y": 220,
+                    "z": 0,
+                    "width": 420,
+                    "height": 320,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "Command executed succesfully. Please check output."
+                },
+                "outputs": {
+                    "text": [
+                        "S6Wtmk7tak"
+                    ]
+                },
+                "info": {
+                    "x": 4760,
+                    "y": 200,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_permissions",
+                "inputs": {
+                    "action": "D8BcclFh18",
+                    "permissions": "Qepe3P6RSc"
+                },
+                "options": {
+                    "permission": "administrator"
+                },
+                "outputs": {
+                    "action1": [
+                        "sMmXhSVd00"
+                    ],
+                    "action2": [
+                        "c1U0iPyOHG"
+                    ]
+                },
+                "info": {
+                    "x": 4490,
+                    "y": 320,
+                    "z": 0,
+                    "width": 438,
+                    "height": 160,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_member_info",
+                "inputs": {
+                    "action": "OLgO0rHNMQ",
+                    "member": "uHQoV5NwnQ"
+                },
+                "options": {
+                    "member_info": "19"
+                },
+                "outputs": {
+                    "action": [
+                        "D8BcclFh18"
+                    ],
+                    "result": [
+                        "Qepe3P6RSc"
+                    ]
+                },
+                "info": {
+                    "x": 4250,
+                    "y": 110,
+                    "z": 0,
+                    "width": 355,
+                    "height": 160,
+                    "color": ""
+                }
+            },
+            {
+                "name": "reply_interaction",
+                "inputs": {
+                    "action": "c1U0iPyOHG",
+                    "interaction": "M6Us0mjdn6",
+                    "message": "HukrMRD5cS",
+                    "embeds": "WMJmi5fE4m",
+                    "row1": "OcVZBi2FeZ",
+                    "row2": "AoyA7n1Yd6",
+                    "row3": "OIwfVKxOBv",
+                    "row4": "pg309Pz4OR",
+                    "row5": "EtxMuAevbm",
+                    "attachment": "6w4O2KWyA2"
+                },
+                "options": {
+                    "response": "reply",
+                    "private": "true"
+                },
+                "outputs": {
+                    "action": [],
+                    "interaction": [],
+                    "message": []
+                },
+                "info": {
+                    "x": 5080,
+                    "y": 540,
+                    "z": 0,
+                    "width": 420,
+                    "height": 320,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "You do not have permission to use this command."
+                },
+                "outputs": {
+                    "text": [
+                        "HukrMRD5cS"
+                    ]
+                },
+                "info": {
+                    "x": 4710,
+                    "y": 620,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "interaction_event",
+                "inputs": {},
+                "options": {
+                    "type": "slash",
+                    "id": "setupfronter",
+                    "sub": "",
+                    "group": "",
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "rh2P0HGYHX"
+                    ],
+                    "user": [],
+                    "member": [
+                        "ggR5OAvCL6"
+                    ],
+                    "server": [
+                        "px04DXO3M5",
+                        "0h66T1npfD",
+                        "6Qq8w5zSzy"
+                    ],
+                    "channel": [],
+                    "message": [],
+                    "interaction": [
+                        "XQNHcKT4q3",
+                        "r6IFdfJygP",
+                        "n4xjSXNEww"
+                    ],
+                    "args": [],
+                    "name": [],
+                    "menuvalues": [],
+                    "subcommandname": [],
+                    "subcommandgroup": []
+                },
+                "info": {
+                    "x": 1479.0625915527344,
+                    "y": 0,
+                    "z": 0,
+                    "width": 366,
+                    "height": 396,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_interaction_argument_by_name",
+                "inputs": {
+                    "action": "rh2P0HGYHX",
+                    "interaction": "XQNHcKT4q3",
+                    "name": "nh9ZpUmwZ2"
+                },
+                "options": {
+                    "name": "categoryname",
+                    "get": "string"
+                },
+                "outputs": {
+                    "action": [
+                        "ymcIsYxAVx"
+                    ],
+                    "output": [
+                        "7GEWD2SGCd"
+                    ]
+                },
+                "info": {
+                    "x": 1999.0625915527344,
+                    "y": 10,
+                    "z": 0,
+                    "width": 434,
+                    "height": 169,
+                    "color": ""
+                }
+            },
+            {
+                "name": "reply_interaction",
+                "inputs": {
+                    "action": "UDP0lJ6Cs8",
+                    "interaction": "r6IFdfJygP",
+                    "message": "OzkIvF1WOV",
+                    "embeds": "oziy7c470C",
+                    "row1": "y4ifiQmO9H",
+                    "row2": "vjXVo9JyS2",
+                    "row3": "Dg71ofZcEb",
+                    "row4": "gexxkBPUd5",
+                    "row5": "MMYXeliy0Z",
+                    "attachment": "icnZqf3XL1"
+                },
+                "options": {
+                    "response": "reply",
+                    "private": "true"
+                },
+                "outputs": {
+                    "action": [],
+                    "interaction": [],
+                    "message": []
+                },
+                "info": {
+                    "x": 2019.0625915527344,
+                    "y": 290,
+                    "z": 0,
+                    "width": 420,
+                    "height": 320,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "Command executed succesfully. Please check output."
+                },
+                "outputs": {
+                    "text": [
+                        "OzkIvF1WOV"
+                    ]
+                },
+                "info": {
+                    "x": 1519.0625915527344,
+                    "y": 420,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_permissions",
+                "inputs": {
+                    "action": "WjAYhKco8p",
+                    "permissions": "1cuESJKgo9"
+                },
+                "options": {
+                    "permission": "administrator"
+                },
+                "outputs": {
+                    "action1": [
+                        "UDP0lJ6Cs8"
+                    ],
+                    "action2": [
+                        "FzwEG9OTZL"
+                    ]
+                },
+                "info": {
+                    "x": 2509.0625915527344,
+                    "y": 240,
+                    "z": 0,
+                    "width": 438,
+                    "height": 160,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_member_info",
+                "inputs": {
+                    "action": "ymcIsYxAVx",
+                    "member": "ggR5OAvCL6"
+                },
+                "options": {
+                    "member_info": "19"
+                },
+                "outputs": {
+                    "action": [
+                        "WjAYhKco8p"
+                    ],
+                    "result": [
+                        "1cuESJKgo9"
+                    ]
+                },
+                "info": {
+                    "x": 2519.0625915527344,
+                    "y": 30,
+                    "z": 0,
+                    "width": 355,
+                    "height": 160,
+                    "color": ""
+                }
+            },
+            {
+                "name": "reply_interaction",
+                "inputs": {
+                    "action": "FzwEG9OTZL",
+                    "interaction": "n4xjSXNEww",
+                    "message": "h2v92nEyDe",
+                    "embeds": "3alxS2p9QX",
+                    "row1": "GJhHNOMrT7",
+                    "row2": "EZzB91B4at",
+                    "row3": "LWhuY3JlI5",
+                    "row4": "PS31fUkLzl",
+                    "row5": "fXDDYQ3BgM",
+                    "attachment": "mEdzpmHICR"
+                },
+                "options": {
+                    "response": "reply",
+                    "private": "true"
+                },
+                "outputs": {
+                    "action": [],
+                    "interaction": [],
+                    "message": []
+                },
+                "info": {
+                    "x": 2509.0625915527344,
+                    "y": 440,
+                    "z": 0,
+                    "width": 420,
+                    "height": 320,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "You do not have permission to use this command."
+                },
+                "outputs": {
+                    "text": [
+                        "h2v92nEyDe"
+                    ]
+                },
+                "info": {
+                    "x": 1809.0625915527344,
+                    "y": 410,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
                     "color": ""
                 }
             }
