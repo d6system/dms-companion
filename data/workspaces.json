@@ -5726,7 +5726,9 @@
                     "private": "true"
                 },
                 "outputs": {
-                    "action": [],
+                    "action": [
+                        "0JdVJixXfn"
+                    ],
                     "interaction": [],
                     "message": []
                 },
@@ -5830,9 +5832,7 @@
                     "private": "true"
                 },
                 "outputs": {
-                    "action": [
-                        "0JdVJixXfn"
-                    ],
+                    "action": [],
                     "interaction": [],
                     "message": []
                 },
@@ -6453,7 +6453,7 @@
                 "name": "text",
                 "inputs": {},
                 "options": {
-                    "text": "PK DM Server Companion Version: 3.0.1"
+                    "text": "PK DM Server Companion Version: 3.0.2"
                 },
                 "outputs": {
                     "text": [
