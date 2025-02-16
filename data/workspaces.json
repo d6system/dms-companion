@@ -1,5 +1,913 @@
 [
     {
+        "id": "fLKOl4srZb",
+        "active": true,
+        "info": {
+            "title": "Debug",
+            "description": "",
+            "thumbnail": ""
+        },
+        "blocks": [
+            {
+                "name": "bot_input",
+                "inputs": {},
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "Eb8hSQ2N8l"
+                    ],
+                    "value": [
+                        "j0pABIRFrf",
+                        "Ek7fJlUWPN",
+                        "ID93wCzBuI",
+                        "2mcs0xVWNc",
+                        "8XJ2t6ozzg",
+                        "nc0tEZhq8D",
+                        "BMyWtQyvxQ",
+                        "C1v4IDyyxT",
+                        "Fau8dGhbIj",
+                        "mTUPQ5Jr5Z",
+                        "iNVOJF3OHp"
+                    ]
+                },
+                "info": {
+                    "x": 90,
+                    "y": 30,
+                    "z": 0,
+                    "width": 228,
+                    "height": 112,
+                    "color": ""
+                }
+            },
+            {
+                "name": "stop_bot",
+                "inputs": {
+                    "action": "4qKyrz2l5t"
+                },
+                "options": {},
+                "outputs": {},
+                "info": {
+                    "x": 2370,
+                    "y": 240,
+                    "z": 0,
+                    "width": 122,
+                    "height": 86,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "Eb8hSQ2N8l",
+                    "value1": "j0pABIRFrf",
+                    "value2": "ire2crwMLo"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "reload"
+                },
+                "outputs": {
+                    "action1": [
+                        "1r2NyXaVoc"
+                    ],
+                    "action2": [
+                        "6rMLjjUb3U"
+                    ]
+                },
+                "info": {
+                    "x": 40,
+                    "y": 210,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "set_bot_activity",
+                "inputs": {
+                    "action": "1r2NyXaVoc",
+                    "activity_name": "JlMYlnK7j9",
+                    "activity_url": "F2AtuC0XVa"
+                },
+                "options": {
+                    "activity_type": "playing"
+                },
+                "outputs": {
+                    "action": [
+                        "klxCi8zSHU"
+                    ]
+                },
+                "info": {
+                    "x": 780,
+                    "y": 200,
+                    "z": 0,
+                    "width": 400,
+                    "height": 150,
+                    "color": ""
+                }
+            },
+            {
+                "name": "wait_with_number",
+                "inputs": {
+                    "action": "DUfH0XQbdV"
+                },
+                "options": {
+                    "time_type": "seconds",
+                    "time": 5
+                },
+                "outputs": {
+                    "action": [
+                        "toS6YvcYok"
+                    ]
+                },
+                "info": {
+                    "x": 1580,
+                    "y": 180,
+                    "z": 0,
+                    "width": 376,
+                    "height": 156,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "Restarting, brb!"
+                },
+                "outputs": {
+                    "text": [
+                        "JlMYlnK7j9"
+                    ]
+                },
+                "info": {
+                    "x": 900,
+                    "y": 80,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "klxCi8zSHU",
+                    "value": "yw5GRR1LFr"
+                },
+                "options": {
+                    "value": "[bot] Restarting, brb!"
+                },
+                "outputs": {
+                    "action": [
+                        "DUfH0XQbdV"
+                    ]
+                },
+                "info": {
+                    "x": 1200,
+                    "y": 220,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "toS6YvcYok",
+                    "value": "9cm5Bal26M"
+                },
+                "options": {
+                    "value": "[bot] Server shut down succesfully!"
+                },
+                "outputs": {
+                    "action": [
+                        "4qKyrz2l5t"
+                    ]
+                },
+                "info": {
+                    "x": 1970,
+                    "y": 210,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "replace_text",
+                "inputs": {
+                    "action": "YdepauUxBG",
+                    "source_text": "ID93wCzBuI",
+                    "old_text": "dkrxB9BoBt",
+                    "new_text": "F8deyUsHDx"
+                },
+                "options": {
+                    "replacement_type": "first"
+                },
+                "outputs": {
+                    "action": [
+                        "zrNG9xQWEX"
+                    ],
+                    "text": [
+                        "GRxZAOnXZl"
+                    ]
+                },
+                "info": {
+                    "x": 1000,
+                    "y": 410,
+                    "z": 0,
+                    "width": 345,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "6rMLjjUb3U",
+                    "value1": "Ek7fJlUWPN",
+                    "value2": "Jg4Q6jnLQX"
+                },
+                "options": {
+                    "comparison_type": "start_with",
+                    "value2": "setstatus"
+                },
+                "outputs": {
+                    "action1": [
+                        "YdepauUxBG"
+                    ],
+                    "action2": [
+                        "1ZZJJP2vMg"
+                    ]
+                },
+                "info": {
+                    "x": 40,
+                    "y": 410,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text_2x",
+                "inputs": {},
+                "options": {
+                    "text1": "setstatus ",
+                    "text2": ""
+                },
+                "outputs": {
+                    "text1": [
+                        "dkrxB9BoBt"
+                    ],
+                    "text2": [
+                        "F8deyUsHDx"
+                    ]
+                },
+                "info": {
+                    "x": 630,
+                    "y": 520,
+                    "z": 0,
+                    "width": 287,
+                    "height": 182,
+                    "color": ""
+                }
+            },
+            {
+                "name": "set_bot_activity",
+                "inputs": {
+                    "action": "zrNG9xQWEX",
+                    "activity_name": "GRxZAOnXZl",
+                    "activity_url": "fuHwKyKAHv"
+                },
+                "options": {
+                    "activity_type": "playing"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 1400,
+                    "y": 470,
+                    "z": 0,
+                    "width": 400,
+                    "height": 150,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "1ZZJJP2vMg",
+                    "value1": "2mcs0xVWNc",
+                    "value2": "pZZhwQE93Q"
+                },
+                "options": {
+                    "comparison_type": "start_with",
+                    "value2": "checkcount"
+                },
+                "outputs": {
+                    "action1": [
+                        "qGRiUXvnRU"
+                    ],
+                    "action2": [
+                        "zXGVD7gDzK"
+                    ]
+                },
+                "info": {
+                    "x": 30,
+                    "y": 770,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "emitter",
+                "inputs": {
+                    "action": "qR87gFqMdm",
+                    "id": "Yv4lWVp6Wl",
+                    "search_value": "Rv7YUCWzZO",
+                    "values": [
+                        "RkcLhSjFgr"
+                    ]
+                },
+                "options": {
+                    "restriction_type": "all",
+                    "search_type": "id"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 1680,
+                    "y": 860,
+                    "z": 0,
+                    "width": 455,
+                    "height": 228,
+                    "color": ""
+                }
+            },
+            {
+                "name": "replace_text",
+                "inputs": {
+                    "action": "qGRiUXvnRU",
+                    "source_text": "8XJ2t6ozzg",
+                    "old_text": "oQJQf1dWWk",
+                    "new_text": "nR40rX87hI"
+                },
+                "options": {
+                    "replacement_type": "first"
+                },
+                "outputs": {
+                    "action": [
+                        "qR87gFqMdm"
+                    ],
+                    "text": []
+                },
+                "info": {
+                    "x": 1000,
+                    "y": 850,
+                    "z": 0,
+                    "width": 345,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text_2x",
+                "inputs": {},
+                "options": {
+                    "text1": "checkcount ",
+                    "text2": ""
+                },
+                "outputs": {
+                    "text1": [
+                        "oQJQf1dWWk"
+                    ],
+                    "text2": [
+                        "nR40rX87hI"
+                    ]
+                },
+                "info": {
+                    "x": 580,
+                    "y": 940,
+                    "z": 0,
+                    "width": 287,
+                    "height": 182,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "checkcount"
+                },
+                "outputs": {
+                    "text": [
+                        "Yv4lWVp6Wl"
+                    ]
+                },
+                "info": {
+                    "x": 1370,
+                    "y": 780,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "zXGVD7gDzK",
+                    "value1": "nc0tEZhq8D",
+                    "value2": "cG3Hto8Ah7"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "update"
+                },
+                "outputs": {
+                    "action1": [
+                        "UhNs7c23Je"
+                    ],
+                    "action2": [
+                        "WuxJIUqIc0"
+                    ]
+                },
+                "info": {
+                    "x": 80,
+                    "y": 1200,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "set_bot_activity",
+                "inputs": {
+                    "action": "UhNs7c23Je",
+                    "activity_name": "00qhS33lIp",
+                    "activity_url": "mNiRIrxoiR"
+                },
+                "options": {
+                    "activity_type": "playing"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 1060,
+                    "y": 1260,
+                    "z": 0,
+                    "width": 400,
+                    "height": 150,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "Updating code!"
+                },
+                "outputs": {
+                    "text": [
+                        "00qhS33lIp"
+                    ]
+                },
+                "info": {
+                    "x": 690,
+                    "y": 1340,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "WuxJIUqIc0",
+                    "value1": "BMyWtQyvxQ",
+                    "value2": "NEQB1RReja"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "loglevel front 1"
+                },
+                "outputs": {
+                    "action1": [
+                        "pSdhEh3GFc"
+                    ],
+                    "action2": [
+                        "xXNawDvUEY"
+                    ]
+                },
+                "info": {
+                    "x": 90,
+                    "y": 1560,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "xXNawDvUEY",
+                    "value1": "C1v4IDyyxT",
+                    "value2": "zGbBL6muTO"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "loglevel front 2"
+                },
+                "outputs": {
+                    "action1": [
+                        "yuERRodBcR"
+                    ],
+                    "action2": [
+                        "atcHPlcPUc"
+                    ]
+                },
+                "info": {
+                    "x": 90,
+                    "y": 1800,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "atcHPlcPUc",
+                    "value1": "Fau8dGhbIj",
+                    "value2": "iCGxuIhjpP"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "loglevel front 0"
+                },
+                "outputs": {
+                    "action1": [
+                        "YdhnyyoXBc"
+                    ],
+                    "action2": [
+                        "nOojPLfAjP"
+                    ]
+                },
+                "info": {
+                    "x": 100,
+                    "y": 2070,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "write_file",
+                "inputs": {
+                    "action": "pSdhEh3GFc",
+                    "file_path": "sqQsCdO6Dz",
+                    "content": "GzRygdf1Df"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "la6FF8Gjjl"
+                    ]
+                },
+                "info": {
+                    "x": 1080,
+                    "y": 1590,
+                    "z": 0,
+                    "width": 398,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "write_file",
+                "inputs": {
+                    "action": "yuERRodBcR",
+                    "file_path": "wqc6PttKcN",
+                    "content": "F8sUMZDHke"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "nAx9GVF27R"
+                    ]
+                },
+                "info": {
+                    "x": 1090,
+                    "y": 1850,
+                    "z": 0,
+                    "width": 398,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "delete_file_folder",
+                "inputs": {
+                    "action": "YdhnyyoXBc",
+                    "path": "njiZQQLhaB"
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "eG6LlrMFnL"
+                    ]
+                },
+                "info": {
+                    "x": 1100,
+                    "y": 2100,
+                    "z": 0,
+                    "width": 197,
+                    "height": 112,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text_3x",
+                "inputs": {},
+                "options": {
+                    "text1": "1",
+                    "text2": "2",
+                    "text3": "debug.txt"
+                },
+                "outputs": {
+                    "text1": [
+                        "GzRygdf1Df"
+                    ],
+                    "text2": [
+                        "F8sUMZDHke"
+                    ],
+                    "text3": [
+                        "njiZQQLhaB",
+                        "wqc6PttKcN",
+                        "sqQsCdO6Dz"
+                    ]
+                },
+                "info": {
+                    "x": 620,
+                    "y": 1730,
+                    "z": 0,
+                    "width": 287,
+                    "height": 247,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "la6FF8Gjjl",
+                    "value": "A03s4DIDsQ"
+                },
+                "options": {
+                    "value": "[front] Log set to level Debug1!"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 1620,
+                    "y": 1620,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "nAx9GVF27R",
+                    "value": "0ZxmsD7Uxr"
+                },
+                "options": {
+                    "value": "[front] Log set to level Debug2!"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 1640,
+                    "y": 1870,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "eG6LlrMFnL",
+                    "value": "ndUapZoUXU"
+                },
+                "options": {
+                    "value": "[front] Log disabled!"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 1640,
+                    "y": 2110,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "nOojPLfAjP",
+                    "value1": "mTUPQ5Jr5Z",
+                    "value2": "vdiszCHSki"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "loglevel roles 1"
+                },
+                "outputs": {
+                    "action1": [
+                        "LcEXORCdHL"
+                    ],
+                    "action2": [
+                        "LTXsFkZrkp"
+                    ]
+                },
+                "info": {
+                    "x": 100,
+                    "y": 2330,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text_2x",
+                "inputs": {},
+                "options": {
+                    "text1": "debugroles.txt",
+                    "text2": "1"
+                },
+                "outputs": {
+                    "text1": [
+                        "8VyeCBmd01",
+                        "k80QDdqYL9"
+                    ],
+                    "text2": [
+                        "8hUoyCaoW4"
+                    ]
+                },
+                "info": {
+                    "x": 630,
+                    "y": 2210,
+                    "z": 0,
+                    "width": 287,
+                    "height": 182,
+                    "color": ""
+                }
+            },
+            {
+                "name": "write_file",
+                "inputs": {
+                    "action": "LcEXORCdHL",
+                    "file_path": "8VyeCBmd01",
+                    "content": "8hUoyCaoW4"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "R7567NDrnj"
+                    ]
+                },
+                "info": {
+                    "x": 1140,
+                    "y": 2360,
+                    "z": 0,
+                    "width": 398,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "LTXsFkZrkp",
+                    "value1": "iNVOJF3OHp",
+                    "value2": "njCmmWQwYy"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "loglevel roles 0"
+                },
+                "outputs": {
+                    "action1": [
+                        "YpOlEBktY6"
+                    ],
+                    "action2": []
+                },
+                "info": {
+                    "x": 90,
+                    "y": 2570,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "R7567NDrnj",
+                    "value": "qq0HcyUABk"
+                },
+                "options": {
+                    "value": "[roles] Log set to level Debug1!"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 1640,
+                    "y": 2390,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "delete_file_folder",
+                "inputs": {
+                    "action": "YpOlEBktY6",
+                    "path": "k80QDdqYL9"
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "WUdtatnsap"
+                    ]
+                },
+                "info": {
+                    "x": 1250,
+                    "y": 2640,
+                    "z": 0,
+                    "width": 197,
+                    "height": 112,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "WUdtatnsap",
+                    "value": "Ps2bOYMkF2"
+                },
+                "options": {
+                    "value": "[roles] Log disabled!"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 1650,
+                    "y": 2640,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            }
+        ],
+        "notes": []
+    },
+    {
         "id": "v6hnFwrtcq",
         "active": true,
         "info": {
@@ -282,177 +1190,17 @@
                 }
             },
             {
-                "name": "bot_input",
+                "name": "register_slash_commands",
                 "inputs": {},
-                "options": {},
-                "outputs": {
-                    "action": [
-                        "Eb8hSQ2N8l"
-                    ],
-                    "value": [
-                        "j0pABIRFrf"
-                    ]
+                "options": {
+                    "text": ""
                 },
-                "info": {
-                    "x": 190,
-                    "y": 1120,
-                    "z": 0,
-                    "width": 228,
-                    "height": 112,
-                    "color": ""
-                }
-            },
-            {
-                "name": "stop_bot",
-                "inputs": {
-                    "action": "4qKyrz2l5t"
-                },
-                "options": {},
                 "outputs": {},
                 "info": {
-                    "x": 2940,
-                    "y": 1440,
+                    "x": 190,
+                    "y": 690,
                     "z": 0,
-                    "width": 122,
-                    "height": 86,
-                    "color": ""
-                }
-            },
-            {
-                "name": "check_comparison",
-                "inputs": {
-                    "action": "Eb8hSQ2N8l",
-                    "value1": "j0pABIRFrf",
-                    "value2": "ire2crwMLo"
-                },
-                "options": {
-                    "comparison_type": "equal",
-                    "value2": "reload"
-                },
-                "outputs": {
-                    "action1": [
-                        "1r2NyXaVoc"
-                    ],
-                    "action2": []
-                },
-                "info": {
-                    "x": 530,
-                    "y": 1100,
-                    "z": 0,
-                    "width": 476,
-                    "height": 171,
-                    "color": ""
-                }
-            },
-            {
-                "name": "set_bot_activity",
-                "inputs": {
-                    "action": "1r2NyXaVoc",
-                    "activity_name": "JlMYlnK7j9",
-                    "activity_url": "F2AtuC0XVa"
-                },
-                "options": {
-                    "activity_type": "playing"
-                },
-                "outputs": {
-                    "action": [
-                        "klxCi8zSHU"
-                    ]
-                },
-                "info": {
-                    "x": 1210,
-                    "y": 1175,
-                    "z": 0,
-                    "width": 400,
-                    "height": 150,
-                    "color": ""
-                }
-            },
-            {
-                "name": "wait_with_number",
-                "inputs": {
-                    "action": "DUfH0XQbdV"
-                },
-                "options": {
-                    "time_type": "seconds",
-                    "time": 5
-                },
-                "outputs": {
-                    "action": [
-                        "toS6YvcYok"
-                    ]
-                },
-                "info": {
-                    "x": 2090,
-                    "y": 1230,
-                    "z": 0,
-                    "width": 376,
-                    "height": 156,
-                    "color": ""
-                }
-            },
-            {
-                "name": "text",
-                "inputs": {},
-                "options": {
-                    "text": "Restarting, brb!"
-                },
-                "outputs": {
-                    "text": [
-                        "JlMYlnK7j9"
-                    ]
-                },
-                "info": {
-                    "x": 830,
-                    "y": 1300,
-                    "z": 0,
-                    "width": 276,
-                    "height": 117,
-                    "color": ""
-                }
-            },
-            {
-                "name": "console_log",
-                "inputs": {
-                    "action": "klxCi8zSHU",
-                    "value": "yw5GRR1LFr"
-                },
-                "options": {
-                    "value": "Restarting, brb!"
-                },
-                "outputs": {
-                    "action": [
-                        "DUfH0XQbdV"
-                    ]
-                },
-                "info": {
-                    "x": 1680,
-                    "y": 1240,
-                    "z": 0,
-                    "width": 364,
-                    "height": 117,
-                    "color": ""
-                }
-            },
-            {
-                "name": "console_log",
-                "inputs": {
-                    "action": "toS6YvcYok",
-                    "value": "9cm5Bal26M"
-                },
-                "options": {
-                    "value": "Server shut down succesfully!"
-                },
-                "outputs": {
-                    "action": [
-                        "4qKyrz2l5t"
-                    ]
-                },
-                "info": {
-                    "x": 2530,
-                    "y": 1280,
-                    "z": 0,
-                    "width": 364,
+                    "width": 235,
                     "height": 117,
                     "color": ""
                 }
@@ -826,15 +1574,16 @@
                 },
                 "outputs": {
                     "action": [
-                        "0356jD7MHh"
+                        "n4sgjOq40l"
                     ],
                     "result": [
-                        "dOnMurswEO"
+                        "dOnMurswEO",
+                        "jXGf19uYkD"
                     ]
                 },
                 "info": {
                     "x": 1270,
-                    "y": 150,
+                    "y": 210,
                     "z": 0,
                     "width": 343,
                     "height": 160,
@@ -872,12 +1621,12 @@
                 "options": {},
                 "outputs": {
                     "action": [
-                        "snKgC9MdHU"
+                        "KSL0S0I1Pd"
                     ]
                 },
                 "info": {
-                    "x": 1020,
-                    "y": 130,
+                    "x": 960,
+                    "y": 120,
                     "z": 0,
                     "width": 240,
                     "height": 112,
@@ -894,18 +1643,19 @@
                 "options": {},
                 "outputs": {
                     "action": [
-                        "egrRkR8vBg"
+                        "CkCwYIxG1S"
                     ],
                     "action2": [],
                     "index": [],
                     "value": [
                         "gdmV7m2SHn",
-                        "cbCZP3SZP4"
+                        "cbCZP3SZP4",
+                        "PsajEhNICa"
                     ]
                 },
                 "info": {
-                    "x": 1700,
-                    "y": 240,
+                    "x": 1190,
+                    "y": 430,
                     "z": 0,
                     "width": 319,
                     "height": 176,
@@ -927,13 +1677,12 @@
                     ],
                     "result": [
                         "0WIVbr4OMV",
-                        "QDk4w7rmek",
                         "sU5dFLKnbV"
                     ]
                 },
                 "info": {
-                    "x": 2126,
-                    "y": 322,
+                    "x": 1160,
+                    "y": 630,
                     "z": 0,
                     "width": 343,
                     "height": 160,
@@ -951,16 +1700,17 @@
                 },
                 "outputs": {
                     "action": [
-                        "NMmT6VLALE"
+                        "YetuxAOYJo"
                     ],
                     "action2": [],
                     "content": [
-                        "wiGV1kbP7d"
+                        "wiGV1kbP7d",
+                        "EFQGrvvJIn"
                     ]
                 },
                 "info": {
-                    "x": 2560,
-                    "y": 320,
+                    "x": 1540,
+                    "y": 670,
                     "z": 0,
                     "width": 451,
                     "height": 138,
@@ -983,13 +1733,12 @@
                     ],
                     "server": [
                         "FrREtc1YIx",
-                        "7pgFZtlEhI",
                         "CxlJUmX8Wt"
                     ]
                 },
                 "info": {
-                    "x": 2150,
-                    "y": 540,
+                    "x": 1120,
+                    "y": 810,
                     "z": 0,
                     "width": 437,
                     "height": 171,
@@ -1010,15 +1759,13 @@
                         "kh0GLSSLUz"
                     ],
                     "result": [
-                        "031btxqqfp",
-                        "Y4ZsC3axAE",
                         "odeVaOKzhZ",
                         "HDvqGkt9Fa"
                     ]
                 },
                 "info": {
-                    "x": 3630,
-                    "y": 580,
+                    "x": 820,
+                    "y": 1240,
                     "z": 0,
                     "width": 361,
                     "height": 160,
@@ -1047,8 +1794,8 @@
                     ]
                 },
                 "info": {
-                    "x": 2700,
-                    "y": 540,
+                    "x": 750,
+                    "y": 1000,
                     "z": 0,
                     "width": 505,
                     "height": 225,
@@ -1059,7 +1806,7 @@
                 "name": "number",
                 "inputs": {},
                 "options": {
-                    "number": 5000
+                    "number": 3000
                 },
                 "outputs": {
                     "number": [
@@ -1067,8 +1814,8 @@
                     ]
                 },
                 "info": {
-                    "x": 1320,
-                    "y": 360,
+                    "x": 670,
+                    "y": 750,
                     "z": 0,
                     "width": 312,
                     "height": 102,
@@ -1086,20 +1833,19 @@
                 },
                 "outputs": {
                     "action": [
-                        "dfNJR4x0GO"
+                        "u54sOWL2Zh"
                     ],
                     "action2": [
-                        "dIZ3oMCsvW"
+                        "XcfPD2kg0G"
                     ],
                     "content": [
                         "0TlVCge0L0",
-                        "dU5YjKDOq9",
-                        "HGUV7mAog7"
+                        "OGFgoQmqru"
                     ]
                 },
                 "info": {
-                    "x": 2520,
-                    "y": 850,
+                    "x": 1170,
+                    "y": 1660,
                     "z": 0,
                     "width": 451,
                     "height": 138,
@@ -1126,8 +1872,8 @@
                     ]
                 },
                 "info": {
-                    "x": 2060,
-                    "y": 770,
+                    "x": 750,
+                    "y": 1640,
                     "z": 0,
                     "width": 364,
                     "height": 164,
@@ -1151,13 +1897,12 @@
                         "ZpSOyJzSQd"
                     ],
                     "data": [
-                        "owxOI1XUsN",
                         "3A6fsXySOj"
                     ]
                 },
                 "info": {
-                    "x": 3530,
-                    "y": 870,
+                    "x": 750,
+                    "y": 2280,
                     "z": 0,
                     "width": 367,
                     "height": 164,
@@ -1177,15 +1922,15 @@
                 },
                 "outputs": {
                     "action": [
-                        "cn882UfnA0"
+                        "tNmbv4SStZ"
                     ],
                     "text": [
                         "dOtoQltjsA"
                     ]
                 },
                 "info": {
-                    "x": 3130,
-                    "y": 870,
+                    "x": 740,
+                    "y": 2050,
                     "z": 0,
                     "width": 364,
                     "height": 164,
@@ -1213,8 +1958,8 @@
                     ]
                 },
                 "info": {
-                    "x": 2220,
-                    "y": 1200,
+                    "x": 810,
+                    "y": 2490,
                     "z": 0,
                     "width": 319,
                     "height": 176,
@@ -1237,8 +1982,8 @@
                     ]
                 },
                 "info": {
-                    "x": 2290,
-                    "y": 1060,
+                    "x": 440,
+                    "y": 2510,
                     "z": 0,
                     "width": 197,
                     "height": 112,
@@ -1261,8 +2006,8 @@
                     ]
                 },
                 "info": {
-                    "x": 3270,
-                    "y": 520,
+                    "x": 1280,
+                    "y": 1030,
                     "z": 0,
                     "width": 197,
                     "height": 112,
@@ -1286,13 +2031,12 @@
                     ],
                     "index": [],
                     "value": [
-                        "MKe6pfsao2",
                         "GtSvPQjZfp"
                     ]
                 },
                 "info": {
-                    "x": 4080,
-                    "y": 580,
+                    "x": 1230,
+                    "y": 1240,
                     "z": 0,
                     "width": 319,
                     "height": 176,
@@ -1311,12 +2055,14 @@
                     "position_type": "last"
                 },
                 "outputs": {
-                    "action": [],
+                    "action": [
+                        "JCQwpgZy2C"
+                    ],
                     "list": []
                 },
                 "info": {
-                    "x": 4980,
-                    "y": 670,
+                    "x": 2030,
+                    "y": 1260,
                     "z": 0,
                     "width": 412,
                     "height": 176,
@@ -1335,16 +2081,16 @@
                 },
                 "outputs": {
                     "action": [
-                        "36Wc9WTgcv"
+                        "lV6Vmoru8s"
                     ],
                     "text": [
                         "vOSFd2QVOL",
-                        "doc9YCDz3i"
+                        "3FHu7yg4Iy"
                     ]
                 },
                 "info": {
-                    "x": 4070,
-                    "y": 800,
+                    "x": 770,
+                    "y": 1470,
                     "z": 0,
                     "width": 386,
                     "height": 138,
@@ -1363,12 +2109,14 @@
                     "position_type": "last"
                 },
                 "outputs": {
-                    "action": [],
+                    "action": [
+                        "xzzpcjBopu"
+                    ],
                     "list": []
                 },
                 "info": {
-                    "x": 3490,
-                    "y": 1330,
+                    "x": 1560,
+                    "y": 2470,
                     "z": 0,
                     "width": 412,
                     "height": 200,
@@ -1390,12 +2138,12 @@
                     ],
                     "value": [
                         "0OH76T4qpH",
-                        "zy1vPJMUXg"
+                        "PC6tq0KR4Y"
                     ]
                 },
                 "info": {
-                    "x": 2650,
-                    "y": 1250,
+                    "x": 1190,
+                    "y": 2490,
                     "z": 0,
                     "width": 365,
                     "height": 130,
@@ -1414,17 +2162,17 @@
                 },
                 "outputs": {
                     "action": [
-                        "R7gd0VEvL6"
+                        "vwG0pLmZNu"
                     ],
                     "text": [
                         "k5ZdJDa1Dp",
-                        "f5frSxMnMZ",
-                        "Mc5vpsSlCj"
+                        "Mc5vpsSlCj",
+                        "kyNNXS7jIO"
                     ]
                 },
                 "info": {
-                    "x": 2650,
-                    "y": 1540,
+                    "x": 490,
+                    "y": 2770,
                     "z": 0,
                     "width": 386,
                     "height": 138,
@@ -1444,15 +2192,15 @@
                 },
                 "outputs": {
                     "action1": [
-                        "QEummlnozB"
+                        "3viDLd686F"
                     ],
                     "action2": [
-                        "Knw2Q7kFYY"
+                        "pjk9tQ1lss"
                     ]
                 },
                 "info": {
-                    "x": 3210,
-                    "y": 1660,
+                    "x": 490,
+                    "y": 2990,
                     "z": 0,
                     "width": 476,
                     "height": 171,
@@ -1473,36 +2221,16 @@
                         "adzS6P43z7"
                     ],
                     "result": [
-                        "IhKJZwO5za"
+                        "IhKJZwO5za",
+                        "K9h9OKMk4c"
                     ]
                 },
                 "info": {
-                    "x": 4470,
-                    "y": 570,
+                    "x": 1590,
+                    "y": 1260,
                     "z": 0,
                     "width": 394,
                     "height": 160,
-                    "color": ""
-                }
-            },
-            {
-                "name": "console_log",
-                "inputs": {
-                    "action": "dIZ3oMCsvW",
-                    "value": "HGUV7mAog7"
-                },
-                "options": {
-                    "value": "not found"
-                },
-                "outputs": {
-                    "action": []
-                },
-                "info": {
-                    "x": 3220,
-                    "y": 730,
-                    "z": 0,
-                    "width": 364,
-                    "height": 117,
                     "color": ""
                 }
             },
@@ -1524,8 +2252,8 @@
                     ]
                 },
                 "info": {
-                    "x": 3520,
-                    "y": 1070,
+                    "x": 1180,
+                    "y": 2310,
                     "z": 0,
                     "width": 365,
                     "height": 117,
@@ -1542,19 +2270,20 @@
                 "options": {},
                 "outputs": {
                     "action": [
-                        "wgdyfRaEQb"
+                        "WlBs7eERPO"
                     ],
                     "action2": [
                         "BfgFMoU5GB"
                     ],
                     "index": [],
                     "value": [
-                        "KUxiXXM0Jz"
+                        "KUxiXXM0Jz",
+                        "1XcGfa5Zgt"
                     ]
                 },
                 "info": {
-                    "x": 4130,
-                    "y": 1780,
+                    "x": 530,
+                    "y": 3250,
                     "z": 0,
                     "width": 319,
                     "height": 176,
@@ -1570,11 +2299,13 @@
                 },
                 "options": {},
                 "outputs": {
-                    "action": []
+                    "action": [
+                        "dEduqKLVcQ"
+                    ]
                 },
                 "info": {
-                    "x": 4565,
-                    "y": 1835,
+                    "x": 1710,
+                    "y": 3400,
                     "z": 0,
                     "width": 210,
                     "height": 138,
@@ -1594,8 +2325,8 @@
                     ]
                 },
                 "info": {
-                    "x": 3720,
-                    "y": 1870,
+                    "x": 30,
+                    "y": 3330,
                     "z": 0,
                     "width": 312,
                     "height": 102,
@@ -1612,17 +2343,20 @@
                 "options": {},
                 "outputs": {
                     "action": [
-                        "365jGhFiWn"
+                        "0H48DdRZVd"
                     ],
-                    "action2": [],
+                    "action2": [
+                        "VwWqvRhrjV"
+                    ],
                     "index": [],
                     "value": [
-                        "o5zbU2cNcU"
+                        "o5zbU2cNcU",
+                        "JBFW1qKwEc"
                     ]
                 },
                 "info": {
-                    "x": 4350,
-                    "y": 2100,
+                    "x": 460,
+                    "y": 3510,
                     "z": 0,
                     "width": 319,
                     "height": 176,
@@ -1649,8 +2383,8 @@
                     ]
                 },
                 "info": {
-                    "x": 3850,
-                    "y": 2070,
+                    "x": 0,
+                    "y": 3490,
                     "z": 0,
                     "width": 386,
                     "height": 164,
@@ -1675,12 +2409,13 @@
                         "RFE0A5qGAz"
                     ],
                     "voice_channel": [
-                        "O3WdIIm9Lp"
+                        "O3WdIIm9Lp",
+                        "BUysiB53Mc"
                     ]
                 },
                 "info": {
-                    "x": 4760,
-                    "y": 2110,
+                    "x": 1090,
+                    "y": 3510,
                     "z": 0,
                     "width": 309,
                     "height": 304,
@@ -1702,11 +2437,13 @@
                 },
                 "options": {},
                 "outputs": {
-                    "action": []
+                    "action": [
+                        "1WJyHjeoRj"
+                    ]
                 },
                 "info": {
-                    "x": 5120,
-                    "y": 2310,
+                    "x": 1480,
+                    "y": 3490,
                     "z": 0,
                     "width": 258,
                     "height": 358,
@@ -1725,8 +2462,8 @@
                     ]
                 },
                 "info": {
-                    "x": 4740,
-                    "y": 2600,
+                    "x": 1100,
+                    "y": 3840,
                     "z": 0,
                     "width": 234,
                     "height": 106,
@@ -1757,11 +2494,1464 @@
                     "error_message": []
                 },
                 "info": {
-                    "x": 560,
-                    "y": 10,
+                    "x": 590,
+                    "y": 0,
                     "z": 0,
                     "width": 320,
                     "height": 294,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions",
+                "inputs": {
+                    "action": [
+                        "OLb2RX0cli",
+                        "iQv2AEKdEs",
+                        "F2pQHb9tcG"
+                    ]
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "0356jD7MHh"
+                    ]
+                },
+                "info": {
+                    "x": 3660,
+                    "y": 200,
+                    "z": 0,
+                    "width": 240,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "D5u6MhcyXE",
+                    "value": "jXGf19uYkD"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "OLb2RX0cli"
+                    ]
+                },
+                "info": {
+                    "x": 3260,
+                    "y": 180,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "n4sgjOq40l",
+                    "file_path": "zPKQfiLsF3"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "Go31buonRN"
+                    ],
+                    "action2": [
+                        "iQv2AEKdEs"
+                    ],
+                    "content": [
+                        "95hh7NzG0h"
+                    ]
+                },
+                "info": {
+                    "x": 2240,
+                    "y": 150,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "Go31buonRN",
+                    "value1": "95hh7NzG0h",
+                    "value2": "1lfQbJxHCE"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "2"
+                },
+                "outputs": {
+                    "action1": [
+                        "D5u6MhcyXE"
+                    ],
+                    "action2": [
+                        "F2pQHb9tcG"
+                    ]
+                },
+                "info": {
+                    "x": 2740,
+                    "y": 150,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "debug.txt"
+                },
+                "outputs": {
+                    "text": [
+                        "zPKQfiLsF3",
+                        "Ssxjn9HBod",
+                        "6EjRINda3V",
+                        "tubezSxGNr",
+                        "r4WEHjPkGC",
+                        "si9XkQhmgq",
+                        "3VsLpWA2tN",
+                        "0qApzutBoj",
+                        "SwEWMlOHyx",
+                        "PrwhzGXNZ9",
+                        "hauRq5yIVt",
+                        "XqOLG8sCNl",
+                        "HVNLf4pIsQ",
+                        "dcHMF0Utsl",
+                        "BIaVY9nmOM",
+                        "UUsBcm1SZq"
+                    ]
+                },
+                "info": {
+                    "x": 1580,
+                    "y": 0,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "CkCwYIxG1S",
+                    "file_path": "Ssxjn9HBod"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "2AaRo4I1UY"
+                    ],
+                    "action2": [
+                        "8mdGpspvox"
+                    ],
+                    "content": []
+                },
+                "info": {
+                    "x": 2250,
+                    "y": 380,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "2AaRo4I1UY",
+                    "value": "PsajEhNICa"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "tmQwBwv477"
+                    ]
+                },
+                "info": {
+                    "x": 3260,
+                    "y": 410,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions",
+                "inputs": {
+                    "action": [
+                        "tmQwBwv477",
+                        "0eQsUvSa7J",
+                        "8mdGpspvox"
+                    ]
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "egrRkR8vBg"
+                    ]
+                },
+                "info": {
+                    "x": 3680,
+                    "y": 470,
+                    "z": 0,
+                    "width": 240,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "YetuxAOYJo",
+                    "file_path": "6EjRINda3V"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "BTdSYQyh25"
+                    ],
+                    "action2": [
+                        "SDcS5fUSHH"
+                    ],
+                    "content": []
+                },
+                "info": {
+                    "x": 2230,
+                    "y": 640,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions_3x",
+                "inputs": {
+                    "action1": "vaXN0rQLRI",
+                    "action2": "v7LqhQnpDU",
+                    "action3": "SDcS5fUSHH"
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "NMmT6VLALE"
+                    ]
+                },
+                "info": {
+                    "x": 3690,
+                    "y": 660,
+                    "z": 0,
+                    "width": 209,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "BTdSYQyh25",
+                    "value": "EFQGrvvJIn"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "vaXN0rQLRI"
+                    ]
+                },
+                "info": {
+                    "x": 3270,
+                    "y": 650,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "JCQwpgZy2C",
+                    "text1": "K9h9OKMk4c",
+                    "text2": "rffVDeUIvt",
+                    "text3": "bNAZ3SqRqH"
+                },
+                "options": {
+                    "text": "Found channel: ${text1}"
+                },
+                "outputs": {
+                    "action": [
+                        "XgeIT2ay3G"
+                    ],
+                    "text": [
+                        "wgqVe7VJ5U"
+                    ]
+                },
+                "info": {
+                    "x": 2480,
+                    "y": 1270,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "XgeIT2ay3G",
+                    "file_path": "tubezSxGNr"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "2FeCWJkQbb"
+                    ],
+                    "action2": [],
+                    "content": [
+                        "vZ0QJikcYE"
+                    ]
+                },
+                "info": {
+                    "x": 2260,
+                    "y": 940,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "9WgcZXhRli",
+                    "value": "wgqVe7VJ5U"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 3340,
+                    "y": 930,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "2FeCWJkQbb",
+                    "value1": "vZ0QJikcYE",
+                    "value2": "2WdGhGFsoH"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "2"
+                },
+                "outputs": {
+                    "action1": [
+                        "9WgcZXhRli"
+                    ],
+                    "action2": []
+                },
+                "info": {
+                    "x": 2770,
+                    "y": 940,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "u54sOWL2Zh",
+                    "file_path": "si9XkQhmgq"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "Wtk2TvFedH"
+                    ],
+                    "action2": [
+                        "A2UAnboUmX"
+                    ],
+                    "content": [
+                        "wgcYROZ6ED"
+                    ]
+                },
+                "info": {
+                    "x": 1950,
+                    "y": 1680,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "NcSq5MpcPA",
+                    "value": "0ot2XQa8z9"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "QBy8K2GgjH"
+                    ]
+                },
+                "info": {
+                    "x": 3160,
+                    "y": 1460,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "XcfPD2kg0G",
+                    "file_path": "3VsLpWA2tN"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "avP0P1kaIF"
+                    ],
+                    "action2": [
+                        "MMGpSuCkep"
+                    ],
+                    "content": []
+                },
+                "info": {
+                    "x": 1970,
+                    "y": 1860,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "MYTIJAUM1g",
+                    "text1": "3FHu7yg4Iy",
+                    "text2": "0tZBZnr2Ux",
+                    "text3": "f4PqYjqRmX"
+                },
+                "options": {
+                    "text": "Current Channels: ${text1}"
+                },
+                "outputs": {
+                    "action": [
+                        "NcSq5MpcPA"
+                    ],
+                    "text": [
+                        "0ot2XQa8z9"
+                    ]
+                },
+                "info": {
+                    "x": 2710,
+                    "y": 1470,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "RVNzfOC4w7",
+                    "value": "OGFgoQmqru"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "VDJ6B1n8tC"
+                    ]
+                },
+                "info": {
+                    "x": 3160,
+                    "y": 1690,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "lV6Vmoru8s",
+                    "file_path": "r4WEHjPkGC"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "MYTIJAUM1g"
+                    ],
+                    "action2": [
+                        "VqP3cySpjI"
+                    ],
+                    "content": []
+                },
+                "info": {
+                    "x": 1950,
+                    "y": 1490,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions_3x",
+                "inputs": {
+                    "action1": "QBy8K2GgjH",
+                    "action2": "VqP3cySpjI",
+                    "action3": "LlTthEYO69"
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "36Wc9WTgcv"
+                    ]
+                },
+                "info": {
+                    "x": 3630,
+                    "y": 1460,
+                    "z": 0,
+                    "width": 209,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions_3x",
+                "inputs": {
+                    "action1": "VDJ6B1n8tC",
+                    "action2": "A2UAnboUmX",
+                    "action3": "5BlggynvDO"
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "dfNJR4x0GO"
+                    ]
+                },
+                "info": {
+                    "x": 3630,
+                    "y": 1670,
+                    "z": 0,
+                    "width": 209,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions_3x",
+                "inputs": {
+                    "action1": "036VEZ5hMd",
+                    "action2": "MMGpSuCkep",
+                    "action3": "G69C4Me6Ya"
+                },
+                "options": {},
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 3640,
+                    "y": 1870,
+                    "z": 0,
+                    "width": 209,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "avP0P1kaIF",
+                    "value": "ZLaKYUCoLV"
+                },
+                "options": {
+                    "value": "No system found"
+                },
+                "outputs": {
+                    "action": [
+                        "036VEZ5hMd"
+                    ]
+                },
+                "info": {
+                    "x": 3170,
+                    "y": 1890,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "Wtk2TvFedH",
+                    "value1": "wgcYROZ6ED",
+                    "value2": "X3GHhQvbpn"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "2"
+                },
+                "outputs": {
+                    "action1": [
+                        "RVNzfOC4w7"
+                    ],
+                    "action2": [
+                        "5BlggynvDO"
+                    ]
+                },
+                "info": {
+                    "x": 2570,
+                    "y": 1680,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "tNmbv4SStZ",
+                    "file_path": "0qApzutBoj"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "6S6DEHt9dy"
+                    ],
+                    "action2": [
+                        "J5pIuiUB0t"
+                    ],
+                    "content": [
+                        "afnTLRskDH"
+                    ]
+                },
+                "info": {
+                    "x": 1960,
+                    "y": 2080,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "6S6DEHt9dy",
+                    "value1": "afnTLRskDH",
+                    "value2": "zZqOMFQVLZ"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "2"
+                },
+                "outputs": {
+                    "action1": [
+                        "GzO0wrLinU"
+                    ],
+                    "action2": [
+                        "QeM1dfS1fO"
+                    ]
+                },
+                "info": {
+                    "x": 2590,
+                    "y": 2090,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "GzO0wrLinU",
+                    "value": "1zTM7tGVnb"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "DxbbdnDKZ5"
+                    ]
+                },
+                "info": {
+                    "x": 3190,
+                    "y": 2120,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions_3x",
+                "inputs": {
+                    "action1": "DxbbdnDKZ5",
+                    "action2": "QeM1dfS1fO",
+                    "action3": "J5pIuiUB0t"
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "cn882UfnA0"
+                    ]
+                },
+                "info": {
+                    "x": 3641,
+                    "y": 2193,
+                    "z": 0,
+                    "width": 209,
+                    "height": 150,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "xzzpcjBopu",
+                    "file_path": "SwEWMlOHyx"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "vzBS0JbwKV"
+                    ],
+                    "action2": [],
+                    "content": []
+                },
+                "info": {
+                    "x": 1990,
+                    "y": 2350,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "vzBS0JbwKV",
+                    "text1": "PC6tq0KR4Y",
+                    "text2": "GKSVXvtUQH",
+                    "text3": "YzPb1BbjIY"
+                },
+                "options": {
+                    "text": "Found Fronter: ${text1}"
+                },
+                "outputs": {
+                    "action": [
+                        "yuDh3v0mFf"
+                    ],
+                    "text": [
+                        "rliAgRD5lr"
+                    ]
+                },
+                "info": {
+                    "x": 2650,
+                    "y": 2390,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "yuDh3v0mFf",
+                    "value": "rliAgRD5lr"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 3200,
+                    "y": 2430,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "vwG0pLmZNu",
+                    "file_path": "PrwhzGXNZ9"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "icGQL8V23Q"
+                    ],
+                    "action2": [
+                        "3XE0S2W1US"
+                    ],
+                    "content": []
+                },
+                "info": {
+                    "x": 2010,
+                    "y": 2810,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "3viDLd686F",
+                    "file_path": "hauRq5yIVt"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "N7pIzyuelE"
+                    ],
+                    "action2": [],
+                    "content": []
+                },
+                "info": {
+                    "x": 2020,
+                    "y": 3020,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "icGQL8V23Q",
+                    "text1": "kyNNXS7jIO",
+                    "text2": "PHsWgEG39M",
+                    "text3": "dagpYINl5W"
+                },
+                "options": {
+                    "text": "Current Fronters: ${text1}"
+                },
+                "outputs": {
+                    "action": [
+                        "jtZqHFNGQr"
+                    ],
+                    "text": [
+                        "kZKUVdqq9K"
+                    ]
+                },
+                "info": {
+                    "x": 2590,
+                    "y": 2760,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "jtZqHFNGQr",
+                    "value": "kZKUVdqq9K"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "CbkrUvwHVY"
+                    ]
+                },
+                "info": {
+                    "x": 3170,
+                    "y": 2780,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions_3x",
+                "inputs": {
+                    "action1": "CbkrUvwHVY",
+                    "action2": "3XE0S2W1US",
+                    "action3": "PyA8wgvLC1"
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "R7gd0VEvL6"
+                    ]
+                },
+                "info": {
+                    "x": 3650,
+                    "y": 2790,
+                    "z": 0,
+                    "width": 209,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "pjk9tQ1lss",
+                    "file_path": "XqOLG8sCNl"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "Y0XbBwTGV9"
+                    ],
+                    "action2": [],
+                    "content": []
+                },
+                "info": {
+                    "x": 2030,
+                    "y": 3240,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "N7pIzyuelE",
+                    "value": "OHRkUmoTZy"
+                },
+                "options": {
+                    "value": "=same"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 2720,
+                    "y": 3050,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "Y0XbBwTGV9",
+                    "value": "QXK2b8sqZJ"
+                },
+                "options": {
+                    "value": "=not same"
+                },
+                "outputs": {
+                    "action": [
+                        "Knw2Q7kFYY"
+                    ]
+                },
+                "info": {
+                    "x": 2720,
+                    "y": 3260,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_voice_channel_info",
+                "inputs": {
+                    "action": "WlBs7eERPO",
+                    "voice_channel": "1XcGfa5Zgt"
+                },
+                "options": {
+                    "voice_channel_info": "12"
+                },
+                "outputs": {
+                    "action": [
+                        "wgdyfRaEQb"
+                    ],
+                    "result": [
+                        "orx7L1u3xC"
+                    ]
+                },
+                "info": {
+                    "x": 1130,
+                    "y": 3270,
+                    "z": 0,
+                    "width": 394,
+                    "height": 160,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "dEduqKLVcQ",
+                    "file_path": "HVNLf4pIsQ"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "2SnA00xz74"
+                    ],
+                    "action2": [],
+                    "content": [
+                        "in7ieneLDa"
+                    ]
+                },
+                "info": {
+                    "x": 2040,
+                    "y": 3450,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "2SnA00xz74",
+                    "value1": "in7ieneLDa",
+                    "value2": "PtaSxZJQgG"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "2"
+                },
+                "outputs": {
+                    "action1": [
+                        "HrVxxIhJPQ"
+                    ],
+                    "action2": []
+                },
+                "info": {
+                    "x": 2650,
+                    "y": 3470,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "rm8hf9KTdI",
+                    "value": "a1mn26U396"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 3660,
+                    "y": 3520,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "HrVxxIhJPQ",
+                    "text1": "orx7L1u3xC",
+                    "text2": "tbrBfFJxz8",
+                    "text3": "9bLjdhqAFj"
+                },
+                "options": {
+                    "text": "Channel \"${text1}\" Deleted"
+                },
+                "outputs": {
+                    "action": [
+                        "rm8hf9KTdI"
+                    ],
+                    "text": [
+                        "a1mn26U396"
+                    ]
+                },
+                "info": {
+                    "x": 3200,
+                    "y": 3470,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "wtU1OlFqrP",
+                    "file_path": "dcHMF0Utsl"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "CYQMmrVWYZ"
+                    ],
+                    "action2": [],
+                    "content": [
+                        "nLlefne9q7"
+                    ]
+                },
+                "info": {
+                    "x": 2060,
+                    "y": 3730,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "CYQMmrVWYZ",
+                    "value1": "nLlefne9q7",
+                    "value2": "HMIq2evXDZ"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": "2"
+                },
+                "outputs": {
+                    "action1": [
+                        "GUpyEpxw7M"
+                    ],
+                    "action2": []
+                },
+                "info": {
+                    "x": 2670,
+                    "y": 3740,
+                    "z": 0,
+                    "width": 476,
+                    "height": 171,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_voice_channel_info",
+                "inputs": {
+                    "action": "1WJyHjeoRj",
+                    "voice_channel": "BUysiB53Mc"
+                },
+                "options": {
+                    "voice_channel_info": "12"
+                },
+                "outputs": {
+                    "action": [
+                        "wtU1OlFqrP"
+                    ],
+                    "result": [
+                        "5sXF4N253H"
+                    ]
+                },
+                "info": {
+                    "x": 1310,
+                    "y": 3980,
+                    "z": 0,
+                    "width": 394,
+                    "height": 160,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "GUpyEpxw7M",
+                    "text1": "5sXF4N253H",
+                    "text2": "MbVT9YzRcT",
+                    "text3": "kTsaLe3wIs"
+                },
+                "options": {
+                    "text": "Channel \"${text1}\" Created"
+                },
+                "outputs": {
+                    "action": [
+                        "T54rSV2CXu"
+                    ],
+                    "text": [
+                        "VFhnthDspd"
+                    ]
+                },
+                "info": {
+                    "x": 3210,
+                    "y": 3750,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "T54rSV2CXu",
+                    "value": "VFhnthDspd"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 3640,
+                    "y": 3780,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "KSL0S0I1Pd",
+                    "file_path": "BIaVY9nmOM"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "RmJps0kPeR"
+                    ],
+                    "action2": [
+                        "P7SzIuolGc"
+                    ],
+                    "content": []
+                },
+                "info": {
+                    "x": 2240,
+                    "y": 0,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "RmJps0kPeR",
+                    "value": "Z9PLxl0D5v"
+                },
+                "options": {
+                    "value": "[front] Sync started"
+                },
+                "outputs": {
+                    "action": [
+                        "C5wVI8er2S"
+                    ]
+                },
+                "info": {
+                    "x": 2790,
+                    "y": 10,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions",
+                "inputs": {
+                    "action": [
+                        "P7SzIuolGc",
+                        "C5wVI8er2S"
+                    ]
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "snKgC9MdHU"
+                    ]
+                },
+                "info": {
+                    "x": 3260,
+                    "y": 10,
+                    "z": 0,
+                    "width": 240,
+                    "height": 112,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "VwWqvRhrjV",
+                    "file_path": "UUsBcm1SZq"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "lzCLWORXrA"
+                    ],
+                    "action2": [],
+                    "content": []
+                },
+                "info": {
+                    "x": 2060,
+                    "y": 4130,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "lzCLWORXrA",
+                    "value": "kjSeY7NPxL"
+                },
+                "options": {
+                    "value": "[front] Sync complete!"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 2650,
+                    "y": 4160,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_comparison",
+                "inputs": {
+                    "action": "0H48DdRZVd",
+                    "value1": "JBFW1qKwEc",
+                    "value2": "68o1l9NDiY"
+                },
+                "options": {
+                    "comparison_type": "equal",
+                    "value2": ""
+                },
+                "outputs": {
+                    "action1": [
+                        "B1AQpUjkqY"
+                    ],
+                    "action2": [
+                        "365jGhFiWn"
+                    ]
+                },
+                "info": {
+                    "x": 370,
+                    "y": 3780,
+                    "z": 0,
+                    "width": 446,
+                    "height": 169,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "B1AQpUjkqY",
+                    "value": "w7ctEjMuCO"
+                },
+                "options": {
+                    "value": "No Displayname Set"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 380,
+                    "y": 3970,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
                     "color": ""
                 }
             }
@@ -1805,7 +3995,10 @@
                         "lxbpbcEhTr"
                     ],
                     "vc": [],
-                    "user": [],
+                    "user": [
+                        "2POsKvz1CL",
+                        "idepyQ4VUf"
+                    ],
                     "member": [
                         "qQmZQJOvPd"
                     ],
@@ -1834,7 +4027,9 @@
                         "IC4XUp5TFA"
                     ],
                     "result": [
-                        "x6tfoEB4FT"
+                        "x6tfoEB4FT",
+                        "hZhYoNJMN5",
+                        "jvWQVevYAC"
                     ]
                 },
                 "info": {
@@ -1857,13 +4052,14 @@
                 },
                 "outputs": {
                     "action": [
-                        "TeYi4xKpSE"
+                        "1pltPITVwp"
                     ],
                     "action2": [
                         "B9smwz9yRr"
                     ],
                     "content": [
-                        "PxnysPSddR"
+                        "PxnysPSddR",
+                        "ULbl7JAmH8"
                     ]
                 },
                 "info": {
@@ -1891,7 +4087,8 @@
                         "g8zH95p4J9"
                     ],
                     "text": [
-                        "2cAH6wRKdc"
+                        "2cAH6wRKdc",
+                        "fuWGARfObU"
                     ]
                 },
                 "info": {
@@ -1923,7 +4120,9 @@
                     "text": "No system has been set yet.\nUse &setupsys to set one.\nUse &help for more information."
                 },
                 "outputs": {
-                    "action": [],
+                    "action": [
+                        "UeyClrqotU"
+                    ],
                     "message": [],
                     "error": []
                 },
@@ -2077,10 +4276,11 @@
                 },
                 "outputs": {
                     "action": [
-                        "So0adAB5BE"
+                        "aw6b1SrMDO"
                     ],
                     "list": [
-                        "mgJZwUNR1U"
+                        "mgJZwUNR1U",
+                        "JHLIurSyis"
                     ]
                 },
                 "info": {
@@ -2129,7 +4329,8 @@
                     ],
                     "index": [],
                     "value": [
-                        "1NtHr6J6Ch"
+                        "1NtHr6J6Ch",
+                        "mBmse98ed1"
                     ]
                 },
                 "info": {
@@ -2198,7 +4399,9 @@
                 },
                 "options": {},
                 "outputs": {
-                    "action": []
+                    "action": [
+                        "VtcLZKhNHG"
+                    ]
                 },
                 "info": {
                     "x": 3530,
@@ -2226,11 +4429,11 @@
                     "button_row": "X5K5DLAh7h"
                 },
                 "options": {
-                    "text": "All alter roles removed!"
+                    "text": "All existing alter roles removed!\nMaking new ones now!"
                 },
                 "outputs": {
                     "action": [
-                        "Iae8eIXlVY"
+                        "BX5dgzzPHv"
                     ],
                     "message": [],
                     "error": []
@@ -2312,8 +4515,7 @@
                         "FCM8TNTbM5"
                     ],
                     "data": [
-                        "gRRuet3obP",
-                        "gulf278ovr"
+                        "gRRuet3obP"
                     ]
                 },
                 "info": {
@@ -2336,9 +4538,9 @@
                         "Me2PuDeO5l"
                     ],
                     "list": [
-                        "B0MkDv8OUD",
                         "mZXJWXog80",
-                        "1E90vFcTHR"
+                        "1E90vFcTHR",
+                        "9nxVsuMxGF"
                     ]
                 },
                 "info": {
@@ -2363,7 +4565,7 @@
                         "0dquwsbMCN"
                     ],
                     "action2": [
-                        "zDtDQu5FeA"
+                        "BAYL6GOu4b"
                     ],
                     "index": [],
                     "value": [
@@ -2393,9 +4595,7 @@
                         "rzhP22tJKX"
                     ],
                     "value": [
-                        "oNoK43VmRs",
-                        "tXoTppvFcJ",
-                        "64VlVZrkB3"
+                        "tXoTppvFcJ"
                     ]
                 },
                 "info": {
@@ -2478,8 +4678,7 @@
                         "zkGnVJo6S5"
                     ],
                     "text": [
-                        "ZIIa2EfJDw",
-                        "3mU6JdB69s"
+                        "ZIIa2EfJDw"
                     ]
                 },
                 "info": {
@@ -2507,7 +4706,6 @@
                         "mmnickbxtn"
                     ],
                     "list": [
-                        "lSLf3vUjbf",
                         "bCJ1arhpXe"
                     ]
                 },
@@ -2537,8 +4735,8 @@
                     ],
                     "index": [],
                     "value": [
-                        "UlDfF9Y8ai",
-                        "g4TpkaETEF"
+                        "g4TpkaETEF",
+                        "TyE772A2gf"
                     ]
                 },
                 "info": {
@@ -2653,7 +4851,9 @@
                 },
                 "options": {},
                 "outputs": {
-                    "action": [],
+                    "action": [
+                        "Ajcb1vMpMC"
+                    ],
                     "action1": []
                 },
                 "info": {
@@ -2685,7 +4885,9 @@
                     "text": "All done!"
                 },
                 "outputs": {
-                    "action": [],
+                    "action": [
+                        "CbvXTjad36"
+                    ],
                     "message": [],
                     "error": []
                 },
@@ -2716,8 +4918,8 @@
                     "list": []
                 },
                 "info": {
-                    "x": 2260,
-                    "y": 1870,
+                    "x": 2210,
+                    "y": 1890,
                     "z": 0,
                     "width": 437,
                     "height": 221,
@@ -2749,6 +4951,783 @@
                     "z": 0,
                     "width": 437,
                     "height": 156,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "debugroles.txt"
+                },
+                "outputs": {
+                    "text": [
+                        "fnXxKbQq5X",
+                        "Xvv7zv2WZt",
+                        "55hEnzQCFE",
+                        "6Gd6RiDmRp",
+                        "Aru0OMqwCf",
+                        "lBQMLRrtjm",
+                        "SCdUeU7GX3",
+                        "hdcRlOrHhf"
+                    ]
+                },
+                "info": {
+                    "x": 4000,
+                    "y": 180,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "uZau3xosZ7",
+                    "value": "cnt7thXnF1"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 6270,
+                    "y": 260,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "UeyClrqotU",
+                    "file_path": "fnXxKbQq5X"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "UjxqNPzK1i"
+                    ],
+                    "action2": [],
+                    "content": []
+                },
+                "info": {
+                    "x": 4510,
+                    "y": 260,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "1pltPITVwp",
+                    "file_path": "Xvv7zv2WZt"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "oYdYX6YqoR"
+                    ],
+                    "action2": [
+                        "Uxgoq1O1yE"
+                    ],
+                    "content": []
+                },
+                "info": {
+                    "x": 4520,
+                    "y": 430,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "aw6b1SrMDO",
+                    "file_path": "55hEnzQCFE"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "9hO9Mf7pHw"
+                    ],
+                    "action2": [
+                        "M4G7LA7ON9"
+                    ],
+                    "content": []
+                },
+                "info": {
+                    "x": 4530,
+                    "y": 600,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "VtcLZKhNHG",
+                    "file_path": "6Gd6RiDmRp"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "TdNfqrMILd"
+                    ],
+                    "action2": [],
+                    "content": []
+                },
+                "info": {
+                    "x": 4590,
+                    "y": 770,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "BX5dgzzPHv",
+                    "file_path": "Aru0OMqwCf"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "zFVQAlwY8d"
+                    ],
+                    "action2": [
+                        "mq4prxKXOc"
+                    ],
+                    "content": []
+                },
+                "info": {
+                    "x": 4530,
+                    "y": 930,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "BAYL6GOu4b",
+                    "file_path": "lBQMLRrtjm"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "GOm0SSCguX"
+                    ],
+                    "action2": [
+                        "9V2SrG6aEn"
+                    ],
+                    "content": []
+                },
+                "info": {
+                    "x": 4530,
+                    "y": 1100,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "Ajcb1vMpMC",
+                    "file_path": "SCdUeU7GX3"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "oxmNXEAexG"
+                    ],
+                    "action2": [],
+                    "content": []
+                },
+                "info": {
+                    "x": 4530,
+                    "y": 1260,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_user_info",
+                "inputs": {
+                    "action": "UjxqNPzK1i",
+                    "user": "2POsKvz1CL"
+                },
+                "options": {
+                    "user_info": "16"
+                },
+                "outputs": {
+                    "action": [
+                        "i13XUejq5n"
+                    ],
+                    "result": [
+                        "WrNkEfMvbO"
+                    ]
+                },
+                "info": {
+                    "x": 5030,
+                    "y": 240,
+                    "z": 0,
+                    "width": 556,
+                    "height": 160,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "i13XUejq5n",
+                    "text1": "WrNkEfMvbO",
+                    "text2": "hZhYoNJMN5",
+                    "text3": "fuWGARfObU"
+                },
+                "options": {
+                    "text": "[roles] User ${text1} requested a role refresh for server with ID ${text2} but file ${text3} was not found."
+                },
+                "outputs": {
+                    "action": [
+                        "uZau3xosZ7"
+                    ],
+                    "text": [
+                        "cnt7thXnF1"
+                    ]
+                },
+                "info": {
+                    "x": 5810,
+                    "y": 230,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_user_info",
+                "inputs": {
+                    "action": "oYdYX6YqoR",
+                    "user": "idepyQ4VUf"
+                },
+                "options": {
+                    "user_info": "16"
+                },
+                "outputs": {
+                    "action": [
+                        "QFtaSHR1iK"
+                    ],
+                    "result": [
+                        "uhMN6jxlQo"
+                    ]
+                },
+                "info": {
+                    "x": 5090,
+                    "y": 400,
+                    "z": 0,
+                    "width": 556,
+                    "height": 160,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "QFtaSHR1iK",
+                    "text1": "uhMN6jxlQo",
+                    "text2": "jvWQVevYAC",
+                    "text3": "ULbl7JAmH8"
+                },
+                "options": {
+                    "text": "[roles] User ${text1} requested a role refresh for server with ID ${text2}\nUsing systemID ${text3}"
+                },
+                "outputs": {
+                    "action": [
+                        "qdUI0F5btI"
+                    ],
+                    "text": [
+                        "PvmAyqrOnX"
+                    ]
+                },
+                "info": {
+                    "x": 5810,
+                    "y": 400,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions",
+                "inputs": {
+                    "action": [
+                        "2NBXWZkIMU",
+                        "Uxgoq1O1yE"
+                    ]
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "TeYi4xKpSE"
+                    ]
+                },
+                "info": {
+                    "x": 6780,
+                    "y": 450,
+                    "z": 0,
+                    "width": 240,
+                    "height": 112,
+                    "color": ""
+                }
+            },
+            {
+                "name": "convert_list_to_text",
+                "inputs": {
+                    "action": "9hO9Mf7pHw",
+                    "list": "JHLIurSyis",
+                    "separator": "CXhY5dRCne"
+                },
+                "options": {
+                    "separator": ","
+                },
+                "outputs": {
+                    "action": [
+                        "y6RRUIW0Bs"
+                    ],
+                    "text": [
+                        "OWzWZfA40x"
+                    ]
+                },
+                "info": {
+                    "x": 5070,
+                    "y": 610,
+                    "z": 0,
+                    "width": 386,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions",
+                "inputs": {
+                    "action": [
+                        "StYKxKd9om",
+                        "M4G7LA7ON9"
+                    ]
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "So0adAB5BE"
+                    ]
+                },
+                "info": {
+                    "x": 6710,
+                    "y": 620,
+                    "z": 0,
+                    "width": 240,
+                    "height": 112,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "qdUI0F5btI",
+                    "value": "PvmAyqrOnX"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "2NBXWZkIMU"
+                    ]
+                },
+                "info": {
+                    "x": 6260,
+                    "y": 420,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "y6RRUIW0Bs",
+                    "text1": "OWzWZfA40x",
+                    "text2": "rsdRq7JCGA",
+                    "text3": "ru55GnTXsE"
+                },
+                "options": {
+                    "text": "[roles] Current role list:\n${text1}"
+                },
+                "outputs": {
+                    "action": [
+                        "I2WbDHubTq"
+                    ],
+                    "text": [
+                        "JrT31lxEyD"
+                    ]
+                },
+                "info": {
+                    "x": 5800,
+                    "y": 600,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "I2WbDHubTq",
+                    "value": "JrT31lxEyD"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "StYKxKd9om"
+                    ]
+                },
+                "info": {
+                    "x": 6250,
+                    "y": 630,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "TdNfqrMILd",
+                    "text1": "mBmse98ed1",
+                    "text2": "oqM9IcZmW8",
+                    "text3": "XjiwW736G8"
+                },
+                "options": {
+                    "text": "[roles] Role ${text1}\nDeleted"
+                },
+                "outputs": {
+                    "action": [
+                        "FLobnHhIHV"
+                    ],
+                    "text": [
+                        "pVEgeJwFX8"
+                    ]
+                },
+                "info": {
+                    "x": 5800,
+                    "y": 780,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "FLobnHhIHV",
+                    "value": "pVEgeJwFX8"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 6220,
+                    "y": 810,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "zFVQAlwY8d",
+                    "value": "CjgM9nbcHp"
+                },
+                "options": {
+                    "value": "[roles] All existing alter roles removed!\nMaking new ones now!"
+                },
+                "outputs": {
+                    "action": [
+                        "vlz0Pl2gj6"
+                    ]
+                },
+                "info": {
+                    "x": 5150,
+                    "y": 960,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions",
+                "inputs": {
+                    "action": [
+                        "vlz0Pl2gj6",
+                        "mq4prxKXOc"
+                    ]
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "Iae8eIXlVY"
+                    ]
+                },
+                "info": {
+                    "x": 6720,
+                    "y": 940,
+                    "z": 0,
+                    "width": 240,
+                    "height": 112,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions",
+                "inputs": {
+                    "action": [
+                        "uBDLY3yq4V",
+                        "9V2SrG6aEn"
+                    ]
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "zDtDQu5FeA"
+                    ]
+                },
+                "info": {
+                    "x": 6720,
+                    "y": 1130,
+                    "z": 0,
+                    "width": 240,
+                    "height": 112,
+                    "color": ""
+                }
+            },
+            {
+                "name": "convert_list_to_text",
+                "inputs": {
+                    "action": "GOm0SSCguX",
+                    "list": "9nxVsuMxGF",
+                    "separator": "qNQ9ed6iZG"
+                },
+                "options": {
+                    "separator": ","
+                },
+                "outputs": {
+                    "action": [
+                        "ExxPj1BFzz"
+                    ],
+                    "text": [
+                        "XMdmO7NQuR"
+                    ]
+                },
+                "info": {
+                    "x": 5140,
+                    "y": 1120,
+                    "z": 0,
+                    "width": 386,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "ExxPj1BFzz",
+                    "text1": "XMdmO7NQuR",
+                    "text2": "ue1Ydr8CnO",
+                    "text3": "F2d85kW6s3"
+                },
+                "options": {
+                    "text": "[roles] Current public members:\n${text1}"
+                },
+                "outputs": {
+                    "action": [
+                        "EDcqyu0lI5"
+                    ],
+                    "text": [
+                        "0ExbwhyPT4"
+                    ]
+                },
+                "info": {
+                    "x": 5800,
+                    "y": 1120,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "EDcqyu0lI5",
+                    "value": "0ExbwhyPT4"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "uBDLY3yq4V"
+                    ]
+                },
+                "info": {
+                    "x": 6270,
+                    "y": 1150,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "read_file",
+                "inputs": {
+                    "action": "CbvXTjad36",
+                    "file_path": "hdcRlOrHhf"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": [
+                        "cempONkrQX"
+                    ],
+                    "action2": [],
+                    "content": []
+                },
+                "info": {
+                    "x": 4530,
+                    "y": 1450,
+                    "z": 0,
+                    "width": 451,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "oxmNXEAexG",
+                    "text1": "TyE772A2gf",
+                    "text2": "pXajLFNbub",
+                    "text3": "9WRa5mGVvc"
+                },
+                "options": {
+                    "text": "[roles] Role ${text1}\n created"
+                },
+                "outputs": {
+                    "action": [
+                        "XZGT0miyZZ"
+                    ],
+                    "text": [
+                        "6wxEZkzmmZ"
+                    ]
+                },
+                "info": {
+                    "x": 5800,
+                    "y": 1290,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "XZGT0miyZZ",
+                    "value": "6wxEZkzmmZ"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 6250,
+                    "y": 1310,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "cempONkrQX",
+                    "value": "TOaVEUygah"
+                },
+                "options": {
+                    "value": "[roles] Action completed"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 6242,
+                    "y": 1592,
+                    "z": 0,
+                    "width": 360,
+                    "height": 113,
                     "color": ""
                 }
             }
@@ -2789,6 +5768,15 @@
                 "y": 1640,
                 "width": 1520,
                 "height": 1120
+            },
+            {
+                "title": "Debug logging",
+                "description": "",
+                "color": "#b94646",
+                "x": 4360,
+                "y": 150,
+                "width": 2300,
+                "height": 2530
             }
         ]
     },
@@ -2831,8 +5819,8 @@
                     "error_message": []
                 },
                 "info": {
-                    "x": 70,
-                    "y": 190,
+                    "x": 1560,
+                    "y": 40,
                     "z": 0,
                     "width": 500,
                     "height": 380,
@@ -2889,7 +5877,7 @@
                 },
                 "outputs": {
                     "action1": [
-                        "VJ5FlDlBS1"
+                        "BeRybprANp"
                     ],
                     "action2": [],
                     "message": [],
@@ -2924,8 +5912,8 @@
                     ]
                 },
                 "info": {
-                    "x": 780,
-                    "y": 1510,
+                    "x": 1610,
+                    "y": 1400,
                     "z": 0,
                     "width": 230,
                     "height": 112,
@@ -2945,8 +5933,8 @@
                     ]
                 },
                 "info": {
-                    "x": 1110,
-                    "y": 1510,
+                    "x": 1870,
+                    "y": 1450,
                     "z": 0,
                     "width": 230,
                     "height": 112,
@@ -2966,8 +5954,8 @@
                     ]
                 },
                 "info": {
-                    "x": 1440,
-                    "y": 1510,
+                    "x": 2140,
+                    "y": 1490,
                     "z": 0,
                     "width": 230,
                     "height": 112,
@@ -2987,8 +5975,8 @@
                     ]
                 },
                 "info": {
-                    "x": 1770,
-                    "y": 1510,
+                    "x": 2440,
+                    "y": 1540,
                     "z": 0,
                     "width": 230,
                     "height": 112,
@@ -3020,8 +6008,8 @@
                     "error": []
                 },
                 "info": {
-                    "x": 2150,
-                    "y": 1520,
+                    "x": 2780,
+                    "y": 1610,
                     "z": 0,
                     "width": 415,
                     "height": 420,
@@ -3039,7 +6027,8 @@
                 },
                 "outputs": {
                     "text1": [
-                        "yj0F6LAavl"
+                        "yj0F6LAavl",
+                        "XlODc7DCCU"
                     ],
                     "text2": [
                         "pHVhNBDJvu"
@@ -3080,8 +6069,8 @@
                     ]
                 },
                 "info": {
-                    "x": 720,
-                    "y": 80,
+                    "x": 2650,
+                    "y": 0,
                     "z": 0,
                     "width": 430,
                     "height": 204,
@@ -3104,8 +6093,8 @@
                     ]
                 },
                 "info": {
-                    "x": 2140,
-                    "y": 130,
+                    "x": 4090,
+                    "y": 80,
                     "z": 0,
                     "width": 398,
                     "height": 138,
@@ -3137,8 +6126,8 @@
                     "error": []
                 },
                 "info": {
-                    "x": 2680,
-                    "y": 300,
+                    "x": 4540,
+                    "y": 200,
                     "z": 0,
                     "width": 415,
                     "height": 372,
@@ -3163,8 +6152,8 @@
                     ]
                 },
                 "info": {
-                    "x": 1300,
-                    "y": 100,
+                    "x": 3220,
+                    "y": 0,
                     "z": 0,
                     "width": 345,
                     "height": 160,
@@ -3191,8 +6180,8 @@
                     ]
                 },
                 "info": {
-                    "x": 1690,
-                    "y": 120,
+                    "x": 3670,
+                    "y": 10,
                     "z": 0,
                     "width": 364,
                     "height": 164,
@@ -3308,12 +6297,12 @@
                 "options": {},
                 "outputs": {
                     "action": [
-                        "gL35UOp9bc"
+                        "R8vNQFLMxp"
                     ]
                 },
                 "info": {
-                    "x": 200,
-                    "y": 2270,
+                    "x": 90,
+                    "y": 2140,
                     "z": 0,
                     "width": 217,
                     "height": 86,
@@ -3334,8 +6323,8 @@
                     "action": []
                 },
                 "info": {
-                    "x": 1920,
-                    "y": 2260,
+                    "x": 2890,
+                    "y": 2060,
                     "z": 0,
                     "width": 400,
                     "height": 150,
@@ -3496,16 +6485,17 @@
                 "name": "text",
                 "inputs": {},
                 "options": {
-                    "text": "ValkyriaBot™ Version: 1.0.0"
+                    "text": "ValkyriaBot™ Version: 6.1.2\nDM Companion Version: 2.2.0"
                 },
                 "outputs": {
                     "text": [
-                        "a9ofKPWQqn"
+                        "a9ofKPWQqn",
+                        "TenNqK6FVF"
                     ]
                 },
                 "info": {
-                    "x": 10,
-                    "y": 10,
+                    "x": 130,
+                    "y": 480,
                     "z": 0,
                     "width": 420,
                     "height": 117,
@@ -3525,7 +6515,7 @@
                 "options": {
                     "position_type": "last",
                     "field_name": "Alter roles",
-                    "field_value": "Want pingable roles for your alters?\nUse &reloadalters\n\nBeware, its going to take a while to create and refresh the roles. Please be patient.",
+                    "field_value": "Want pingable roles for your alters?\nUse &reloadalters\n\nBeware, its going to take a while to create and refresh the roles. Please be patient.\n\nBeware, DIscord has a max of 250 roles per server. If you have more members than that, it won't work.",
                     "field_inline": "false",
                     "custom_position": 0
                 },
@@ -3666,8 +6656,8 @@
                     ]
                 },
                 "info": {
-                    "x": 510,
-                    "y": 2200,
+                    "x": 1950,
+                    "y": 2020,
                     "z": 0,
                     "width": 343,
                     "height": 160,
@@ -3694,8 +6684,8 @@
                     ]
                 },
                 "info": {
-                    "x": 1072,
-                    "y": 2322,
+                    "x": 2420,
+                    "y": 2030,
                     "z": 0,
                     "width": 364,
                     "height": 164,
@@ -4001,7 +6991,9 @@
                     "value": ""
                 },
                 "outputs": {
-                    "action": []
+                    "action": [
+                        "VsrQhuKXbs"
+                    ]
                 },
                 "info": {
                     "x": 1230,
@@ -4037,6 +7029,274 @@
                     "z": 0,
                     "width": 364,
                     "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_actions_3x",
+                "inputs": {
+                    "action1": "TbREl9nDOV",
+                    "action2": "VsrQhuKXbs",
+                    "action3": "Gn02nRfMr2"
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "gL35UOp9bc"
+                    ]
+                },
+                "info": {
+                    "x": 1680,
+                    "y": 2360,
+                    "z": 0,
+                    "width": 209,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "create_server_event",
+                "inputs": {},
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "Gn02nRfMr2"
+                    ],
+                    "server": []
+                },
+                "info": {
+                    "x": 1050,
+                    "y": 2510,
+                    "z": 0,
+                    "width": 212,
+                    "height": 112,
+                    "color": ""
+                }
+            },
+            {
+                "name": "set_bot_activity",
+                "inputs": {
+                    "action": "delbp7G63H",
+                    "activity_name": "ByaBsZSL17",
+                    "activity_url": "tuwLDtD9DO"
+                },
+                "options": {
+                    "activity_type": "playing"
+                },
+                "outputs": {
+                    "action": [
+                        "0IU3qLpYhC"
+                    ]
+                },
+                "info": {
+                    "x": 430,
+                    "y": 2240,
+                    "z": 0,
+                    "width": 400,
+                    "height": 150,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "Initializing..."
+                },
+                "outputs": {
+                    "text": [
+                        "ByaBsZSL17"
+                    ]
+                },
+                "info": {
+                    "x": 90,
+                    "y": 2240,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "R8vNQFLMxp",
+                    "value": "JfIJX5LYjj"
+                },
+                "options": {
+                    "value": "[bot] Initializing..."
+                },
+                "outputs": {
+                    "action": [
+                        "delbp7G63H"
+                    ]
+                },
+                "info": {
+                    "x": 450,
+                    "y": 2090,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "wait_with_number",
+                "inputs": {
+                    "action": "3opb7XvJjF"
+                },
+                "options": {
+                    "time_type": "seconds",
+                    "time": 1
+                },
+                "outputs": {
+                    "action": [
+                        "fBtrtC69Z2"
+                    ]
+                },
+                "info": {
+                    "x": 920,
+                    "y": 2040,
+                    "z": 0,
+                    "width": 376,
+                    "height": 156,
+                    "color": ""
+                }
+            },
+            {
+                "name": "wait_with_number",
+                "inputs": {
+                    "action": "0IU3qLpYhC"
+                },
+                "options": {
+                    "time_type": "seconds",
+                    "time": 1
+                },
+                "outputs": {
+                    "action": [
+                        "2H4nLUu6ON"
+                    ]
+                },
+                "info": {
+                    "x": 920,
+                    "y": 1880,
+                    "z": 0,
+                    "width": 376,
+                    "height": 156,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "2H4nLUu6ON",
+                    "value": "XHgV1xpdE8"
+                },
+                "options": {
+                    "value": "[bot] Connection to PK API established"
+                },
+                "outputs": {
+                    "action": [
+                        "3opb7XvJjF"
+                    ]
+                },
+                "info": {
+                    "x": 1330,
+                    "y": 1890,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "fBtrtC69Z2",
+                    "value": "9XgukOQTQq"
+                },
+                "options": {
+                    "value": "[bot] Connection to Discord API established"
+                },
+                "outputs": {
+                    "action": [
+                        "fUbHLXbmIa"
+                    ]
+                },
+                "info": {
+                    "x": 1330,
+                    "y": 2030,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "console_log",
+                "inputs": {
+                    "action": "2fHCZQGGMG",
+                    "value": "TenNqK6FVF"
+                },
+                "options": {
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "TbREl9nDOV"
+                    ]
+                },
+                "info": {
+                    "x": 1340,
+                    "y": 2210,
+                    "z": 0,
+                    "width": 364,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "wait_with_number",
+                "inputs": {
+                    "action": "fUbHLXbmIa"
+                },
+                "options": {
+                    "time_type": "seconds",
+                    "time": 3
+                },
+                "outputs": {
+                    "action": [
+                        "2fHCZQGGMG"
+                    ]
+                },
+                "info": {
+                    "x": 930,
+                    "y": 2210,
+                    "z": 0,
+                    "width": 376,
+                    "height": 156,
+                    "color": ""
+                }
+            },
+            {
+                "name": "check_if_path_exists",
+                "inputs": {
+                    "action": "BeRybprANp",
+                    "path": "XlODc7DCCU"
+                },
+                "options": {},
+                "outputs": {
+                    "action1": [],
+                    "action2": [
+                        "VJ5FlDlBS1"
+                    ]
+                },
+                "info": {
+                    "x": 1050,
+                    "y": 1370,
+                    "z": 0,
+                    "width": 256,
+                    "height": 112,
                     "color": ""
                 }
             }
